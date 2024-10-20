@@ -1,0 +1,118 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void AOTGenericReferences_RefMethods_m17CF257D96D8BC2F232C4C1502905B792D17170C (void);
+extern void AOTGenericReferences__ctor_m41CBD692FC9B521512E552575AFE7A385DEC71A6 (void);
+extern void AOTGenericReferences__cctor_mA46BDC06A6577D725A2E5284A2A34C974CE65F68 (void);
+extern void DebugLog_Start_m8BB410FC6DCF65CD1DDAE378B4B1D4080E245181 (void);
+extern void DebugLog_Msg_m22C19E49CD53A03051C505E4CCAE42C8FD0DF5D3 (void);
+extern void DebugLog_OnDestroy_m01B37C36520725C260850B2A3EDEA58EE7F15BD4 (void);
+extern void DebugLog__ctor_mBB4CAD19BD0F0555B32CEF2925373C138F916C14 (void);
+extern void InitializeRoot_Start_m9E59818B2A09BC49F796424AC28B6FB9392C7968 (void);
+extern void InitializeRoot_ToLoadDll_mA96A321A77AF45774681E4DBBBEC8600DEAC2DA2 (void);
+extern void InitializeRoot_LoadMetadataForAOTAssembly_mBD43715661BDF0470C59692BCB03BB29B401166D (void);
+extern void InitializeRoot_GotoLogin_m0B2AD46642E74D41BB1860425CA2EA25203EF0BA (void);
+extern void InitializeRoot__ctor_m07A6EA3345E07B427DC15CCDF79D2624FFA5CF8F (void);
+extern void InitializeRoot_U3CToLoadDllU3Eb__2_0_m462CD59BA5A64DCC8B0E256285826312B0D60668 (void);
+extern void U3CGotoLoginU3Ed__4_MoveNext_m38DB5AA51118088838DA20626FAC951D9550D4FE (void);
+extern void U3CGotoLoginU3Ed__4_SetStateMachine_mD6434572B00D9BEBB6EC7695F13395944FC9CA80 (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3__ctor_mC6FC5D4EC3899D9DEFC7902FC36BDFFA6D19DD45 (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_System_IDisposable_Dispose_m62818E1C4DCB85749FFBD655FADCCFB06FA7D73D (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_MoveNext_mD3F4444464067CFBB76A3A451DA49DCC87A2749A (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_U3CU3Em__Finally1_mFDD8EC40FB84B0199F572B93AFF34C1092657006 (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE43C86D55D280CC8B75D74B6AB8D3021956B00CE (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_IEnumerator_Reset_m637853EFB42187193822BD9D7BFA3F31AF21BFBE (void);
+extern void U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_IEnumerator_get_Current_m32FD6129D94F38A2DD7328DB05B206E056200588 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+extern void NetworkVariableSerializationHelper_InitializeSerialization_mA4F17C9D8F4934C552263003358AF8CC0E55E6E3 (void);
+static Il2CppMethodPointer s_methodPointers[25] = 
+{
+	AOTGenericReferences_RefMethods_m17CF257D96D8BC2F232C4C1502905B792D17170C,
+	AOTGenericReferences__ctor_m41CBD692FC9B521512E552575AFE7A385DEC71A6,
+	AOTGenericReferences__cctor_mA46BDC06A6577D725A2E5284A2A34C974CE65F68,
+	DebugLog_Start_m8BB410FC6DCF65CD1DDAE378B4B1D4080E245181,
+	DebugLog_Msg_m22C19E49CD53A03051C505E4CCAE42C8FD0DF5D3,
+	DebugLog_OnDestroy_m01B37C36520725C260850B2A3EDEA58EE7F15BD4,
+	DebugLog__ctor_mBB4CAD19BD0F0555B32CEF2925373C138F916C14,
+	InitializeRoot_Start_m9E59818B2A09BC49F796424AC28B6FB9392C7968,
+	InitializeRoot_ToLoadDll_mA96A321A77AF45774681E4DBBBEC8600DEAC2DA2,
+	InitializeRoot_LoadMetadataForAOTAssembly_mBD43715661BDF0470C59692BCB03BB29B401166D,
+	InitializeRoot_GotoLogin_m0B2AD46642E74D41BB1860425CA2EA25203EF0BA,
+	InitializeRoot__ctor_m07A6EA3345E07B427DC15CCDF79D2624FFA5CF8F,
+	InitializeRoot_U3CToLoadDllU3Eb__2_0_m462CD59BA5A64DCC8B0E256285826312B0D60668,
+	U3CGotoLoginU3Ed__4_MoveNext_m38DB5AA51118088838DA20626FAC951D9550D4FE,
+	U3CGotoLoginU3Ed__4_SetStateMachine_mD6434572B00D9BEBB6EC7695F13395944FC9CA80,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3__ctor_mC6FC5D4EC3899D9DEFC7902FC36BDFFA6D19DD45,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_System_IDisposable_Dispose_m62818E1C4DCB85749FFBD655FADCCFB06FA7D73D,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_MoveNext_mD3F4444464067CFBB76A3A451DA49DCC87A2749A,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_U3CU3Em__Finally1_mFDD8EC40FB84B0199F572B93AFF34C1092657006,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE43C86D55D280CC8B75D74B6AB8D3021956B00CE,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_IEnumerator_Reset_m637853EFB42187193822BD9D7BFA3F31AF21BFBE,
+	U3CLoadMetadataForAOTAssemblyU3Ed__3_System_Collections_IEnumerator_get_Current_m32FD6129D94F38A2DD7328DB05B206E056200588,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+	NetworkVariableSerializationHelper_InitializeSerialization_mA4F17C9D8F4934C552263003358AF8CC0E55E6E3,
+};
+extern void U3CGotoLoginU3Ed__4_MoveNext_m38DB5AA51118088838DA20626FAC951D9550D4FE_AdjustorThunk (void);
+extern void U3CGotoLoginU3Ed__4_SetStateMachine_mD6434572B00D9BEBB6EC7695F13395944FC9CA80_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
+{
+	{ 0x0600000E, U3CGotoLoginU3Ed__4_MoveNext_m38DB5AA51118088838DA20626FAC951D9550D4FE_AdjustorThunk },
+	{ 0x0600000F, U3CGotoLoginU3Ed__4_SetStateMachine_mD6434572B00D9BEBB6EC7695F13395944FC9CA80_AdjustorThunk },
+};
+static const int32_t s_InvokerIndices[25] = 
+{
+	19033,
+	19033,
+	31605,
+	19033,
+	2947,
+	19033,
+	19033,
+	19033,
+	19033,
+	12147,
+	19033,
+	19033,
+	19033,
+	19033,
+	14173,
+	14101,
+	19033,
+	18600,
+	19033,
+	18806,
+	19033,
+	18806,
+	31637,
+	19033,
+	31605,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	25,
+	s_methodPointers,
+	2,
+	s_adjustorThunks,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};

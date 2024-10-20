@@ -1,0 +1,384 @@
+{
+    "Summary": {
+        "YooVersion": "2.2.4-preview",
+        "UnityVersion": "6000.0.11f1",
+        "BuildDate": "2024/10/6 下午 12:02:41",
+        "BuildSeconds": 2,
+        "BuildTarget": 19,
+        "BuildMode": 0,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildPackageName": "GameCore",
+        "BuildPackageVersion": "2024-10-06-722",
+        "UniqueBundleName": true,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.RawFileIgnoreRule",
+        "EnableSharePackRule": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "AssetFileTotalCount": 19,
+        "MainAssetTotalCount": 10,
+        "AllBundleTotalCount": 10,
+        "AllBundleTotalSize": 1002898,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "QQ",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneHome/Art/QQ.jpg",
+            "AssetGUID": "ff2e42fa7478cd14aaa9fa479626020b",
+            "AssetTags": [
+                "Home"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_scenehome_art.bundle",
+            "MainBundleSize": 136643,
+            "DependAssets": []
+        },
+        {
+            "Address": "Home",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home.unity",
+            "AssetGUID": "e144cf8852539954e9a15a6ae5d67cd9",
+            "AssetTags": [
+                "Scenes"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_scenes.bundle",
+            "MainBundleSize": 157076,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/AssetManagement/GameCore/Other/CanvasPrefab.prefab",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login.unity",
+            "AssetGUID": "8fe1599918e5cdb419daf657f00080b1",
+            "AssetTags": [
+                "Scenes"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_scenes.bundle",
+            "MainBundleSize": 157076,
+            "DependAssets": [
+                "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/InputSystemUIInputModule@64.png",
+                "Assets/AssetManagement/GameCore/SceneLogin/Prefab/Ui_Login.prefab",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Input Field Icon.psd",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/AssetManagement/GameCore/Other/CanvasPrefab.prefab",
+                "Packages/com.unity.inputsystem/InputSystem/Plugins/PlayerInput/DefaultInputActions.inputactions",
+                "Assets/AssetManagement/GameCore/SceneLogin/Prefab/UI_GameStart.prefab",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "UI_GameStart",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneLogin/Prefab/UI_GameStart.prefab",
+            "AssetGUID": "91b28cff912f719438a68fb3330bcbd8",
+            "AssetTags": [
+                "Login"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle",
+            "MainBundleSize": 17490,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "Ui_Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneLogin/Prefab/Ui_Login.prefab",
+            "AssetGUID": "e99fe5c275bbeef4daa2480d323b8448",
+            "AssetTags": [
+                "Login"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle",
+            "MainBundleSize": 17490,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Input Field Icon.psd",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "CanvasPrefab",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/CanvasPrefab.prefab",
+            "AssetGUID": "55af6a3281343014d94f94f34ccea210",
+            "AssetTags": [
+                "Other"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "MainBundleSize": 18458,
+            "DependAssets": []
+        },
+        {
+            "Address": "SceneLoad",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/SceneLoad.prefab",
+            "AssetGUID": "ef46c29601ad28f41b34287d832c1a96",
+            "AssetTags": [
+                "Other"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "MainBundleSize": 18458,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "SystemMsg",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/SystemMsg.prefab",
+            "AssetGUID": "08d3bafe8f4a8b94987075d1de7280d9",
+            "AssetTags": [
+                "Other"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "MainBundleSize": 18458,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "TopCanvas",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/TopCanvas.prefab",
+            "AssetGUID": "f1e6b94b9a7ba52489259d02dd26c6f2",
+            "AssetTags": [
+                "Other"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "MainBundleSize": 18458,
+            "DependAssets": []
+        },
+        {
+            "Address": "Ui_LoadIng",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/Ui_LoadIng.prefab",
+            "AssetGUID": "30dc7114b7bdc0b4095fe59748c553d2",
+            "AssetTags": [
+                "Other"
+            ],
+            "MainBundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "MainBundleSize": 18458,
+            "DependAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenehome_art.bundle",
+            "FileName": "47292a4f960813b011ab60f656ec4381.bundle",
+            "FileHash": "47292a4f960813b011ab60f656ec4381",
+            "FileCRC": "4766e570",
+            "FileSize": 136643,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameCore/SceneHome/Art/QQ.jpg"
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes.bundle",
+            "FileName": "2cafa444ad0916c9b6c85848b1e3707b.bundle",
+            "FileHash": "2cafa444ad0916c9b6c85848b1e3707b",
+            "FileCRC": "463adc01",
+            "FileSize": 157076,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes"
+            ],
+            "DependBundles": [
+                "gamecore_assets_assetmanagement_gamecore_other.bundle",
+                "gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle",
+                "gamecore_share_assets_textmesh_pro_fonts.bundle",
+                "gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "gamecore_share_packages_com_unity_inputsystem_inputsystem_plugins_playerinput.bundle",
+                "gamecore_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameCore/Scenes/Home.unity",
+                "Assets/AssetManagement/GameCore/Scenes/Login.unity"
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle",
+            "FileName": "c03c2526345e41ecfc52e3925cf5166d.bundle",
+            "FileHash": "c03c2526345e41ecfc52e3925cf5166d",
+            "FileCRC": "c32135d4",
+            "FileSize": 17490,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login"
+            ],
+            "DependBundles": [
+                "gamecore_share_assets_textmesh_pro_fonts.bundle",
+                "gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "gamecore_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameCore/SceneLogin/Prefab/UI_GameStart.prefab",
+                "Assets/AssetManagement/GameCore/SceneLogin/Prefab/Ui_Login.prefab"
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "FileName": "535d388f64f177271a69fdc45ba0e973.bundle",
+            "FileHash": "535d388f64f177271a69fdc45ba0e973",
+            "FileCRC": "51b1730d",
+            "FileSize": 18458,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Other"
+            ],
+            "DependBundles": [
+                "gamecore_share_assets_textmesh_pro_fonts.bundle",
+                "gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "gamecore_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameCore/Other/CanvasPrefab.prefab",
+                "Assets/AssetManagement/GameCore/Other/SceneLoad.prefab",
+                "Assets/AssetManagement/GameCore/Other/SystemMsg.prefab",
+                "Assets/AssetManagement/GameCore/Other/TopCanvas.prefab",
+                "Assets/AssetManagement/GameCore/Other/Ui_LoadIng.prefab"
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_ugui_editor_resources_gizmos.bundle",
+            "FileName": "1285f492365bac3831314515db620464.bundle",
+            "FileHash": "1285f492365bac3831314515db620464",
+            "FileCRC": "84e0507b",
+            "FileSize": 6876,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Input Field Icon.psd"
+            ]
+        },
+        {
+            "BundleName": "gamecore_unityshaders.bundle",
+            "FileName": "c0752a352905a77f37a215a48706f1b6.bundle",
+            "FileHash": "c0752a352905a77f37a215a48706f1b6",
+            "FileCRC": "5995d8bf",
+            "FileSize": 54134,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader"
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "FileName": "05400d97d27f06672ea1a61e39760876.bundle",
+            "FileHash": "05400d97d27f06672ea1a61e39760876",
+            "FileCRC": "0f77537f",
+            "FileSize": 374099,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependBundles": [
+                "gamecore_share_assets_textmesh_pro_fonts.bundle",
+                "gamecore_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset"
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_assets_textmesh_pro_fonts.bundle",
+            "FileName": "8178543ba4349b574a7c777d3bb16bd1.bundle",
+            "FileHash": "8178543ba4349b574a7c777d3bb16bd1",
+            "FileCRC": "8be65dbb",
+            "FileSize": 227232,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_inputsystem_inputsystem_editor_icons.bundle",
+            "FileName": "af92cf3398134270f43ddfd35faafea6.bundle",
+            "FileHash": "af92cf3398134270f43ddfd35faafea6",
+            "FileCRC": "6ebabe8c",
+            "FileSize": 3394,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/InputSystemUIInputModule@64.png"
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_inputsystem_inputsystem_plugins_playerinput.bundle",
+            "FileName": "bc7a7f5eea3a4e0f6b8296e8116db561.bundle",
+            "FileHash": "bc7a7f5eea3a4e0f6b8296e8116db561",
+            "FileCRC": "51f1ee14",
+            "FileSize": 7496,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Packages/com.unity.inputsystem/InputSystem/Plugins/PlayerInput/DefaultInputActions.inputactions"
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

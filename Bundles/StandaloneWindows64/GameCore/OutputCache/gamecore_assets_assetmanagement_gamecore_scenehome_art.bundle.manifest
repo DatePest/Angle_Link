@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 4261853231
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 973c92f9efcab74a2ef1d94b6adb4468
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9fc132d7bfb7c076b431d3bc389aeb49
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetManagement/GameCore/SceneHome/Art/QQ.jpg
+Dependencies: []

@@ -1,0 +1,263 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "GameCore",
+    "PackageVersion": "2024-10-06-89",
+    "AssetList": [
+        {
+            "Address": "QQ",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneHome/Art/QQ.jpg",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 0
+        },
+        {
+            "Address": "Home",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home.unity",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Scenes"
+            ],
+            "BundleID": 1
+        },
+        {
+            "Address": "Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login.unity",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Scenes"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "UI_GameStart",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneLogin/Prefab/UI_GameStart.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Login"
+            ],
+            "BundleID": 3
+        },
+        {
+            "Address": "Ui_Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/SceneLogin/Prefab/Ui_Login.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Login"
+            ],
+            "BundleID": 3
+        },
+        {
+            "Address": "CanvasPrefab",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/CanvasPrefab.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Other"
+            ],
+            "BundleID": 4
+        },
+        {
+            "Address": "SceneLoad",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/SceneLoad.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Other"
+            ],
+            "BundleID": 4
+        },
+        {
+            "Address": "SystemMsg",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/SystemMsg.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Other"
+            ],
+            "BundleID": 4
+        },
+        {
+            "Address": "TopCanvas",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/TopCanvas.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Other"
+            ],
+            "BundleID": 4
+        },
+        {
+            "Address": "Ui_LoadIng",
+            "AssetPath": "Assets/AssetManagement/GameCore/Other/Ui_LoadIng.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Other"
+            ],
+            "BundleID": 4
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenehome_art.bundle",
+            "UnityCRC": 4261853231,
+            "FileHash": "47292a4f960813b011ab60f656ec4381",
+            "FileCRC": "4766e570",
+            "FileSize": 136643,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home.bundle",
+            "UnityCRC": 177144159,
+            "FileHash": "af62c1a0d1932a03ac9b946a9f4e51ba",
+            "FileCRC": "dd0cb44a",
+            "FileSize": 141660,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes"
+            ],
+            "DependIDs": [
+                4,
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_login.bundle",
+            "UnityCRC": 2465039196,
+            "FileHash": "f893aa1cf40174a0f92dd89fe71e4793",
+            "FileCRC": "269c4f51",
+            "FileSize": 155619,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes"
+            ],
+            "DependIDs": [
+                4,
+                3,
+                8,
+                7,
+                10,
+                6
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle",
+            "UnityCRC": 2706522494,
+            "FileHash": "c03c2526345e41ecfc52e3925cf5166d",
+            "FileCRC": "c32135d4",
+            "FileSize": 17490,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login"
+            ],
+            "DependIDs": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_other.bundle",
+            "UnityCRC": 2076837634,
+            "FileHash": "37bcce1f93e9df05624305a907f11d2f",
+            "FileCRC": "b31b9421",
+            "FileSize": 18458,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Other"
+            ],
+            "DependIDs": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_ugui_editor_resources_gizmos.bundle",
+            "UnityCRC": 1444161788,
+            "FileHash": "531b68bf7ab1c7a17aec880a4384492a",
+            "FileCRC": "8191559e",
+            "FileSize": 1285,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_unityshaders.bundle",
+            "UnityCRC": 3018867405,
+            "FileHash": "c0752a352905a77f37a215a48706f1b6",
+            "FileCRC": "5995d8bf",
+            "FileSize": 54134,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "UnityCRC": 984418172,
+            "FileHash": "05400d97d27f06672ea1a61e39760876",
+            "FileCRC": "0f77537f",
+            "FileSize": 374099,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependIDs": [
+                8,
+                6
+            ]
+        },
+        {
+            "BundleName": "gamecore_share_assets_textmesh_pro_fonts.bundle",
+            "UnityCRC": 828164864,
+            "FileHash": "8178543ba4349b574a7c777d3bb16bd1",
+            "FileCRC": "8be65dbb",
+            "FileSize": 227232,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes",
+                "Login",
+                "Other"
+            ],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_inputsystem_inputsystem_editor_icons.bundle",
+            "UnityCRC": 506332973,
+            "FileHash": "15cc47040dbc58b84064f1b76a7cd743",
+            "FileCRC": "ab6ed6aa",
+            "FileSize": 1216,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_share_packages_com_unity_inputsystem_inputsystem_plugins_playerinput.bundle",
+            "UnityCRC": 3589221275,
+            "FileHash": "bc7a7f5eea3a4e0f6b8296e8116db561",
+            "FileCRC": "51f1ee14",
+            "FileSize": 7496,
+            "Encrypted": false,
+            "Tags": [
+                "Scenes"
+            ],
+            "DependIDs": []
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 2316867980
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 03e421ff0be5c6133a7286e68448dfc8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 33dafb8a1508329f80bdcf015b0f37b5
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetManagement/GameDll/Core.dll.bytes
+Dependencies: []

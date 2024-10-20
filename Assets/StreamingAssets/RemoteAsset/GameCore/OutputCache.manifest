@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 2466197256
+HashAppended: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: gamecore_assets_assetmanagement_gamecore_scenehome_art.bundle
+      Dependencies: {}
+    Info_1:
+      Name: gamecore_assets_assetmanagement_gamecore_scenes_home.bundle
+      Dependencies:
+        Dependency_0: gamecore_assets_assetmanagement_gamecore_other.bundle
+        Dependency_1: gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle
+    Info_2:
+      Name: gamecore_assets_assetmanagement_gamecore_scenes_login.bundle
+      Dependencies:
+        Dependency_0: gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle
+        Dependency_1: gamecore_assets_assetmanagement_gamecore_other.bundle
+        Dependency_2: gamecore_share_packages_com_unity_inputsystem_inputsystem_plugins_playerinput.bundle
+    Info_3:
+      Name: gamecore_assets_assetmanagement_gamecore_scenelogin_prefab.bundle
+      Dependencies:
+        Dependency_0: gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle
+    Info_4:
+      Name: gamecore_assets_assetmanagement_gamecore_other.bundle
+      Dependencies:
+        Dependency_0: gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle
+    Info_5:
+      Name: gamecore_share_packages_com_unity_ugui_editor_resources_gizmos.bundle
+      Dependencies: {}
+    Info_6:
+      Name: gamecore_unityshaders.bundle
+      Dependencies: {}
+    Info_7:
+      Name: gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle
+      Dependencies:
+        Dependency_0: gamecore_unityshaders.bundle
+        Dependency_1: gamecore_share_assets_textmesh_pro_fonts.bundle
+    Info_8:
+      Name: gamecore_share_assets_textmesh_pro_fonts.bundle
+      Dependencies: {}
+    Info_9:
+      Name: gamecore_share_packages_com_unity_inputsystem_inputsystem_editor_icons.bundle
+      Dependencies: {}
+    Info_10:
+      Name: gamecore_share_packages_com_unity_inputsystem_inputsystem_plugins_playerinput.bundle
+      Dependencies: {}

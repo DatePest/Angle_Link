@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
+  m_Name: AssetBundleCollectorSetting
+  m_EditorClassIdentifier: 
+  ShowPackageView: 1
+  ShowEditorAlias: 1
+  UniqueBundleName: 1
+  Packages:
+  - PackageName: GameCore
+    PackageDesc: 
+    EnableAddressable: 1
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: RawFileIgnoreRule
+    Groups:
+    - GroupName: Other
+      GroupDesc: 
+      AssetTags: Other
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/OtherPrefab
+        CollectorGUID: bf0d86ba48eb6494aaad26f34f8303f0
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: Prefab
+        UserData: 
+    - GroupName: Scenes
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Login
+        CollectorGUID: ae52934fa82f3834caef8696915511fe
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Home
+        CollectorGUID: 71e56492908438d4d90ad4c34622eade
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/News
+        CollectorGUID: 94ee1214ded3a8243bf5f5574653d054
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Character
+        CollectorGUID: ebcca5bae7c889d42a91e4e6e236e349
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Story
+        CollectorGUID: fbed26a828dba3445abb2fb31dd9b158
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/BattleStageSelect
+        CollectorGUID: e46a95669ddf99944af6a4a9a5f95beb
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Radio
+        CollectorGUID: 4f4d9c4690cbfcd4b867feb451b9be8f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Gasha
+        CollectorGUID: f9ac1f4de99ba8c439202eb7d33f27c8
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Config
+        CollectorGUID: 94bef1c9c6767004781b16255a8ca7dc
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Art
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/Art/Cover
+        CollectorGUID: cb5cc91d027d8744b96187fc7216bea0
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: Cover
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Art/Other
+        CollectorGUID: d5ce847af4e22da49bc6a94a0cbfee5e
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: ArtOther
+        UserData: 
+    - GroupName: GameLevel
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/BattleLevelData/Main/LevelTables
+        CollectorGUID: af199286c4e6de94493b57d304367f5f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: GameLevelTables
+        UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1
+        CollectorGUID: 69b72fda297095847b1c4e39fc8d1f67
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: Main_1
+        UserData: 
+  - PackageName: GameDll
+    PackageDesc: 
+    EnableAddressable: 1
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
+    Groups:
+    - GroupName: Dll
+      GroupDesc: 
+      AssetTags: Dll
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameDll
+        CollectorGUID: 48e35cea8f6f1fb4aa8c3f9390a182ca
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackRawFile
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
