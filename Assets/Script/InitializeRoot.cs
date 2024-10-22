@@ -12,9 +12,11 @@ using UnityEngine.SceneManagement;
 public class InitializeRoot : MonoBehaviour
 {
     public TextMeshProUGUI proUGUI;
-     void  Start()
+
+    public ITestData testData;
+    async void Start()
     {
-         RootStert();
+        await RootStert();
     }
 
 
@@ -22,7 +24,7 @@ public class InitializeRoot : MonoBehaviour
     {
         var c = ClientRoot.Get();
         await  c.StartInitUpdata();
-       // while (!temp.IsCompleted) await UniTask.Yield(PlayerLoopTiming.Update);
+        // while (!temp.IsCompleted) await UniTask.Yield(PlayerLoopTiming.Update);
 
 #if !UNITY_EDITOR
         c.clientUpdata.StartLoadDll
@@ -62,6 +64,10 @@ public class InitializeRoot : MonoBehaviour
 
     static async void GotoLogin()
     {
+#if UNITY_EDITOR
+        GameObject.FindFirstObjectByType<InitializeRoot>().testData?.Excute();
+#endif
+
         while (UI_SceneLoad.Get()== null)
         {
             await UniTask.DelayFrame(5);
@@ -71,6 +77,10 @@ public class InitializeRoot : MonoBehaviour
         FindAnyObjectByType<DebugLog>().Clear();
         UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Login , LoadSceneMode.Single,true,20f);
     }
-
+}
+[System.Serializable]
+public abstract class ITestData : MonoBehaviour 
+{
+    public abstract void Excute();
 }
 

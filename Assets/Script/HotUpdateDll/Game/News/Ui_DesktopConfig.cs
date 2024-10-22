@@ -11,14 +11,14 @@ public class Ui_DesktopConfig : MonoBehaviour
     GameObject Hide;
     GameObject NotSelect;
     Ui_Select SelectObj;
-    RawImage Target;
+    RawImage BackImgae;
     List<GameObject> HiedToShows = new();
 
     string CoverTag = "Cover";
     [SerializeField ]int High = 240, width = 135;
     private void Start()
     {
-        Target = transform.parent.Find("BackImgae").GetComponent<RawImage>();
+        BackImgae = transform.parent.Find("BackImgae").GetComponent<RawImage>();
         CreatTouchShow();
         SetSwichDisplay();
         SwitchCover();
@@ -78,7 +78,7 @@ public class Ui_DesktopConfig : MonoBehaviour
             NotSelect.gameObject.SetActive(false);
             NotSelect.transform.SetParent(transform);
         }
-        var tn = Target.texture.name;
+        var tn = BackImgae.texture.name;
 
        foreach (Transform t in SelectObj.ObjContenet.transform)
         {
@@ -113,7 +113,7 @@ public class Ui_DesktopConfig : MonoBehaviour
     }
     void ChangeTarget(Sprite sprite)
     {
-        Target.texture = sprite.texture;
+        BackImgae.texture = sprite.texture;
     }
     List<Sprite> GetCovers()
     {
@@ -164,7 +164,7 @@ public class Ui_DesktopConfig : MonoBehaviour
                 HiedToShows.Add(g);
                 g.gameObject.SetActive(false);
             }
-            Target.gameObject.SetActive(true);
+            BackImgae.gameObject.SetActive(true);
         }
         else 
         {

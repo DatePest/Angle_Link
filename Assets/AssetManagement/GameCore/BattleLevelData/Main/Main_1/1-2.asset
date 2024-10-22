@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d2f34cb5d21a4439495f5de17c79c3, type: 3}
   m_Name: 1-2
   m_EditorClassIdentifier: 
-  Stamina: 10
+  Stamina: 12
+  Exp: 70
   DropItems: []
   Waves: []
   Bgm: {fileID: 0}

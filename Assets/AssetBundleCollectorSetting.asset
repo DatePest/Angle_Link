@@ -135,6 +135,14 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: ArtOther
         UserData: 
+      - CollectPath: Assets/AssetManagement/GameCore/Art/Characters
+        CollectorGUID: 97788f89402902442854422c192ee254
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: ArtCharacters
+        UserData: 
     - GroupName: GameLevel
       GroupDesc: 
       AssetTags: 
@@ -155,6 +163,32 @@ MonoBehaviour:
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
         AssetTags: Main_1
+        UserData: 
+    - GroupName: Characters
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/Character
+        CollectorGUID: a132620642f7ea041bfa0985d1ba0bff
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: CharactersData
+        UserData: 
+    - GroupName: Monsters
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/Monsters
+        CollectorGUID: e292882b4a82a5a46a8048025c28a73d
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: MonstersData
         UserData: 
   - PackageName: GameDll
     PackageDesc: 

@@ -232,6 +232,13 @@ public class YooAsset_Tool
         if(operation.Status != EOperationStatus.Succeed) await UniTask.Yield();
         return;
     }
+    public static Sprite[] GetPackageDataSprites(string packagname, string name) 
+    {
+        var p = YooAssets.GetPackage(packagname);
+        if (p == null) return null;
+        var a = p.LoadSubAssetsSync<Sprite>(name).GetSubAssetObjects<Sprite>();
+        return a;
+    }
     public static T GetPackageData<T>(string packagname, string name) where T : UnityEngine.Object
     {
         var p = YooAssets.GetPackage(packagname);

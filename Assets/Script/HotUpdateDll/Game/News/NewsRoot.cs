@@ -17,7 +17,7 @@ public class NewsRoot : MonoBehaviour
         checkupdata = false;
         var sd = new NetSendData(ClientEventTag.SendLogin, NetworkMsg_HandlerName.Account, default);
         var msg = new UserGetPlayerDataRequest();
-        var user = ClientRoot.Get().ClientUser;
+        var user = ClientRoot.Get().ClientUserData;
         user.UpdataPlayerDataCallBack += callback;
         msg.username = user.UserData.Username;
         msg.accesLogin_token = user.UserData.Access_Token;

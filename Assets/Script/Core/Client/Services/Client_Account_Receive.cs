@@ -23,14 +23,14 @@ namespace Client
         public void Login(ReceiveNetSerializedData data)
         {
             var msg = data.NData.Get<UserData>();
-            ClientRoot.Get().ClientUser.SetUserData(msg);
+            ClientRoot.Get().ClientUserData.SetUserData(msg);
             UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home,UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         [EventTag(NetworkMsg_HandlerName.ReturnGetPlayerData)]
         public void UpdatePlayerData(ReceiveNetSerializedData data)
         {
-            var msg = data.NData.Get<PlayerData>();
-            ClientRoot.Get().ClientUser.UpdatePlayerData(msg);
+            var msg = data.NData.Get<PlayerData_Net>();
+            ClientRoot.Get().ClientUserData.UpdatePlayerData(msg);
         }
     }
 }

@@ -563,7 +563,7 @@ public class NetworkFilteredData<T> where T : UnityEngine.Object
     [NonSerialized] T Data;
     public string TargetNameOrId;
     public string DataInPackageName;
-    public NetworkFilteredData(T data, string dataInPackageName = GameConstant.PackName_GaneCore)
+    public NetworkFilteredData(T data, string dataInPackageName = GameConstant.PackName_GameCore)
     {
         Data = data;
         TargetNameOrId = data.name;

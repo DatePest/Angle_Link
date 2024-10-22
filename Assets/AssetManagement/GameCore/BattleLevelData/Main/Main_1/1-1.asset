@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1-1
   m_EditorClassIdentifier: 
   Stamina: 10
+  Exp: 60
   DropItems: []
   Waves: []
   Bgm: {fileID: 0}

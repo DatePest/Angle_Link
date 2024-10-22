@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 public class GameConstant
 {
 
-    public const string PackName_GaneCore = "GaneCore";
+    public const string PackName_GameCore = "GameCore";
 }

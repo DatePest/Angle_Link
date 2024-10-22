@@ -13,7 +13,7 @@ namespace Client
         readonly ClientMsgEvent clientMsgEvent;
 
         static ClientRoot instance;
-        public ClientUserData ClientUser { get; private set; }
+        public ClientUserData ClientUserData { get; private set; } = new();
         public Action UpdataPlayerDataCallBack;
 
         bool Inited;

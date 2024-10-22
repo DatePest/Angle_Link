@@ -25,7 +25,7 @@ public class UI_BattleLevelManager : MonoBehaviour
     {
         if(Asset_LevelContenet == null)
         {
-            var g = YooAsset_Tool.GetPackageData<GameObject>("GameCore", "GameLevelContenet");
+            var g = YooAsset_Tool.GetPackageData<GameObject>(GameConstant.PackName_GameCore, "GameLevelContenet");
             Asset_LevelContenet = g;
         }
         return Instantiate(Asset_LevelContenet);
@@ -33,7 +33,7 @@ public class UI_BattleLevelManager : MonoBehaviour
 
     void AddSeletUI()
     {
-        var g = YooAsset_Tool.GetPackageData<GameObject>("GameCore", "Ui_Select_GameLevel");
+        var g = YooAsset_Tool.GetPackageData<GameObject>(GameConstant.PackName_GameCore, "Ui_Select_GameLevel");
         var s = GameObject.Instantiate(g, transform.parent).GetComponent<Ui_Select>();
         UI = s;
         UI.gameObject.SetActive(false);
@@ -55,12 +55,13 @@ public class UI_BattleLevelManager : MonoBehaviour
     {
         UI.Clear();
         UI.gameObject.SetActive(true);
-        var g = YooAsset_Tool.GetPackageData<GameLevelTable>("GameCore", Name);
+        var g = YooAsset_Tool.GetPackageData<GameLevelTable>(GameConstant.PackName_GameCore, Name);
         foreach (var t in g.Datas)
         {
-            var Handle = Ui_Select.CreatNewSelectHandle(t.Art,
-               () => { ChangeUI_ShowMainBattle(t.Name); });
-            UI.AddSelectContent(Handle);
+            var newg = GetGameLevelContenet();
+            var T = newg.GetComponentInChildren<TextMeshProUGUI>();
+            T.text = t.DisplayTitle;
+            UI.AddSelectContent(newg, ()=>ChangeUI_ShowMainBattle(t.TagName));
         }
     }
 
@@ -68,27 +69,32 @@ public class UI_BattleLevelManager : MonoBehaviour
     void ChangeUI_ShowMainBattle(string Tag)
     {
         UI.Clear();
-        var data = YooAsset_Tool.GetGameDatas<GameLevelData>("GameCore", Tag);
+        var data = YooAsset_Tool.GetGameDatas<GameLevelData>(GameConstant.PackName_GameCore, Tag);
         foreach (var t in data)
         {
             var g = GetGameLevelContenet();
             SetGameLevelInfo(g, t);
-            UI.AddSelectContent(g,()=> BattleCheck(t));
+            UI.AddSelectContent(g,()=> SelectBattleClick(t));
         }
     }
-    void BattleCheck(GameLevelData data)
+    void SelectBattleClick(GameLevelData data)
     {
-        Ui_SystemMsg.Get().WatiUserSelect(" Confirm selection!", ()=>SendToServerRequestPlayerGame(data));
+        var t =transform.parent.Find("Team_Editor");
+        if (t == null) throw new Exception("Team_Editor is null");
+        t.GetComponent<UI_TeamEditor>()?.StartTeamEditor(
+            () => SendToServerRequestPlayerGame(data)
+            );
+        
     }
     void SetGameLevelInfo(GameObject obj, GameLevelData data)
     {
         //No.1-1  <br>Stamina 10<br>Exp $$
-        var Test = obj.GetComponentInChildren<TextMeshProUGUI>();
-        Test.text = $"No.{data.name}  <br>Stamina {data.Stamina}<br>Exp {data.Exp}";
+        var T = obj.GetComponentInChildren<TextMeshProUGUI>();
+        T.text = $"No.{data.name}  <br>Stamina {data.Stamina}<br>Exp {data.Exp}";
     }
     void SendToServerRequestPlayerGame(GameLevelData levelData)
     {
-        Debug.Log("Test SendToServerRequestPlayerGame! ");
+        Debug.Log($"GameStart SendToServerRequestPlayerGame! {levelData.name}");
     }
 
  

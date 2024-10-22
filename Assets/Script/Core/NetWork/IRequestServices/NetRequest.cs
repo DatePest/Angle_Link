@@ -18,7 +18,6 @@ public class NetRequest
         RequestSend = requestSend;
         RequestReceive = requestReceive ;
         Messaging.ListenMsg(RequestReceive.ListenMsgTag, RequestReceive.Request);
-        // listener = new Listener<SendData>(e => RequestSend.Request((SendData)e));
         listener = new Listener<NetSendData>(Send);
     }
     public void Send(IEventTag sendData)

@@ -14,7 +14,8 @@ public class GameLevelTable : ScriptableObject
     public class TableData
     {
         public Sprite Art;
-        public string Name;
+        public string TagName;
+        public string DisplayTitle;
     }
 }
 

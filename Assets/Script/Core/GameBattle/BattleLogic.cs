@@ -395,7 +395,7 @@ public class BattleSelectOrder
         Speed = caster.UnitAttribute.Speed;
         AbilityLv = caster.GetUnitAbilityLV(ability.name);
 
-        Ability = new NetworkFilteredData<AbilityData>(ability, GameConstant.PackName_GaneCore);
+        Ability = new NetworkFilteredData<AbilityData>(ability, GameConstant.PackName_GameCore);
         Targets = new string[targets.Length];
         for (int i = 0; i < targets.Length; i++)
         {

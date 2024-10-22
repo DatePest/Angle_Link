@@ -90,8 +90,8 @@
             "BundleID": 2
         },
         {
-            "Address": "QQ",
-            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home/Art/QQ.jpg",
+            "Address": "ScenesSwichIcon",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home/Art/ScenesSwichIcon.png",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 3
@@ -174,8 +174,22 @@
             "BundleID": 12
         },
         {
+            "Address": "CharacterSelectButton",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/CharacterSelectButton.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
             "Address": "GameLevelContenet",
             "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/GameLevelContenet.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "Team_Editor",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/Team_Editor.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 12
@@ -236,6 +250,15 @@
             "BundleID": 16
         },
         {
+            "Address": "CharacterButtonInfo",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/CharacterButtonInfo.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 17
+        },
+        {
             "Address": "White1X1",
             "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/White1X1.png",
             "AssetGUID": "",
@@ -290,13 +313,49 @@
             "BundleID": 17
         },
         {
+            "Address": "シス／戦闘／支援効果／子供志津香／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A001/シス／戦闘／支援効果／子供志津香／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 18
+        },
+        {
+            "Address": "シス／戦闘／支援効果／子供ナギ／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A002/シス／戦闘／支援効果／子供ナギ／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 19
+        },
+        {
+            "Address": "シス／戦闘／支援効果／美樹／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A003/シス／戦闘／支援効果／美樹／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "シス／戦闘／支援効果／剣豪／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A004/シス／戦闘／支援効果／剣豪／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 21
+        },
+        {
             "Address": "MainGameLevelTable",
             "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/LevelTables/MainGameLevelTable.asset",
             "AssetGUID": "",
             "AssetTags": [
                 "GameLevelTables"
             ],
-            "BundleID": 18
+            "BundleID": 22
         },
         {
             "Address": "1-1",
@@ -305,7 +364,7 @@
             "AssetTags": [
                 "Main_1"
             ],
-            "BundleID": 19
+            "BundleID": 23
         },
         {
             "Address": "1-2",
@@ -314,7 +373,7 @@
             "AssetTags": [
                 "Main_1"
             ],
-            "BundleID": 19
+            "BundleID": 23
         },
         {
             "Address": "1-3",
@@ -323,14 +382,68 @@
             "AssetTags": [
                 "Main_1"
             ],
-            "BundleID": 19
+            "BundleID": 23
+        },
+        {
+            "Address": "1-4",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-4.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Main_1"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "A001",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A001.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "A002",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A002.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "A003",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A003.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "A004",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A004.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "Monster_1",
+            "AssetPath": "Assets/AssetManagement/GameCore/Monsters/Monster_1.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "MonstersData"
+            ],
+            "BundleID": 25
         }
     ],
     "BundleList": [
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_otherprefab.bundle",
             "UnityCRC": 0,
-            "FileHash": "80589fa9017aae8f3010896fb652509c",
+            "FileHash": "ba64465c8651be158fc18c5eb495d5aa",
             "FileCRC": "00000000",
             "FileSize": 87753,
             "Encrypted": false,
@@ -340,7 +453,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_login.bundle",
             "UnityCRC": 0,
-            "FileHash": "ca9fe0581e778a87268cd4d7f05c1af4",
+            "FileHash": "3d5291b4f8d7fe7438fdf4b1c7cf1ab0",
             "FileCRC": "00000000",
             "FileSize": 25044,
             "Encrypted": false,
@@ -350,7 +463,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_login_prefab.bundle",
             "UnityCRC": 0,
-            "FileHash": "7bf89a6e7f3766f7ac9ff6d573dc176a",
+            "FileHash": "12880b5f153d00be79af4c8b2ac2e739",
             "FileCRC": "00000000",
             "FileSize": 61260,
             "Encrypted": false,
@@ -360,9 +473,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home_art.bundle",
             "UnityCRC": 0,
-            "FileHash": "6956b8d2b26b6ee3c5011581d27d648b",
+            "FileHash": "945c4711e5e8c82b83f37235be7c0ad8",
             "FileCRC": "00000000",
-            "FileSize": 69714,
+            "FileSize": 40639,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -370,7 +483,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home.bundle",
             "UnityCRC": 0,
-            "FileHash": "3632554e24bd71e8815cbc8c18c19342",
+            "FileHash": "7ec5f5e98b7c3940ccd19f980b43d2f2",
             "FileCRC": "00000000",
             "FileSize": 30201,
             "Encrypted": false,
@@ -380,9 +493,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home_prefab.bundle",
             "UnityCRC": 0,
-            "FileHash": "9429b8625abf6ab80ea8ce33a4d60088",
+            "FileHash": "cee6b4cb613fed638730a1bb8d4a518c",
             "FileCRC": "00000000",
-            "FileSize": 16665,
+            "FileSize": 17784,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -390,7 +503,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news_art_other.bundle",
             "UnityCRC": 0,
-            "FileHash": "8fdd26b25825ff8268183ba7c486ff81",
+            "FileHash": "2fc6ca3fa704bfe871906176bb120990",
             "FileCRC": "00000000",
             "FileSize": 12277,
             "Encrypted": false,
@@ -400,7 +513,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news.bundle",
             "UnityCRC": 0,
-            "FileHash": "00063cff2e713e5bf1e6bec58f17258d",
+            "FileHash": "83858703d69133f7f6551f8864ec4110",
             "FileCRC": "00000000",
             "FileSize": 29233,
             "Encrypted": false,
@@ -410,7 +523,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news_prefab.bundle",
             "UnityCRC": 0,
-            "FileHash": "b69034ab4e58d6b9a4b5ff685e7b2578",
+            "FileHash": "16e53b484b06ae01d1d232f7a43cc685",
             "FileCRC": "00000000",
             "FileSize": 40289,
             "Encrypted": false,
@@ -420,7 +533,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_character.bundle",
             "UnityCRC": 0,
-            "FileHash": "5da5c58349a9fbf9ad09b2d1508f2ac2",
+            "FileHash": "c1074dc34d7e5d05383970c4dfa5e8af",
             "FileCRC": "00000000",
             "FileSize": 12811,
             "Encrypted": false,
@@ -430,7 +543,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_story.bundle",
             "UnityCRC": 0,
-            "FileHash": "1dc51a7b8342e19a5d8b3fc5af90ef82",
+            "FileHash": "fb8135c60f82405020f16446d854c193",
             "FileCRC": "00000000",
             "FileSize": 3463,
             "Encrypted": false,
@@ -440,9 +553,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battlestageselect.bundle",
             "UnityCRC": 0,
-            "FileHash": "0de0f411b87984b5b227205c1d02944d",
+            "FileHash": "25cebe146e9e83bb383d91663f118b40",
             "FileCRC": "00000000",
-            "FileSize": 22266,
+            "FileSize": 35000,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -450,9 +563,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battlestageselect_prefab.bundle",
             "UnityCRC": 0,
-            "FileHash": "ef37977f2d1169862dd0203d7f23adda",
+            "FileHash": "f137c499ab1e5c32997e7dbe0beb1a01",
             "FileCRC": "00000000",
-            "FileSize": 65466,
+            "FileSize": 238054,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -460,9 +573,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_radio.bundle",
             "UnityCRC": 0,
-            "FileHash": "0fa79ee1db3a6e9b1f5677dac989b895",
+            "FileHash": "5820128e6695f6e18517f624e3292a5b",
             "FileCRC": "00000000",
-            "FileSize": 12643,
+            "FileSize": 12816,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -470,7 +583,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_gasha.bundle",
             "UnityCRC": 0,
-            "FileHash": "2f9b6a35d49a622a283139f44e7c68b2",
+            "FileHash": "7ca444447dbf8101e1c49948030a7402",
             "FileCRC": "00000000",
             "FileSize": 12988,
             "Encrypted": false,
@@ -480,7 +593,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_config.bundle",
             "UnityCRC": 0,
-            "FileHash": "a640829e95766cdca64ad7224ef80082",
+            "FileHash": "aad631917039616673eec5344824d288",
             "FileCRC": "00000000",
             "FileSize": 3463,
             "Encrypted": false,
@@ -490,7 +603,7 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_art_cover.bundle",
             "UnityCRC": 0,
-            "FileHash": "4f652f566e84ca4c30dac840dba56d4a",
+            "FileHash": "65a95b3a35d23e0da13575b47d06652a",
             "FileCRC": "00000000",
             "FileSize": 2539255,
             "Encrypted": false,
@@ -500,9 +613,49 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_art_other.bundle",
             "UnityCRC": 0,
-            "FileHash": "2841d90d8ca33e38d0f0faa4b38c8f90",
+            "FileHash": "b78f35e2a42e42097884760dd042196d",
             "FileCRC": "00000000",
-            "FileSize": 60091,
+            "FileSize": 80254,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a001.bundle",
+            "UnityCRC": 0,
+            "FileHash": "98bcccca304331a5ae7075177a84472f",
+            "FileCRC": "00000000",
+            "FileSize": 63527,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a002.bundle",
+            "UnityCRC": 0,
+            "FileHash": "49578c50ceebefa4601b223491011ed3",
+            "FileCRC": "00000000",
+            "FileSize": 71063,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a003.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b74c090ccc7ad5418f30d6b1960da4d1",
+            "FileCRC": "00000000",
+            "FileSize": 69244,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a004.bundle",
+            "UnityCRC": 0,
+            "FileHash": "a428130877008aa0e7018d61ec09a8d3",
+            "FileCRC": "00000000",
+            "FileSize": 60291,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -510,9 +663,9 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_battleleveldata_main_leveltables.bundle",
             "UnityCRC": 0,
-            "FileHash": "c81fcd0a1190ff351ca7c77ffc1bc270",
+            "FileHash": "6f269b7e063ba470c8e7f8f911b7fdf8",
             "FileCRC": "00000000",
-            "FileSize": 454,
+            "FileSize": 485,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -520,9 +673,29 @@
         {
             "BundleName": "gamecore_assets_assetmanagement_gamecore_battleleveldata_main_main_1.bundle",
             "UnityCRC": 0,
-            "FileHash": "071d08666437ca10c6c09571d6a1beb8",
+            "FileHash": "3d1e613225eb72d00f362fea0ce7e19d",
             "FileCRC": "00000000",
-            "FileSize": 1359,
+            "FileSize": 1853,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_character.bundle",
+            "UnityCRC": 0,
+            "FileHash": "25d1a59b699aa7585e1fa446f3dde9d9",
+            "FileCRC": "00000000",
+            "FileSize": 4141,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_monsters.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3294c8fcb6ea6129b7de58d4f77c7738",
+            "FileCRC": "00000000",
+            "FileSize": 849,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

@@ -33,8 +33,8 @@ public class Ui_PlayerInfo : MonoBehaviour
 
     private void UpdatePlayerInfo()
     {
-        var data = new PlayerData() { Lv = 100, PaidCoins = 100000, Stamina = 30, Exp = 7000, Money = 67869323 };
-        //var data = Client.ClientRoot.Get().ClientUser.UserData.PlayerData;
+        //var data = new PlayerData_Net() { Lv = 100, PaidCoins = 100000, Stamina = 30, Exp = 7000, Money = 67869323 };
+        var data = Client.ClientRoot.Get().ClientUserData.UserData.PlayerData;
         SetExpBar(data.Exp, data.GetNextLvExp());
         SetStamian(data.Stamina, data.GetStaminaMax());
         SetLv(data.Lv);

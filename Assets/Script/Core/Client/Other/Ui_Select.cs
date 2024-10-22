@@ -15,13 +15,21 @@ namespace Client
         public void AddSelectContent(GameObject gameObject, Action action)
         {
             gameObject.transform.SetParent(ObjContenet.transform);
-            EventTrigger eventTrigger = gameObject.AddComponent<EventTrigger>();
-            EventTrigger.Entry onChick = new EventTrigger.Entry();
-            onChick.eventID = EventTriggerType.PointerClick; onChick.callback.AddListener((data) =>
+            if(gameObject.TryGetComponent<Button>(out var t))
             {
-                action();
-            });
-            eventTrigger.triggers.Add(onChick);
+                t.onClick.AddListener(()=> action());
+            }
+            else
+            {
+                EventTrigger eventTrigger = gameObject.AddComponent<EventTrigger>();
+                EventTrigger.Entry onChick = new EventTrigger.Entry();
+                onChick.eventID = EventTriggerType.PointerClick; onChick.callback.AddListener((data) =>
+                {
+                    action();
+                });
+                eventTrigger.triggers.Add(onChick);
+            }
+          
         }
         public void AddSelectContent(GameObject gameObject)
         {
