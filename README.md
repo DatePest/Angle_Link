@@ -12,9 +12,9 @@
 至於WebDB的內容目前暫時尚未搭建之後會放置於一個git倉庫  
 
 模塊簡介:  
-Client 負責接受並還原遊戲資料 大致上就使僅顯示 任何需求都必須發給Ser代理執行  
-Server 中間代理，可以初步執行部分內容，有調用的在往後傳遞，#遊戲邏輯在此執行 結果log會發回去被Client重演#  
-WebDB  與DB調取玩家資料  
+Client    負責接受並還原遊戲資料 大致上就使僅顯示 任何需求都必須發給Ser代理執行  
+Server    中間代理，可以初步執行部分內容，有調用的在往後傳遞，#遊戲邏輯在此執行 結果log會發回去被Client重演#  
+WebDB     WebApi+EFcore實現  
 
 FileServer 個人使採用HFS的方案，連線位置放在Client設定
 
