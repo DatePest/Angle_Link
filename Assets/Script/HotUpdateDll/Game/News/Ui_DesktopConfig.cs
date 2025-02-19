@@ -10,7 +10,7 @@ public class Ui_DesktopConfig : MonoBehaviour
 {
     GameObject Hide;
     GameObject NotSelect;
-    Ui_Select SelectObj;
+    Ui_Layout SelectObj;
     RawImage BackImgae;
     List<GameObject> HiedToShows = new();
 
@@ -57,15 +57,15 @@ public class Ui_DesktopConfig : MonoBehaviour
         SetNotUse();
     }
 
-    Client.Ui_Select CreatSelectObj()
+    Client.Ui_Layout CreatSelectObj()
     {
-        var g =YooAsset_Tool.GetPackageData<GameObject>("GameCore", "Ui_Select_default");
-        var s = GameObject.Instantiate(g,transform.parent).GetComponent<Ui_Select>();
+        var g =YooAsset_Tool.GetPackageData_Sync<GameObject>("GameCore", "Ui_Select_default");
+        var s = GameObject.Instantiate(g,transform.parent).GetComponent<Ui_Layout>();
         s.SetSize(High, width);
         var sp = GetCovers();
         foreach (var a in sp)
         {
-            var Handle = Ui_Select.CreatNewSelectHandle(a,  
+            var Handle = Ui_Layout.CreatNewSelectHandle(a,  
                 ()=> { ChangeTarget(a); s.gameObject.SetActive(false); });
             s.AddSelectContent(Handle);
         }
@@ -100,7 +100,7 @@ public class Ui_DesktopConfig : MonoBehaviour
         {
             NotSelect = new GameObject($"NotSelect {GetType().ToString()}");
             var r =NotSelect.AddComponent<RawImage>();
-            var s = YooAsset_Tool.GetPackageData<Sprite>("GameCore", "選択不可");
+            var s = YooAsset_Tool.GetPackageData_Sync<Sprite>("GameCore", "選択不可");
             r.texture = s.texture;
           
         }

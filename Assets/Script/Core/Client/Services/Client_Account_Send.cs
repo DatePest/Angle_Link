@@ -1,4 +1,6 @@
 ﻿using EventSystemTool;
+using GameApi;
+using NetWorkServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,33 +18,32 @@ namespace Client
         public void Test(NetSendData Sdata)    
         {
             UnityEngine.Debug.Log("Test");
-            var data = (MsgEvent)Sdata.data;
+            var data = (MsgEvent_Net)Sdata.data;
             var jdata = ApiTool.ToJson(data);
-            SendAction(NetworkMsg_HandlerName.Test, jdata, TargetID);
+            SendAction(NetworkMsg_HandlerTag.Test, jdata, TargetID);
         }
 
 
         [EventTag(ClientEventTag.SendLogin)]
         public void Login(NetSendData Sdata)    // ApiMsg LoginRequest 
         {
-            UnityEngine.Debug.Log("Login");
             var data = (LoginRequest)Sdata.data;
             var jdata = ApiTool.ToJson(data);
-            SendAction(NetworkMsg_HandlerName.Login, jdata, TargetID);
+            SendAction(NetworkMsg_HandlerTag.RequestLogin, jdata, TargetID);
         }
         [EventTag(ClientEventTag.SendRegister)]
         public void Register(NetSendData Sdata)  // ApiMsg RegisterRequest 
         {
             var data = (RegisterRequest)Sdata.data;
             var jdata = ApiTool.ToJson(data);
-            SendAction(NetworkMsg_HandlerName.Register, jdata, TargetID);
+            SendAction(NetworkMsg_HandlerTag.RequestRegister, jdata, TargetID);
         }
         [EventTag(ClientEventTag.SendGetUserData)]
-        public void GetUserData(NetSendData Sdata)  // ApiMsg RegisterRequest 
+        public void GetUserData(NetSendData Sdata)  // ApiMsg GetUserDataRequest 
         {
             var data = (UserGetPlayerDataRequest)Sdata.data;
             var jdata = ApiTool.ToJson(data);
-            SendAction(NetworkMsg_HandlerName.GetPlayerData, jdata, TargetID);
+            SendAction(NetworkMsg_HandlerTag.RequestGetPlayerData, jdata, TargetID);
         }
     }
 }

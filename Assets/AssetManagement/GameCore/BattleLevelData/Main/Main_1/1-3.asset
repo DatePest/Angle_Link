@@ -12,8 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d2f34cb5d21a4439495f5de17c79c3, type: 3}
   m_Name: 1-3
   m_EditorClassIdentifier: 
+  AssetName: 1-3
   Stamina: 14
   Exp: 80
-  DropItems: []
-  Waves: []
+  TurnMax: 30
+  Waves:
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
   Bgm: {fileID: 0}
+  RngDrop:
+    RandomType: 0
+    items:
+      rid: 894652969250455649
+  references:
+    version: 2
+    RefIds:
+    - rid: 894652969250455649
+      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+      data:
+        itemTable:
+          TableName: 
+          TotalWeight: 0
+          items: []

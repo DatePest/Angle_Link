@@ -2,33 +2,31 @@ using Client;
 using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
-using static IRequestSend;
 
 public class NewsRoot : MonoBehaviour
 {
     bool checkupdata;
+    ClientUserData clientUser => ClientRoot.Get().ClientUserData;
     async void Awake()
     {
-        GetPlayerData();
+       GetPlayerData();
         while (!checkupdata) { await UniTask.Yield(PlayerLoopTiming.Update); }
     }
     void GetPlayerData()
     {
         checkupdata = false;
-        var sd = new NetSendData(ClientEventTag.SendLogin, NetworkMsg_HandlerName.Account, default);
-        var msg = new UserGetPlayerDataRequest();
-        var user = ClientRoot.Get().ClientUserData;
-        user.UpdataPlayerDataCallBack += callback;
-        msg.username = user.UserData.Username;
-        msg.accesLogin_token = user.UserData.Access_Token;
-        sd.data = msg;
-        EventSystemTool.EventSystem.Publish(sd);
+        clientUser.ReqUpdataPlayerData();
+        var msg = new GameApi.UserGetPlayerDataRequest();
+        clientUser.UpdataPlayerDataCallBack += callback;
     }
 
-
-    public void callback()
+    private void callback(UserData data)
     {
         checkupdata = true;
-        ClientRoot.Get().UpdataPlayerDataCallBack -= callback;
+        clientUser.UpdataPlayerDataCallBack -= callback;
+    }
+    private void OnDestroy()
+    {
+
     }
 }

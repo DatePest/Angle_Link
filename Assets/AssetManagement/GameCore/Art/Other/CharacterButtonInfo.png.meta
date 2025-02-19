@@ -112,16 +112,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterButtonInfo_0
+      name: CharacterButtonInfo_Frame1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 177
-        width: 72
-        height: 70
+        x: 11
+        y: 176
+        width: 75
+        height: 71
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -134,7 +134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterButtonInfo_1
+      name: CharacterButtonInfo_Healer
       rect:
         serializedVersion: 2
         x: 98
@@ -156,12 +156,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterButtonInfo_2
+      name: CharacterButtonInfo_Frame2
       rect:
         serializedVersion: 2
-        x: 10
-        y: 93
-        width: 79
+        x: 177
+        y: 177
+        width: 72
         height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -178,13 +178,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterButtonInfo_3
+      name: CharacterButtonInfo_Attacker
       rect:
         serializedVersion: 2
-        x: 103
+        x: 11
         y: 94
-        width: 56
-        height: 72
+        width: 75
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,13 +200,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterButtonInfo_4
+      name: CharacterButtonInfo_Tank
       rect:
         serializedVersion: 2
-        x: 5
-        y: 4
-        width: 79
-        height: 77
+        x: 98
+        y: 95
+        width: 68
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,15 +222,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterButtonInfo_5
+      name: CharacterButtonInfo_Support
       rect:
         serializedVersion: 2
-        x: 96
-        y: 9
-        width: 67
-        height: 67
+        x: 6
+        y: 5
+        width: 76
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,6 +239,28 @@ TextureImporter:
       bones: []
       spriteID: 48d413bf50f92fb4fbe09e7c39ab063e
       internalID: 1262691401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterButtonInfo_6
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 8
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef82e2f5a6050b4c8e95ec56368c016
+      internalID: 707364875
       vertices: []
       indices: 
       edges: []
@@ -257,12 +279,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CharacterButtonInfo_0: -8190579994669686023
-      CharacterButtonInfo_1: 8640770022835090097
-      CharacterButtonInfo_2: -8589605528288494449
-      CharacterButtonInfo_3: 8619345261080720140
-      CharacterButtonInfo_4: -2624593925745674672
-      CharacterButtonInfo_5: 1262691401
+      CharacterButtonInfo_6: 707364875
+      CharacterButtonInfo_Attacker: 8619345261080720140
+      CharacterButtonInfo_Frame1: -8190579994669686023
+      CharacterButtonInfo_Frame2: -8589605528288494449
+      CharacterButtonInfo_Healer: 8640770022835090097
+      CharacterButtonInfo_Support: 1262691401
+      CharacterButtonInfo_Tank: -2624593925745674672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

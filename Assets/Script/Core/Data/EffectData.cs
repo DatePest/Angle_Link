@@ -9,21 +9,21 @@ using static EffectData;
 
 public abstract class EffectData : ScriptableObject
 {
-    [TextArea(2, 2)]
+    [TextArea(5,5)]
     public string EffectDesc;
 
-    [TextArea(2,2)]
+    [TextArea(5,5)]
     [SerializeField]
     string parametersDesc;
     protected abstract string ParametersDesc { get; } // get => "your Desc{int,int}"; 
 
 
-    public abstract void DoEffect(BattleLogic logic ,AbilityExcuteData ability);
+    public abstract void DoEffect(BattleLogic logic ,AbilityEffectsExcuteData ability);
 
  
-    public abstract void UnDoEffect(BattleLogic logic, AbilityExcuteData ability);
-    public virtual void DoEffect(Unit Target, AbilityExcuteData ability) { }
-    public virtual void UnDoEffect(Unit Target, AbilityExcuteData ability) { }
+    public abstract void UnDoEffect(BattleLogic logic, AbilityEffectsExcuteData ability);
+    public virtual void DoEffect(Unit Target, AbilityEffectsExcuteData ability) { }
+    public virtual void UnDoEffect(Unit Target, AbilityEffectsExcuteData ability) { }
 
 
 
@@ -40,24 +40,24 @@ public class Effect
     public string CalculateFormula; // LvCalculateFormula "100 * {Lv} * 50"
     public string[] OtherParameters;
 
-    public void Excute(BattleLogic logic, AbilityExcuteData data)
+    public void Excute(BattleLogic logic, AbilityEffectsExcuteData data)
     {
        
         effect?.DoEffect(logic,data);
     }
 
-    public void SetParameter(AbilityExcuteData data)
+    public void SetParameter(AbilityEffectsExcuteData data)
     {
         SetOtherParameters(data);
         SettMainParameter(data);
     }
-    void SetOtherParameters( AbilityExcuteData data)
+    void SetOtherParameters( AbilityEffectsExcuteData data)
     {
         if (OtherParameters == null || OtherParameters.Length <= 0) return;
         data.Parameters = OtherParameters;
     }
 
-    void SettMainParameter( AbilityExcuteData data)
+    void SettMainParameter( AbilityEffectsExcuteData data)
     {
         string description = CalculateFormula.Replace("{Lv}", data.AbilityLv.ToString());
         var f =OtherTool.StringCalculateFormulaCompute(description);

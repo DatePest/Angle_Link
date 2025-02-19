@@ -1,14 +1,10 @@
 using System.Threading.Tasks;
+using GameApi;
 using UnityEngine;
 
 public class Authenticator_Test : IAuthenticator
 {
-    public override UserData GetUserData()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override Task<UserData> LoadUserData()
+    public override Task<Api_PlayerData> LoadUserPlayerData()
     {
         throw new System.NotImplementedException();
     }

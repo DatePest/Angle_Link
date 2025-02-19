@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Threading.Tasks;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "Character", menuName = "AL/Character", order = 10)]
 public class CharacterData : IUnitData
@@ -19,26 +21,25 @@ public class CharacterPersonal
 [System.Serializable]
 public class Character
 {
-    public UnitAttribute UnitAttribute;
-    public CharacterData characterData;
-    public CharacterData_Net characterAbilityData;
-    Character() { }
+    public UnitAttribute UnitAttribute ;
+    public NetworkFilteredData<CharacterData> characterData;
+    public CharacterData_Net characterNetData;
     public void SetCharacterData(CharacterData data)
     {
-        UnitAttribute = new UnitAttribute(data.Attribute);
-        characterData = data;
+        UnitAttribute = UnitAttribute.Create(data.Attribute);
+        characterData = new(data);
     }
     public void SetAttributeData(CharacterData_Net data)
     {
-        characterAbilityData = data;
+        characterNetData = data;
         UnitAttribute.Lv = data.Lv;
-        UnitAttribute.CalculateLvGrowth(characterAbilityData);
+        UnitAttribute.CalculateLvGrowth(characterNetData);
     }
-
-    public static Character Create(CharacterData_Net character_Net)
+     
+    public static  async Task<Character> Create(CharacterData_Net character_Net)
     {
         var C = new Character();
-        var data = YooAsset_Tool.GetPackageData<CharacterData>(GameConstant.PackName_GameCore, character_Net.IUnitDataName);
+        var data = await AssetFInd.GetCharacterData_Async(character_Net.AssetName);
         C.SetCharacterData(data);
         C.SetAttributeData(character_Net);
 

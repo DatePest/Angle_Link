@@ -20,11 +20,9 @@ namespace Client
         public List<Assembly> Assemblies { get; private set; } = new List<Assembly>();
         public bool PackageInitialize { get; private set; } = false;
         public void InitCompleted() => PackageInitialize = true;
-        public WaitActionHandle Updata(string PackageName, Action callback = null)
+        public async Task<bool> Updata(string PackageName, Action callback = null)
         {
-            var handle = new WaitActionHandle();
-            handle.SetRun(YooAsset_Tool.InitPackage(playMode, PackageName), callback);
-            return handle;
+            return await YooAsset_Tool.InitPackageAsync(playMode, PackageName);
         }
         public void StartLoadDll(string packageName, string name, Action callback = null)
         {
@@ -60,32 +58,41 @@ namespace Client
             package.UnloadUnusedAssetsAsync();
         }
 
-        public async Task InitUpdata(ClientPackageSetting packageSetting)
+        public async Task<bool> InitUpdata(ClientPackageSetting packageSetting)
         {
             if (PackageInitialize)
             {
                 Debug.LogError("Initialized");
-                return;
+                return true;
             }
 
             foreach (string name in packageSetting.PackageNames)
             {
-                var T = Updata(name);
-                while (!T.completed) { await UniTask.Yield(PlayerLoopTiming.Update); }
-                Debug.Log($"InitAssPackage {name} ");
+                var T = await Updata(name);
+                if (T)
+                {
+                    Debug.Log($"InitAssPackage {name} ");
+                }
+                else
+                {
+                    Debug.LogError($"Pack {name} Error");
+                    return false;
+                }
             }
             InitCompleted();
             Debug.Log("InitAssPackage  All End ");
-            await InitUI();
-            return;
+            //await InitUI();
+            return true;
         }
+
+        //Not used anymore for some reason
         async Task InitUI()
         {
             string pack = "GameCore";
-            var tc = await TopCanvas.Create(pack, "TopCanvas");
-            await Ui_LoadIng.Create(pack, "Ui_LoadIng", tc.transform);
-            await Ui_SystemMsg.Create(pack, "SystemMsg", tc.transform);
-            await UI_SceneLoad.Create(pack, "SceneLoad", tc.transform);
+            var tc = await TopCanvas.Create_YooAsset(pack, "TopCanvas");
+            await Ui_LoadIng.Create_YooAsset(pack, "Ui_LoadIng", tc.transform);
+            await Ui_SystemMsg.Create_YooAsset(pack, "SystemMsg", tc.transform);
+            await UI_SceneLoad.Create_YooAsset(pack, "SceneLoad", tc.transform);
 
             Debug.Log("Init UI  End ");
         }

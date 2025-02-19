@@ -22,7 +22,7 @@ public class HomeRoot : SigMono<HomeRoot>
 #endif
 
 
-        var handle = UI_SceneLoad.Get().BackLoad(ClientSceneName.News);
+        var handle = UI_SceneLoad.Get().BackLoad(ClientSceneName.News.ToString(), "GameCore");
         while (!(handle.Progress >= 0.9f)) await UniTask.Yield(PlayerLoopTiming.Update);
         handle.UnSuspend();
     }
@@ -62,7 +62,7 @@ public class HomeRoot : SigMono<HomeRoot>
         var u = UI_SceneLoad.Get();
         if(u == null) return;
         LoadLock = true;
-        u.SceneLoad(scene, LoadSceneMode.Additive, false);
+        u.SceneLoad(scene.ToString(), GameConstant.PackName_GameCore, LoadSceneMode.Additive, false);
         return;
     }
 }

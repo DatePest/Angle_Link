@@ -1,25 +1,43 @@
-﻿using System;
+﻿using Assets.Script.Core.Data;
+using RngDropTool;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "AL/Item", order = 8)]
-public class ItemData : ScriptableObject
+public class ItemData : iSobj_Name, IRngItem
 {
-
-    public string ID;
+    [TextArea(5,5)]
+    public string Desc;
+    public Sprite Icon;
+    public bool CanStack;
+    public string Name { get => AssetName; }
 }
-
-public class Item
+[System.Serializable]
+public class Item 
 {
-    Item() { }
     public ItemData Data;
-   
+    public string AssetName => Data.AssetName;
+    public int Amount;
 
-    public static Item Create(Item_Net data)
+    public static async Task<Item> Create_async(Item_Net dataNet)
     {
         var item = new Item();
+        var data = await AssetFInd.GetItemData_Async(dataNet.AssetName);
+        //item.AssetName = dataNet.AssetName;
+        item.Amount = dataNet.Amount;
+        item.Data = data;
         return item;
     }
+
+    public static Item Create(ItemData itemData,int Amount)
+    {
+        var item = new Item();
+        item.Amount = Amount;
+        item.Data = itemData;
+        return item;
+    }
+
 }

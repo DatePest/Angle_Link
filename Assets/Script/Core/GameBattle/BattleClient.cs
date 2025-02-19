@@ -1,47 +1,120 @@
-﻿using EventSystemTool;
+﻿using GameApi;
+using Assets.Script.Core.Server;
+using Client;
+using Cysharp.Threading.Tasks;
+using EventSystemTool;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tools;
 
-public class BattleClient 
+public class BattleClient :IDisposable
 {
-    EventSystemTool.Listener<BattleEventData> listener;
-    Battle Game;
-    BattleEvent_Client battleEvent;
+    public BattleData Game { get; private set; }
     public ClientEvent GameEvent { get; private set; }
+    Listener<BattleMsgLogs> listener;
+    LogQueue logQueue;
+    BattleEvent_Client battleLogEvent;
+  
     public BattleClient()
     {
-        listener = new(Event);
-        GameEvent = new();
-        battleEvent = new(GameEvent);
+        listener = new((e)=>GameReceiveGameLogs((BattleMsgLogs)e));
+         GameEvent = new();
+        battleLogEvent = new(GameEvent);
+        logQueue = new(Event_Client);
+        GameEvent.OnGameUpdata += UpdataGame;
+        GameEvent.RequestSettlementToServer += RequestSettlementToServer;
     }
-    public void Init(Battle battle)
+    public void Init(BattleData battle)
     {
-        Game = battle;
-        GameEvent.OnGameUpdata?.Invoke(Game);
-        battleEvent.SetGameUid(Game.Uid);
+        GameEvent.OnGameUpdata?.Invoke(battle);
     }
-    void Event(IEventTag sendData)
+    async UniTask Event_Client(IEventTag sendData)
     {
         var data = sendData as BattleEventData;
-        battleEvent.FindRun(data);
+        await battleLogEvent.FindRunAsync_UniTask(data.EventId,data);
     }
-    public void OnDestroy()
+    public void GameReceiveGameLogs(BattleMsgLogs battleLogs)
+    {
+        logQueue.TaskAdd(battleLogs.logs);
+    }
+    void UpdataGame(BattleData data) => Game = data;
+    public void Dispose()
     {
         listener.Stop();
+        listener = null;
+        GameEvent.Dispose();
+        logQueue.Dispose();
     }
+   
+    public void OnGameStartToServer()
+    {
+        var msg = new BattleRequest();
+        msg.accesLogin_token = ClientRoot.GetToken();
+        msg.GameUid = Game.Uid;
+        EventSystemToolExpand.Publish(ClientEventTag.SendOnGameStartToServerrRequest, NetworkMsg_HandlerTag.Battle, default, msg);
+    }
+    public void RequestSettlementToServer()
+    {
+        var msg = new BattleRequest();
+        msg.accesLogin_token = ClientRoot.GetToken();
+        msg.GameUid = Game.Uid;
+        EventSystemToolExpand.Publish(ClientEventTag.SendBattleEndSettlementRequest, NetworkMsg_HandlerTag.Battle, default, msg);
+    }
+    public void SelectToServer(List<BattleSelectOrder> orders)
+    {
+        UnityEngine.Debug.Log($" Req.orders : {orders.Count}");
+        var msg = new BattlePlayerSelectRequest();
+        msg.accesLogin_token = ClientRoot.GetToken();
+        msg.orders_Json = ApiTool.ToJson(orders);
+        msg.GameUid = Game.Uid;
+        EventSystemToolExpand.Publish(ClientEventTag.SendSelectToServerRequest, NetworkMsg_HandlerTag.Battle, default, msg);
+    }
+   
+    public class LogQueue : IDisposable
+    {
+        Queue<IGameBattleLog> Logs { get; set; } = new();
+        Func<IEventTag, UniTask> Event;
+        bool _Running = false;
+        public LogQueue(Func<IEventTag, UniTask> @event)
+        {
+            Event = @event;
+        }
+        public void TaskAdd(List<IGameBattleLog> log)
+        {
+            foreach (var a in log) Logs.Enqueue(a);
+            RunQueue();
+        }
+        async UniTask ExcuteAction(IGameBattleLog log)
+        {
+            var data = new BattleEventData(log);
+#if UNITY_EDITOR
+            UnityEngine.Debug.Log($"Battle Client Log {data.EventId}");
+#endif
+            await Event(data);
+        
+        }
 
-}
-public class ClientEvent : IBattleEvent_Client
-{
-    public Action<Battle> OnGameUpdata { get; set; }
-    public Action OnStartTurn { get; set; }
-    public Action OnEndTurn { get; set; }
-    public Action OnWaitSelect { get; set; }
-    public Action<bool> OnGameEnd { get; set; }
-    public Func<Task> Ability_StartCasting { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public Func<Task> Ability_CastingFX { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public Func<Task> Ability_MakeEffect { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        async void RunQueue()
+        {
+            if (_Running) return;
+            _Running = true;
+            while (Logs.Count != 0)
+            {
+                var a = Logs.Dequeue();
+                await UniTask.Yield();
+                await UniTask.SwitchToMainThread();
+                await ExcuteAction(a);
+                await UniTask.Delay(200);
+            }
+
+            _Running = false;
+        }
+
+        public void Dispose()
+        {
+            Logs.Clear();
+            Logs= null;
+            Event = null;   
+        }
+    }
 }

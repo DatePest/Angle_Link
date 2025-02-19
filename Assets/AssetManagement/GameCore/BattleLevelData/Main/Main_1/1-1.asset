@@ -12,8 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d2f34cb5d21a4439495f5de17c79c3, type: 3}
   m_Name: 1-1
   m_EditorClassIdentifier: 
+  AssetName: 1-1
   Stamina: 10
-  Exp: 60
-  DropItems: []
-  Waves: []
+  Exp: 50
+  TurnMax: 30
+  Waves:
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
   Bgm: {fileID: 0}
+  RngDrop:
+    RandomType: 1
+    items:
+      rid: 894652969250455646
+  references:
+    version: 2
+    RefIds:
+    - rid: 894652969250455646
+      type: {class: LayeredRandom, ns: RngDropTool, asm: Core}
+      data:
+        ItemTables:
+        - rid: 894652969250455647
+        - rid: 894652969250455648
+        - rid: 894652969250455664
+    - rid: 894652969250455647
+      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+      data:
+        itemTable:
+          TableName: 
+          TotalWeight: 500
+          items:
+          - Amount: 1
+            Data: {fileID: 11400000, guid: e18ddd2e902a9b646bf868630907e4ce, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 102f1ddb5f8ce80448de7e7b3d00efb6, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 0}
+            <Weight>k__BackingField: 200
+    - rid: 894652969250455648
+      type: {class: AllIndividuallyRandom, ns: RngDropTool, asm: Core}
+      data:
+        itemTable:
+          TableName: 
+          TotalWeight: 0
+          items:
+          - Amount: 1
+            Data: {fileID: 11400000, guid: e18ddd2e902a9b646bf868630907e4ce, type: 2}
+            <Weight>k__BackingField: 2000
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 102f1ddb5f8ce80448de7e7b3d00efb6, type: 2}
+            <Weight>k__BackingField: 2000
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
+            <Weight>k__BackingField: 2000
+    - rid: 894652969250455664
+      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+      data:
+        itemTable:
+          TableName: 
+          TotalWeight: 7
+          items:
+          - Amount: 1
+            Data: {fileID: 11400000, guid: ddeafd79d06003f418bda7965c932eff, type: 2}
+            <Weight>k__BackingField: 1
+          - Amount: 1
+            Data: {fileID: 11400000, guid: b5f0eeeec395e104493e636ff991dce9, type: 2}
+            <Weight>k__BackingField: 1
+          - Amount: 1
+            Data: {fileID: 0}
+            <Weight>k__BackingField: 5

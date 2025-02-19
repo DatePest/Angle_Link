@@ -1,16 +1,12 @@
 using Client;
 using System;
-using System.Collections.Generic;
-using System.Security.Policy;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.TestTools;
-using UnityEngine.UI;
 using TMPro;
 using YooAsset;
 public class UI_BattleLevelManager : MonoBehaviour
 {
-    Ui_Select UI;
+    Ui_Layout UI;
     GameObject Asset_LevelContenet;
 
     private void Awake()
@@ -18,14 +14,12 @@ public class UI_BattleLevelManager : MonoBehaviour
         var m = transform.Find("Main");
         Add_PointerClick(m, ()=>LoadMainBattleLavel("MainGameLevelTable"));
         AddSeletUI();
-
-
     }
     GameObject GetGameLevelContenet()
     {
         if(Asset_LevelContenet == null)
         {
-            var g = YooAsset_Tool.GetPackageData<GameObject>(GameConstant.PackName_GameCore, "GameLevelContenet");
+            var g = YooAsset_Tool.GetPackageData_Sync<GameObject>(GameConstant.PackName_GameCore, "GameLevelContenet");
             Asset_LevelContenet = g;
         }
         return Instantiate(Asset_LevelContenet);
@@ -33,8 +27,8 @@ public class UI_BattleLevelManager : MonoBehaviour
 
     void AddSeletUI()
     {
-        var g = YooAsset_Tool.GetPackageData<GameObject>(GameConstant.PackName_GameCore, "Ui_Select_GameLevel");
-        var s = GameObject.Instantiate(g, transform.parent).GetComponent<Ui_Select>();
+        var g = YooAsset_Tool.GetPackageData_Sync<GameObject>(GameConstant.PackName_GameCore, "Ui_Select_GameLevel");
+        var s = GameObject.Instantiate(g, transform.parent).GetComponent<Ui_Layout>();
         UI = s;
         UI.gameObject.SetActive(false);
     }
@@ -55,7 +49,7 @@ public class UI_BattleLevelManager : MonoBehaviour
     {
         UI.Clear();
         UI.gameObject.SetActive(true);
-        var g = YooAsset_Tool.GetPackageData<GameLevelTable>(GameConstant.PackName_GameCore, Name);
+        var g = YooAsset_Tool.GetPackageData_Sync<GameLevelTable>(GameConstant.PackName_GameCore, Name);
         foreach (var t in g.Datas)
         {
             var newg = GetGameLevelContenet();
@@ -81,9 +75,7 @@ public class UI_BattleLevelManager : MonoBehaviour
     {
         var t =transform.parent.Find("Team_Editor");
         if (t == null) throw new Exception("Team_Editor is null");
-        t.GetComponent<UI_TeamEditor>()?.StartTeamEditor(
-            () => SendToServerRequestPlayerGame(data)
-            );
+        t.GetComponent<UI_TeamEditor>()?.StartTeamEditor(data);
         
     }
     void SetGameLevelInfo(GameObject obj, GameLevelData data)
@@ -92,10 +84,5 @@ public class UI_BattleLevelManager : MonoBehaviour
         var T = obj.GetComponentInChildren<TextMeshProUGUI>();
         T.text = $"No.{data.name}  <br>Stamina {data.Stamina}<br>Exp {data.Exp}";
     }
-    void SendToServerRequestPlayerGame(GameLevelData levelData)
-    {
-        Debug.Log($"GameStart SendToServerRequestPlayerGame! {levelData.name}");
-    }
-
  
 }

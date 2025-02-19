@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static IRequestSend;
+using GameApi;
+using Tools;
 
 
 namespace Client.Login
@@ -12,6 +13,7 @@ namespace Client.Login
         Button LoginButton;
         Button RegButton;
         TMP_InputField account , password;
+        GameObject RegObj;
 
         protected override void Awake()
         {
@@ -30,8 +32,13 @@ namespace Client.Login
         }
         private void Reg()
         {
-            if (account.text == string.Empty) { return; }
-            if (password.text == string.Empty) { return; }
+           if(RegObj == null)
+            {
+                var g =YooAsset_Tool.GetPackageData_Sync<GameObject>(GameConstant.PackName_GameCore, "Ui_Regisiter");
+                RegObj =GameObject.Instantiate(g,transform.parent,false);
+            }
+            gameObject.SetActive(false);
+            RegObj.SetActive(true);
         }
 
         private void Login()
@@ -40,12 +47,10 @@ namespace Client.Login
             if (account.text == string.Empty) { return; }
             if (password.text == string.Empty) { return; }
             //
-            var sd = new NetSendData(ClientEventTag.SendLogin, NetworkMsg_HandlerName.Account, default);
             var msg = new LoginRequest();
             msg.username = account.text;
             msg.password = password.text;
-            sd.data = msg;
-            EventSystemTool.EventSystem.Publish(sd);
+            EventSystemToolExpand.Publish(ClientEventTag.SendLogin, NetworkMsg_HandlerTag.Account, default, msg);
         }
     }
 }

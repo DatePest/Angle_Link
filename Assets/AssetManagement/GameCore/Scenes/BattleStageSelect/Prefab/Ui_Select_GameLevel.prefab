@@ -209,10 +209,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1316620252977452872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697d72025ce58624dbe60f552b4c18a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d1f7270b1dc2a94da0914b31c352998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjContenet>k__BackingField: {fileID: 2311390296962523199}
+  DefaultObj: {fileID: 0}
 --- !u!1 &2311390296962523199
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +645,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5563350760770619931}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

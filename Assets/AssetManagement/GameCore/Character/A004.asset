@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: RRRR
   Attribute:
-    Lv: 1
     HP: 0
     Atk: 0
     Def: 0
     MAtk: 0
     MDef: 0
-    Speed: 0
+    Speed: 2000
     CritRate: 0
-    AtkType: 2
+    AtkType: 1
     RoleType: 8
   Art:
-    CharacterIcon: {fileID: 0}
+    CharacterIcon: {fileID: 2878712913677935542, guid: 5f2957e64dd52ea4fb7745db8d40f879, type: 3}
     SDIcon: {fileID: 1397706256231721863, guid: 8d7b050591e282d4f8d4cad1283bec66, type: 3}
     Develop: {fileID: 0}
     Casting: {fileID: 0}
     Overkill: {fileID: 0}
   Ability:
+    Ability_NormalAttack: {fileID: 11400000, guid: 7df92b393ba85c14ca1023ab15e6b1a5, type: 2}
     Ability_1: {fileID: 0}
     Ability_2: {fileID: 0}
     Ability_SP: {fileID: 0}

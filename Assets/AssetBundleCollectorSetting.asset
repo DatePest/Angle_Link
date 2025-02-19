@@ -24,90 +24,13 @@ MonoBehaviour:
     AutoCollectShaders: 1
     IgnoreRuleName: RawFileIgnoreRule
     Groups:
-    - GroupName: Other
-      GroupDesc: 
-      AssetTags: Other
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/AssetManagement/GameCore/OtherPrefab
-        CollectorGUID: bf0d86ba48eb6494aaad26f34f8303f0
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: Prefab
-        UserData: 
     - GroupName: Scenes
       GroupDesc: 
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Login
-        CollectorGUID: ae52934fa82f3834caef8696915511fe
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Home
-        CollectorGUID: 71e56492908438d4d90ad4c34622eade
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/News
-        CollectorGUID: 94ee1214ded3a8243bf5f5574653d054
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Character
-        CollectorGUID: ebcca5bae7c889d42a91e4e6e236e349
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Story
-        CollectorGUID: fbed26a828dba3445abb2fb31dd9b158
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/BattleStageSelect
-        CollectorGUID: e46a95669ddf99944af6a4a9a5f95beb
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Radio
-        CollectorGUID: 4f4d9c4690cbfcd4b867feb451b9be8f
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Gasha
-        CollectorGUID: f9ac1f4de99ba8c439202eb7d33f27c8
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetManagement/GameCore/Scenes/Config
-        CollectorGUID: 94bef1c9c6767004781b16255a8ca7dc
+      - CollectPath: Assets/AssetManagement/GameCore/Scenes
+        CollectorGUID: b7e8d583b2cb0874d876e94035a0aee7
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
@@ -189,6 +112,45 @@ MonoBehaviour:
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
         AssetTags: MonstersData
+        UserData: 
+    - GroupName: AbilityDatas
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/AbilityDatas
+        CollectorGUID: b46ae41d11c3b2e4588b992389781697
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Fx
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/FxData
+        CollectorGUID: 30c5706888feb794b911a85b120cf9c5
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Items
+      GroupDesc: 
+      AssetTags: Items
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetManagement/GameCore/Items
+        CollectorGUID: badfd06ca76609e409e003abd237d76f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
         UserData: 
   - PackageName: GameDll
     PackageDesc: 

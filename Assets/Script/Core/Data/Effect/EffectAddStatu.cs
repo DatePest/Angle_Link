@@ -11,14 +11,14 @@ public class EffectAddStatu : EffectData
     //Duration passed to the effect (usually for status, 0 =permanent)
     protected override string ParametersDesc { get => "null"; }
 
-    public override void DoEffect(BattleLogic logic, AbilityExcuteData ExcuteData)
+    public override void DoEffect(BattleLogic logic, AbilityEffectsExcuteData ExcuteData)
     {
         var u = logic.GetUnit(ExcuteData.Caster);
         var s = new Statu(ExcuteData, statuData);
         u.AddStatu(s);
     }
 
-    public override void UnDoEffect(BattleLogic logic, AbilityExcuteData ExcuteData)
+    public override void UnDoEffect(BattleLogic logic, AbilityEffectsExcuteData ExcuteData)
     {
         throw new NotImplementedException();
     }

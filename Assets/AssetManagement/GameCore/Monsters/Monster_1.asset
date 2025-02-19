@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: 
   Attribute:
-    Lv: 1
-    HP: 0
+    HP: 10
     Atk: 0
     Def: 0
     MAtk: 0
     MDef: 0
-    Speed: 0
+    Speed: 1250
     CritRate: 0
     AtkType: 0
     RoleType: 0
   Art:
-    CharacterIcon: {fileID: 0}
-    SDIcon: {fileID: 0}
+    CharacterIcon: {fileID: 2331210693439328752, guid: 40c11dd3d6a786e47834d12dc4150a51, type: 3}
+    SDIcon: {fileID: 3469188206771619185, guid: 3f71e6a917960e042a5961130d3005b2, type: 3}
     Develop: {fileID: 0}
     Casting: {fileID: 0}
     Overkill: {fileID: 0}
   Ability:
+    Ability_NormalAttack: {fileID: 0}
     Ability_1: {fileID: 0}
     Ability_2: {fileID: 0}
     Ability_SP: {fileID: 0}

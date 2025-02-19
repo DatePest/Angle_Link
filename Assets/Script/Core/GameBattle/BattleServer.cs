@@ -1,100 +1,96 @@
-﻿using EventSystemTool;
+﻿using Cysharp.Threading.Tasks;
+using RngDropTool;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Unity.Netcode;
 
-public class BattleServer
+public class BattleServer : IDisposable
 {
     public BattleLogic GameLogic { get; private set; }
-    public Battle GamedData { get; private set; }
+    public BattleData GamedData { get; private set; }
+    UsedTime usedTime = new();
     public string GameUid => GamedData.Uid;
-    ulong Client;
+    //public bool IsEnd;
+    //public Action<FastBufferWriter> OnSend; //Local Test Use
     public void Init(BattleSettings settings)
     {
         if (settings == null) throw new Exception("BattleSetting is null");
-        GamedData = new(settings, OtherTool.GenerateStringID());
+    
+        GamedData = BattleData.New(settings, OtherTool.GenerateStringID());
         GameLogic = new (GamedData);
     }
+    public void Init(BattleData data)
+    {
+        if (data == null) throw new Exception("BattleData is null");
+        GamedData = data;
+        GameLogic = new(GamedData);
+    }
+    public string GetGameDataToJosn() => GameApi.ApiTool.ToJson(GamedData);
     public void Start()
     {
+        UpdataHeartbeat();
         GameLogic.StartGame();
     }
-    public void ReceiveSelect(List<BattleSelectOrder> orders) => GameLogic.ReceiveSelect(orders);
-
-    void TSendClient()
+    public void ReceiveSelect(List<BattleSelectOrder> orders) 
     {
-        var mdata = new MsgLogs();
-        mdata.GameLogs = GameLogic.GetCacheLogs;
-        SendAction(NetworkMsg_HandlerName.Register, mdata, Client);
+        UpdataHeartbeat();
+        GameLogic.ReceiveSelect(orders);
+    } 
+    public MsgLogs GetCurrentLogs()
+    {
+        return GameLogic.GetCurrentLogs();
+    }
+    public SettlementDatas_Net GetDrop()
+    {
+       // IsEnd = true;
+        return GamedData.GetRandomDrop();
+    }
+    public bool HeartbeatCheck(int Time) => usedTime.IsExpired(Time);
+    public void UpdataHeartbeat() => usedTime.UpdateLastUsedTime();
+    //private void SerSend(MsgLogs logs)
+    //{
+    //    #region Local Test
+    //    //var writer = new FastBufferWriter(2048, Unity.Collections.Allocator.Temp,Network.Msg_size);
+    //    //writer.WriteNetworkSerializable(logs);
+    //    //OnSend?.Invoke(writer);
+    //    //writer.Dispose();
+    //    #endregion
+    //}
+
+    public void Dispose()
+    {
+        GameLogic = null;
+        GamedData = null;
     }
 
-    protected void SendAction<T>(ushort type, T data, ulong TargetID, NetworkDelivery delivery = NetworkDelivery.Reliable) where T : INetworkSerializable
+    public class UsedTime
     {
-        FastBufferWriter writer = new FastBufferWriter(128, Unity.Collections.Allocator.Temp, Network.Msg_size);
-        writer.WriteValueSafe(type);
-        writer.WriteNetworkSerializable(data);
-        //Network.Get().Messaging.Send(SendMsgTag, TargetID, writer, delivery);
-        writer.Dispose();
-    }
-}
-public class MsgLogs : INetworkSerializable
-{
-    public List<IGameBattleLog> GameLogs;
-
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        if (serializer.IsReader)
+        public DateTime LastUsedTime { get; private set; }
+        public UsedTime()
         {
-            int size = 0;
-            serializer.SerializeValue(ref size);
-            UnityEngine.Debug.Log($"IsReader Size = {size}");
-            if (size > 0)
-            {
-                byte[] bytes = new byte[size];
-                serializer.SerializeValue(ref bytes);
-                GameLogs = NetworkTool.Deserialize<List<IGameBattleLog>>(bytes);
-            }
+            UpdateLastUsedTime();
         }
 
-        if (serializer.IsWriter)
+        public void UpdateLastUsedTime()
         {
-            byte[] bytes = NetworkTool.Serialize(GameLogs);
-            int size = bytes.Length;
-            UnityEngine.Debug.Log($"IsWriter Size = {size}");
-            serializer.SerializeValue(ref size);
-            if (size > 0)
-                serializer.SerializeValue(ref bytes);
+            LastUsedTime = DateTime.UtcNow;
+        }
+        public bool IsExpired(int minutes)
+        {
+            return (DateTime.UtcNow - LastUsedTime).TotalMinutes > minutes;
         }
     }
-}
-public class MsgRefreshAll : INetworkSerializable
-{
-    public Battle game_data;
 
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+
+
+    #region Action Tag
+
+    public static Action<BattleServer> a_Start = (x) => x.Start();
+    public static Action<BattleServer> GetAction_ReceiveSelect(List<BattleSelectOrder> orders)
     {
-        if (serializer.IsReader)
-        {
-            int size = 0;
-            serializer.SerializeValue(ref size);
-            if (size > 0)
-            {
-                byte[] bytes = new byte[size];
-                serializer.SerializeValue(ref bytes);
-                game_data = NetworkTool.Deserialize<Battle>(bytes);
-            }
-        }
-
-        if (serializer.IsWriter)
-        {
-            byte[] bytes = NetworkTool.Serialize(game_data);
-            int size = bytes.Length;
-            serializer.SerializeValue(ref size);
-            if (size > 0)
-                serializer.SerializeValue(ref bytes);
-        }
+        return (x) => x.ReceiveSelect(orders);
     }
+    public static Func<BattleServer, object> GetLevelDrop = (x) => x.GetDrop();
+    #endregion
 }

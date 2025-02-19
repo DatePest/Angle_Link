@@ -3,7 +3,6 @@ using System.Collections;
 using System.Security.Principal;
 using UnityEngine;
 using YooAsset;
-using static IRequestSend;
 
 namespace Client.Login
 {
@@ -24,24 +23,26 @@ namespace Client.Login
             inited = true;
 
         }
+#if UNITY_EDITOR
         private void OnGUI()
         {
             if (!inited) return;
-            if (GUI.Button(new Rect (40,80 , 120 ,40),"GoHome"))
+            if (GUI.Button(new Rect(40, 80, 120, 40), "GoHome"))
             {
-                UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home,UnityEngine.SceneManagement.LoadSceneMode.Single);
+                UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home.ToString(),GameConstant.PackName_GameCore,UnityEngine.SceneManagement.LoadSceneMode.Single);
             }
 
 
-            if (GUI.Button(new Rect(40, 120, 120, 40), "Test"))
-            {
-                var sd = new NetSendData(ClientEventTag.Test, NetworkMsg_HandlerName.Account, default);
-                var msg = new MsgEvent();
-                msg.msg = "Hello!";
-                msg.MsgId = 100;
-                sd.data = msg;
-                EventSystemTool.EventSystem.Publish(sd);
-            }
+            //if (GUI.Button(new Rect(40, 120, 120, 40), "Test"))
+            //{
+            //    var sd = new NetSendData(ClientEventTag.Test, NetworkMsg_HandlerName.Account, default);
+            //    var msg = new MsgEvent();
+            //    msg.msg = "Hello!";
+            //    msg.MsgId = 100;
+            //    sd.data = msg;
+            //    EventSystemTool.EventSystem.Publish(sd);
+            //}
         }
+#endif
     }
 }

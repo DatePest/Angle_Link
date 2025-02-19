@@ -16,7 +16,7 @@ MonoBehaviour:
   port: 2211
   FileUrl_1: 
   FileUrl_2: 
-  api_url: 
+  api_url: 127.0.0.1:5126
   api_https: 0
   solo_type: 0
   auth_type: 10

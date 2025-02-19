@@ -12,8 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d2f34cb5d21a4439495f5de17c79c3, type: 3}
   m_Name: 1-2
   m_EditorClassIdentifier: 
+  AssetName: 1-2
   Stamina: 12
   Exp: 70
-  DropItems: []
-  Waves: []
+  TurnMax: 30
+  Waves:
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+  - Enemys:
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
+    - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
   Bgm: {fileID: 0}
+  RngDrop:
+    RandomType: 1
+    items:
+      rid: 4723744245954117707
+  references:
+    version: 2
+    RefIds:
+    - rid: 4723744245954117707
+      type: {class: LayeredRandom, ns: RngDropTool, asm: Core}
+      data:
+        ItemTables:
+        - rid: 4723744245954117708
+    - rid: 4723744245954117708
+      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+      data:
+        itemTable:
+          TableName: 
+          TotalWeight: 500
+          items:
+          - Amount: 1
+            Data: {fileID: 11400000, guid: e18ddd2e902a9b646bf868630907e4ce, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 102f1ddb5f8ce80448de7e7b3d00efb6, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
+            <Weight>k__BackingField: 100
+          - Amount: 1
+            Data: {fileID: 0}
+            <Weight>k__BackingField: 200

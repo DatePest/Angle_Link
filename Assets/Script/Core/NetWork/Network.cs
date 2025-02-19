@@ -92,7 +92,7 @@ public class Network : MonoBehaviour
             NetManager.NetworkConfig.NetworkTransport = transport;
             NetManager.NetworkConfig.ConnectionApproval = false;
             transport.ClientFailedConnect+= ClientFailedConnect;
-            InitAuth();
+            //InitAuth();
         }
     }
 
@@ -132,7 +132,7 @@ public class Network : MonoBehaviour
     //so its still a client (not server) but is the one who selected game settings
     public void StartClient(string server_url, ushort port)
     {
-        Debug.Log("Join Server: " + server_url + " " + port);
+        //Debug.Log("Join Server: " + server_url + " " + port);
         CoustmTransport.SetClient(server_url, port);
         //Connection.user_id = Auth.UserID;
         //Connection.username = Auth.Username;
@@ -215,7 +215,7 @@ public class Network : MonoBehaviour
     {
         if (IsServer && client_id != ServerID)
         {
-            Debug.Log("Client Disconnected: " + client_id);
+           // Debug.Log("Client Disconnected: " + client_id);
             onClientDisconnect?.Invoke(client_id);
         }
 

@@ -1,10 +1,10 @@
+using Client;
 using Codice.Client.BaseCommands;
 using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Codice.CM.Common.CmCallContext;
 public class Ui_PlayerInfo : MonoBehaviour
 {
 
@@ -14,12 +14,24 @@ public class Ui_PlayerInfo : MonoBehaviour
     GameObject PaidCoins;
     GameObject Money;
 
-    void Start()
+
+    ClientUserData clientUser => ClientRoot.Get().ClientUserData;
+    void Awake()
     {
         Init();
-        UpdatePlayerInfo();
-    }
+        clientUser.UpdataPlayerDataCallBack += UpdatePlayerInfo;
 
+
+    }
+    private void Start()
+    {
+        UpdatePlayerInfo(clientUser.UserData);
+
+    }
+    private void OnDestroy()
+    {
+        clientUser.UpdataPlayerDataCallBack -= UpdatePlayerInfo;
+    }
     void Init()
     {
         Lv = transform.Find("Lv").gameObject;
@@ -30,11 +42,11 @@ public class Ui_PlayerInfo : MonoBehaviour
         SetdClickPaidCoins(PaidCoins);
         Money = transform.Find("Money").gameObject;
     }
-
-    private void UpdatePlayerInfo()
+    private void UpdatePlayerInfo(UserData U)
     {
-        //var data = new PlayerData_Net() { Lv = 100, PaidCoins = 100000, Stamina = 30, Exp = 7000, Money = 67869323 };
-        var data = Client.ClientRoot.Get().ClientUserData.UserData.PlayerData;
+        if (U.PlayerData == null) return;
+      
+        var data = U.PlayerData;
         SetExpBar(data.Exp, data.GetNextLvExp());
         SetStamian(data.Stamina, data.GetStaminaMax());
         SetLv(data.Lv);

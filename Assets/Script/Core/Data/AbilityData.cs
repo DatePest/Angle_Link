@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
-using static EffectData;
-using static Codice.CM.Common.Serialization.PacketFileReader;
-using PlasticGui.Configuration.CloudEdition.Welcome;
+using Assets.Script.Core.Fx;
+using Assets.Script.Core.Data;
 [CreateAssetMenu(fileName = "Ability", menuName = "AL/AbilityData", order = 5)]
-public class AbilityData : ScriptableObject
+public class AbilityData : iSobj_Name
 {
     [Header("Text")]
     public string title;
@@ -24,34 +23,34 @@ public class AbilityData : ScriptableObject
     [Header("FX")]
     public AudioClip cast_audio;
     public AudioClip target_audio;
-    public GameObject CastFX;
+    public FXObj FXData;
+    public Sprite Icon;
 
     [Header("Effect")]
+    public int CoolDown;
     [Header("Please refer to the target script, otherwise an error will occur")]
     public Effect[] effects;
     [HideInInspector]
     [Header("AddStatuOnly")]
     public string StatuDurationFormula;
 
-    public List<AbilityExcuteData> Excute(BattleLogic logic , BattleSelectOrder order )
+    public void Excute(BattleLogic logic , BattleOrderLog order )
     {
-        if (order.AbilityLv < 1) return null;
-        int statuDuration= GetStatuDurationFormula(order.AbilityLv);
-        List<AbilityExcuteData> datas = new List<AbilityExcuteData>();
+        if (order.SelectOrder.AbilityLv < 1) return ;
+        int statuDuration= GetStatuDurationFormula(order.SelectOrder.AbilityLv);
         foreach (var effect in effects)
         {
-            var data = new AbilityExcuteData(OtherTool.GenerateStringID()); 
-            data.AbilityLv = order.AbilityLv;
-            data.Caster = order.OrderUid;
+            var data = new AbilityEffectsExcuteData() { ExcuteUid = OtherTool.GenerateStringID() };
+            order.Add_ExcuteData(data);
+            data.AbilityLv = order.SelectOrder.AbilityLv;
+            data.Caster = order.SelectOrder.Caster;
             data.StatuDuration = statuDuration;
-            data.Targets = order.Targets;
+            data.Targets = order.SelectOrder.Targets;
             effect.SetParameter(data);
             effect.Excute(logic, data);
-            datas.Add(data);
         }
-        return datas;
     }
-    public void TTT(BattleLogic logic, AbilityExcuteData excuteData)
+    public void TTT(BattleLogic logic, AbilityEffectsExcuteData excuteData)
     {
         foreach (var effect in effects)
         {
@@ -61,16 +60,95 @@ public class AbilityData : ScriptableObject
 
     public int GetStatuDurationFormula(int Lv)
     {
-        if (StatuDurationFormula == string.Empty) throw new Exception("GetStatuDurationFormula == 0");
+        if (StatuDurationFormula == string.Empty) return 0;
         string description = StatuDurationFormula.Replace("{Lv}", Lv.ToString());
         return  (int)OtherTool.StringCalculateFormulaCompute(description);
 
     }
+    public List<Unit> GetTarget(BattleData Game, Unit Caster)
+    {
+        List<Unit> units = new List<Unit>();
+        var All = Game.GetAllUnit();
+        if (target == AbilityTarget.Self)
+        {
+            foreach(var a in All)
+            {
+                if(a == Caster)
+                { units.Add(a); break; }
+            }
+        }
+        if (target == AbilityTarget.OwnTeam)
+        {
+            foreach (var a in All)
+            {
+                if (a.OwnerID == Caster.OwnerID)
+                { units.Add(a);}
+            }
+        }
+        if (target == AbilityTarget.OpponentTeam)
+        {
+            foreach (var a in All)
+            {
+                if (a.OwnerID != Caster.OwnerID)
+                { units.Add(a); }
+            }
+        }
+        if (target == AbilityTarget.BothAll)
+        {
+            units = All;
+        }
+        if (target == AbilityTarget.NotSelfAll)
+        {
+            units = All;
+            units.Remove(Caster);
+        }
+        if (target == AbilityTarget.SelectTarget)
+        {
+           throw new Exception("AbilityTarget.SelectTarget Is Not ");
+        }
+
+
+        //Conditions
+        if (conditions_target != null && units.Count > 0)
+        {
+            var Temp = new List<Unit>();
+            foreach (var a in units)
+            {
+                if (AreTargetConditionsMet(Caster, a))
+                {
+                    Temp.Add(a);
+                }
+            }
+
+            units = Temp;
+        }
+        //Filter targets
+        if (filters_target != null && units.Count > 0)
+        {
+            foreach (FilterData filter in filters_target)
+            {
+                if (filter != null)
+                    units = filter.FilterTargets(this, Caster, units);
+            }
+        }
+        return units;
+    }
+
+    bool AreTargetConditionsMet(Unit caster,Unit Target)
+    {
+        foreach (ConditionData cond in conditions_target)
+        {
+            if (cond != null && !cond.IsTargetConditionMet(this, caster, Target))
+                return false;
+        }
+        return true;
+    }
+
 
 }
 //Suppose there are multiple targets and each needs to be executed separately
 [System.Serializable]
-public class AbilityExcuteData
+public class AbilityEffectsExcuteData
 {
     public int AbilityLv;
     public int StatuDuration;
@@ -80,10 +158,6 @@ public class AbilityExcuteData
     public string[] Parameters;
     public string ExcuteUid;
 
-    public AbilityExcuteData(string uid)
-    {
-        ExcuteUid = uid;
-    }
 }
 
 public enum AbilityTrigger

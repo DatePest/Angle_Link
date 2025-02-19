@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: God
   Attribute:
-    Lv: 1
     HP: 0
     Atk: 0
     Def: 0
     MAtk: 0
     MDef: 0
-    Speed: 0
+    Speed: 1000
     CritRate: 0
-    AtkType: 0
+    AtkType: 2
     RoleType: 0
   Art:
-    CharacterIcon: {fileID: 0}
+    CharacterIcon: {fileID: 4447055333610800460, guid: 631fa8a6c32eb8c43b93be2f35cb8e29, type: 3}
     SDIcon: {fileID: 7403640485278077760, guid: d40ecb6cb63dacc499dea91db5e91795, type: 3}
     Develop: {fileID: 0}
     Casting: {fileID: 0}
     Overkill: {fileID: 0}
   Ability:
+    Ability_NormalAttack: {fileID: 11400000, guid: 38d9c70b510f28b4dbf81b9f6283b7ec, type: 2}
     Ability_1: {fileID: 0}
     Ability_2: {fileID: 0}
     Ability_SP: {fileID: 0}

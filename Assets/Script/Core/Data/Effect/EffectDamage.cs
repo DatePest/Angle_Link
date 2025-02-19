@@ -3,25 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
+using static EffectAddUnitAttribute;
 [CreateAssetMenu(fileName = "EffectDamage", menuName = "AL/EffectData/Damage")]
 public class EffectDamage : EffectData
 {
-    protected override string ParametersDesc { get => "null"; }
-    public override void DoEffect(BattleLogic logic, AbilityExcuteData ability)
+    public EffectDamage()
     {
+        EffectDesc = "Damage = (MainP + TypeAtk)To [ModfireType][Parameters] ";
+    }
+   
+    protected override string ParametersDesc { get => "AtkType{int},ModfireType(int),ModfireParametersTypeTool{f}, "; }
+    
+    public override void DoEffect(BattleLogic logic, AbilityEffectsExcuteData ability)
+    {
+        var type = ParametersTypeTool.GetAtkType(int.Parse(ability.Parameters[0]));
+        var modfireType = ParametersTypeTool.GetModfireType(int.Parse(ability.Parameters[1]));
+        var ModfireParameters = float.Parse(ability.Parameters[2]);
+
+
         var C = logic.GetUnit(ability.Caster);
         foreach(var target in ability.Targets)
         {
             var T = logic.GetUnit(target);
-            var d = C.UnitAttribute.Atk;
-            logic.Damage(C, T, d, ability.ExcuteUid);
+            int damage = (int)ability.AbilityMainParameter;
+            if(type == AtkType.physics)
+            {
+                damage += C.UnitAttribute.Atk;
+            }
+            else
+            {
+                damage += C.UnitAttribute.MAtk;
+            }
+            int _Value = ParametersTypeTool.CalculateAddValue(damage, ModfireParameters, modfireType);
+
+            logic.Damage(C, T, _Value, type, ability.ExcuteUid);
         }
     }
 
-    public override void UnDoEffect(BattleLogic logic, AbilityExcuteData ability)
+    public override void UnDoEffect(BattleLogic logic, AbilityEffectsExcuteData ability)
     {
         return;
     }
+
 
 }

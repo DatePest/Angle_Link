@@ -1,15 +1,16 @@
 using System.Threading.Tasks;
+using GameApi;
 using UnityEngine;
 /// <summary>
 /// Base class for all Authenticators, must be inherited
 /// </summary>
 public abstract class IAuthenticator 
 {
-    protected string user_id = null;
-    protected string username = null;
-    protected string password = null;
-    protected string errormsg = null;
-    protected bool logged_in = false;
+    public string email { get; protected set; } = null;
+    public string username { get; protected set; } = null;
+    public string password { get; protected set; } = null;
+    public string errormsg { get; protected set; } = null;
+    public bool logged_in { get; protected set; } = false;
     public bool inited { get; protected set; } = false;
     public static IAuthenticator Create(AuthenticatorType type)
     {
@@ -27,7 +28,6 @@ public abstract class IAuthenticator
     //Bypass login system by just assigning your own values, for testing
     public virtual void LoginTest(string username)
     {
-        this.user_id = username;
         this.username = username;
         logged_in = true;
     }
@@ -36,13 +36,11 @@ public abstract class IAuthenticator
     public abstract Task<bool> Login(string username, string token); //Some authenticator dont define this function
     public abstract Task<bool> Register(string username, string email, string token); //Some authenticator dont define this function
     //public abstract Task<bool> RefreshLogin() //Same as Login if not defined
-    public abstract Task<UserData> LoadUserData();
+    public abstract Task<Api_PlayerData> LoadUserPlayerData();
     public abstract Task<bool> SaveUserData(); 
-    public abstract UserData GetUserData(); 
     public virtual void Logout()
     {
         logged_in = false;
-        user_id = null;
         username = null;
     }
     #endregion

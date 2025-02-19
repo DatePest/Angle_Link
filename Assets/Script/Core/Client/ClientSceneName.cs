@@ -15,17 +15,9 @@ namespace Client
             BattleStageSelect,
             Radio,
             Gasha,
-            Config
+            Config,
             //
-        }
-
-
-        public static string GetSceneInPackName(ClientSceneName sceneName)
-        {
-            //if (sceneName == ClientSceneName.Login || sceneName == ClientSceneName.Home)
-            return "GameCore";
-
-            return string.Empty;
+            Battle
         }
     }
 }

@@ -5,17 +5,20 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEditor.Graphs;
+using UnityEngine.SceneManagement;
+using EventSystemTool;
+using Tools;
 
 public class UI_TeamEditor : MonoBehaviour
 {
     List<GameObject> HiedToShows = new();
-    Team team = new();
+    Team team;
     Sprite[] RoleTyptSprites;
 
-    Ui_Select Ui_Select_PlayerCharacters;
+    Ui_Layout Ui_Select_PlayerCharacters;
     GameObject[] TeamSolt;
     Dictionary<string,GameObject> ShowUsedObj = new();
-    Action BattleStartAction;
+    GameLevelData GameLevelDataTemp;
     private void Awake()
     {
         InittInfoSprite();
@@ -26,17 +29,21 @@ public class UI_TeamEditor : MonoBehaviour
     #region Init
     void InittInfoSprite()
     {
-        RoleTyptSprites = new Sprite[4];
-        var sprites = YooAsset_Tool.GetPackageDataSprites(GameConstant.PackName_GameCore, "CharacterButtonInfo");
-        if (sprites == null) throw new Exception("sprites is null");
-
-        for (int i = 0; i < RoleTyptSprites.Length; i++)
+        RoleTyptSprites = YooAsset_Tool.GetPackageDataSprites(GameConstant.PackName_GameCore, "CharacterButtonInfo");
+        if (RoleTyptSprites == null) throw new Exception("sprites is null");
+    }
+    Sprite GetSP(string Name)
+    {
+        foreach (Sprite sprite in RoleTyptSprites)
         {
-            RoleTyptSprites[i] = sprites[i + 1];
+            if(sprite.name == Name)
+                return sprite;
         }
+        return default;
     }
     void InitTeamSolt()
     {
+        team = Team.Create(6);
         TeamSolt = new GameObject[6];
         var Slots =transform.Find("TeamSlots");
         int i = 0;
@@ -53,7 +60,7 @@ public class UI_TeamEditor : MonoBehaviour
                    ShowUsedObj.TryGetValue(Name, out var obj);
                    obj.gameObject.SetActive(false);
                    ShowUsedObj.Remove(Name);
-                   RemoveCharacterChick(team.Characters[CureentIndex]);
+                   RemoveCharacterClick(team.Characters[CureentIndex]);
                });
 
             HideCharacterButtonInfos(TeamSolt[CureentIndex]);
@@ -94,9 +101,9 @@ public class UI_TeamEditor : MonoBehaviour
     {
         var u =transform.Find("Ui_PlayerCharacters");
         if (u == null) throw new System.Exception("Ui_PlayerCharacters is null");
-        Ui_Select_PlayerCharacters = u.GetComponentInChildren<Ui_Select>();
+        Ui_Select_PlayerCharacters = u.GetComponentInChildren<Ui_Layout>();
         var cs = ClientRoot.Get().ClientUserData.GetPlayerCharacters();
-        var g = YooAsset_Tool.GetPackageData<GameObject>("GameCore", "CharacterSelectButton");
+        var g = YooAsset_Tool.GetPackageData_Sync<GameObject>(GameConstant.PackName_GameCore, "Team_EditorCharacterSelectButton");
 
         foreach(var c in cs)
         {
@@ -109,12 +116,12 @@ public class UI_TeamEditor : MonoBehaviour
             Ubutton.gameObject.SetActive(false);
 
             Sbutton.onClick.AddListener(
-               () => { SelectCharacterChick(c); Ubutton.gameObject.SetActive(true);
-                   ShowUsedObj.Add(c.characterData.UnitName,Ubutton.gameObject);}
+               () => { SelectCharacterClick(c); Ubutton.gameObject.SetActive(true);
+                   ShowUsedObj.Add(c.characterData.GetData().UnitName,Ubutton.gameObject);}
                 );
            
             Ubutton.onClick.AddListener(
-                ()=> { RemoveCharacterChick(c); Ubutton.gameObject.SetActive(false); ShowUsedObj.Remove(c.characterData.UnitName);  }
+                ()=> { RemoveCharacterClick(c); Ubutton.gameObject.SetActive(false); ShowUsedObj.Remove(c.characterData.GetData().UnitName);  }
                 );
             Ui_Select_PlayerCharacters.AddSelectContent(target);
         }
@@ -123,7 +130,7 @@ public class UI_TeamEditor : MonoBehaviour
 
     #region Ui_Select....
 
-    void SelectCharacterChick(Character character)
+    void SelectCharacterClick(Character character)
     {
         if (character == null) return;
         for (int i = 0; i < team.Characters.Length; i++)
@@ -136,7 +143,7 @@ public class UI_TeamEditor : MonoBehaviour
             }
         }
     }
-    void RemoveCharacterChick(Character character)
+    void RemoveCharacterClick(Character character)
     {
         if (character == null) return;
         bool find = false;
@@ -175,7 +182,7 @@ public class UI_TeamEditor : MonoBehaviour
     }
     void SetCharacterButton(GameObject g, Character character)
     {
-        UnitArt data = character.characterData.Art;
+        ArtData data = character.characterData.GetData().Art;
        foreach (Transform a in g.transform)
         {
             switch (a.name)
@@ -185,25 +192,25 @@ public class UI_TeamEditor : MonoBehaviour
                 break;
                 case "Type":
                     var r = a.GetComponent<Image>();
-                    switch (character.characterData.Attribute.RoleType)
+                    switch (character.characterData.GetData().Attribute.RoleType)
                     {
                         case RoleType.Attacker:
-                            r.sprite = RoleTyptSprites[2-1];
+                            r.sprite = GetSP("CharacterButtonInfo_Attacker");
                             break;
                         case RoleType.Support:
-                            r.sprite = RoleTyptSprites[4-1];
+                            r.sprite = GetSP("CharacterButtonInfo_Support");
                             break;
                         case RoleType.Tank:
-                            r.sprite = RoleTyptSprites[3-1];
+                            r.sprite = GetSP("CharacterButtonInfo_Tank");
                             break;
                         case RoleType.Healer:
-                            r.sprite = RoleTyptSprites[1 - 1];
+                            r.sprite = GetSP("CharacterButtonInfo_Healer");
                             break;
 
                     }
                     break;
                 case "Name":
-                    a.GetComponent<TextMeshProUGUI>().text = character.characterData.UnitName;
+                    a.GetComponent<TextMeshProUGUI>().text = character.characterData.GetData().UnitName;
                     break;
             }
             a.gameObject.SetActive(true);
@@ -237,14 +244,27 @@ public class UI_TeamEditor : MonoBehaviour
     }
     void ButtonStart()
     {
-        Ui_SystemMsg.Get().WatiUserSelect(" Confirm selection!", BattleStartAction);
-        BattleStartAction = null;
-
+        Ui_SystemMsg.Get().WaitUserSelect($"{GameLevelDataTemp.name}  Confirm selection!", SendToSer);
     }
     #endregion
-    public void StartTeamEditor(Action buttonStartAction)
+    void SendToSer()
     {
-        BattleStartAction = buttonStartAction;
+        var msg = new GameApi.BattleEnterRequest();
+        var Client = ClientRoot.Get();
+        msg.accesLogin_token = ClientRoot.GetToken();
+        msg.GameLevelDataName = GameLevelDataTemp.name;
+        msg.team = team;
+
+        EventSystemToolExpand.Publish(ClientEventTag.SendBattleEnterRequest, NetworkMsg_HandlerTag.Battle, default, msg);
+        #region LocalSet Test 
+        //var Bs = new BattleSettings(team, GameLevelDataTemp);
+        //Client.ClientUserData.AddCache("GameLevelDataTemp", Bs);
+        #endregion
+    }
+
+    public void StartTeamEditor(GameLevelData  data)
+    {
+        GameLevelDataTemp = data;
         SwichDisplay(true);
     }
     void SwichDisplay(bool b)
@@ -290,4 +310,6 @@ public class UI_TeamEditor : MonoBehaviour
 
     //    return TeamEdiotObj;
     //}
+
+
 }
