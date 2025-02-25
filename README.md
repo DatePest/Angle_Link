@@ -32,7 +32,6 @@ UniTask    協程替代或切換執行續
 美術效果相關的，只會做一些基礎的處理，或是預留功能口，由於美術相關的放面暫時還不是我學習方向中較為注重的區域，請多包涵
 ![Animation](https://github.com/user-attachments/assets/c79109fe-f751-41ae-97eb-955264a5d083)
 
-感謝您的閱讀!   我是一個不專業的Unity自學者!
 
 
 
