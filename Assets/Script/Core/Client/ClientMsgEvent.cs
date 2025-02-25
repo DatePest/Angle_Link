@@ -31,11 +31,9 @@ namespace Client
         class MsgEvent : EventSystemTool.IEventBase<EventTagAttribute>
         {
 
-
             [EventTag(1)]
-            public void Event_02()
+            public void Event()
             {
-
             }
 
         }

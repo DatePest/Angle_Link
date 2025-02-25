@@ -588,7 +588,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StateMachineUtility_GetState_m73ED4AA
 		L_1 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_0, NULL);
 		NullCheck(L_1);
 		FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8* L_2;
-		L_2 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(114, L_1, ((int32_t)52));
+		L_2 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(115, L_1, ((int32_t)52));
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tDD9CC396183702571C4C341E88371927D9623BA8_il2cpp_TypeInfo_var);
 		Func_2_t03668587D04B8ECC3E6CE9EF3B2852118286E630* L_3 = ((U3CU3Ec_tDD9CC396183702571C4C341E88371927D9623BA8_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tDD9CC396183702571C4C341E88371927D9623BA8_il2cpp_TypeInfo_var))->___U3CU3E9__0_0;
 		Func_2_t03668587D04B8ECC3E6CE9EF3B2852118286E630* L_4 = L_3;
@@ -620,7 +620,7 @@ IL_002c:
 		RuntimeObject* L_9 = ___0_stateMachine;
 		NullCheck(L_8);
 		RuntimeObject* L_10;
-		L_10 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(23, L_8, L_9);
+		L_10 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(25, L_8, L_9);
 		return ((*(int32_t*)UnBox(L_10, il2cpp_defaults.int32_class)));
 	}
 }
@@ -667,7 +667,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CGetStateU3Eb__0_0_m11816848E5
 		FieldInfo_t* L_0 = ___0_x;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_0);
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = String_EndsWith_mCD3754F5401E19CE7821CD398986E4EAA6AD87DC(L_1, _stringLiteral55CAB524459EBE11B81C4E5F0FDDD1A36A98C71B, NULL);

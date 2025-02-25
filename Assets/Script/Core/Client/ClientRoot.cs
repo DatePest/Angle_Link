@@ -14,7 +14,6 @@ namespace Client
 
         static ClientRoot instance;
         public ClientUserData ClientUserData { get; private set; } = new();
-        public Action UpdataPlayerDataCallBack;
 
         bool Inited;
         public static ClientRoot Get()

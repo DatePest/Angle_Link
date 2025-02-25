@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 3056442609
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7209c07ba7e10259481c9a4208da653b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 13208f629018854191d85906d33546fd
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetManagement/GameDll/UniTask.dll.bytes
+Dependencies: []

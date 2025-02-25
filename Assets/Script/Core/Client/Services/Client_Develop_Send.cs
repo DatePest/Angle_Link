@@ -17,7 +17,7 @@ namespace Client
         [EventTag(ClientEventTag.SendCharacterDevelopLv)]
         public void SendCharacterDevelopLv(NetSendData Sdata)    
         {
-            var jdata = GameApi.ApiTool.ToJson(Sdata.data);
+            var jdata = WebTool.ToJson(Sdata.data);
             SendAction(NetworkMsg_HandlerTag.RequestCharacterDevelop_Lv, jdata, TargetID);
         }
 

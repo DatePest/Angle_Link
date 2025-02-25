@@ -1,10 +1,5 @@
-﻿using Codice.CM.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 [System.Serializable]
@@ -198,9 +193,9 @@ public class UnitAttribute : AttributeData
         data.RoleType = other.RoleType;
         return data;
     }
-
     public void CalculateLvGrowth(CharacterData_Net data)
     {
+        Lv = data.Lv;
         //Todo calculate UnitAttribute
         HP = HP + Lv * 100;
         HPMax = HP;

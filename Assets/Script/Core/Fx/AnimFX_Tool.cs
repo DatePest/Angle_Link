@@ -1,15 +1,7 @@
-﻿
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine.Events;
 using UnityEngine;
-using static Assets.Script.Core.Fx.AnimFX_Tool;
-using Codice.CM.Common;
-using NUnit.Framework;
 using UnityEngine.UI;
 using TMPro;
 

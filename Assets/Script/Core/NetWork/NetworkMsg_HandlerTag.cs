@@ -1,11 +1,4 @@
-﻿using Codice.Client.BaseCommands.Import;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/// <summary>
+﻿/// <summary>
 /// Here defines the header name of the custom message interaction
 /// </summary>
 

@@ -10330,7 +10330,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetricHooks_OnBeforeReceiveMessage_mAFCE
 		Type_t* L_3 = ___1_messageType;
 		NullCheck(L_3);
 		String_t* L_4;
-		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_3);
+		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_3);
 		int32_t L_5 = ___2_messageSizeBytes;
 		NullCheck(L_1);
 		InterfaceActionInvoker3< uint64_t, String_t*, int64_t >::Invoke(4, INetworkMetrics_tE2C13758A950A5C77D2682C15F47914B13AC1C41_il2cpp_TypeInfo_var, L_1, L_2, L_4, ((int64_t)L_5));
@@ -12979,7 +12979,7 @@ IL_0012:
 		Type_t* L_4 = ___0_type;
 		NullCheck(L_4);
 		String_t* L_5;
-		L_5 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_4);
+		L_5 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_4);
 		String_t* L_6;
 		L_6 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral4A2F200C1FD568A90AC2FA2AAEF41AF63C20763A, L_5, NULL);
 		ProfilerMarker__ctor_mDD68B0A8B71E0301F592AF8891560150E55699C8_inline((&V_0), L_6, NULL);
@@ -13025,7 +13025,7 @@ IL_0012:
 		Type_t* L_4 = ___0_type;
 		NullCheck(L_4);
 		String_t* L_5;
-		L_5 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_4);
+		L_5 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_4);
 		String_t* L_6;
 		L_6 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral39D7FE489CD49D2B99BBEE46AD639D24F0E296BC, L_5, NULL);
 		ProfilerMarker__ctor_mDD68B0A8B71E0301F592AF8891560150E55699C8_inline((&V_0), L_6, NULL);
@@ -25924,7 +25924,7 @@ CATCH_011e:
 		Exception_t* L_36 = V_7;
 		NullCheck(L_36);
 		String_t* L_37;
-		L_37 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_36);
+		L_37 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_36);
 		String_t* L_38;
 		L_38 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_35, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral39F723AB6E8A34D0F4609CD5C546527B2D4C8676)), L_37, NULL);
 		NetworkLog_LogErrorServer_m4FC1BA70BDE934A5CFE32FCE5BF14C69BFC95067(L_38, NULL);

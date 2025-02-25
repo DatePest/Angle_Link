@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.VisualScripting.YamlDotNet.Core.Tokens;
-using UnityEngine;
-using static EffectAddUnitAttribute;
+﻿using UnityEngine;
 [CreateAssetMenu(fileName = "EffectDamage", menuName = "AL/EffectData/Damage")]
 public class EffectDamage : EffectData
 {

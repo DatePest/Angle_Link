@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
+
 public class InitializeRoot : MonoBehaviour
 {
     public TextMeshProUGUI proUGUI;
@@ -44,10 +45,12 @@ public class InitializeRoot : MonoBehaviour
         Debug.Log("Init UI  End ");
     }
 
-    public static  void AssLoad()
+    public static  async void AssLoad()
     {
 #if !UNITY_EDITOR
-        c.clientUpdata.StartLoadDll
+        var c = ClientRoot.Get();
+        await c.StartInitUpdata();
+        c.clientAsset.StartLoadDll
             ("GameDll", "GameHotDll.dll",
             () => TimeTool.StartCoroutine(LoadMetadataForAOTAssembly("GameDll", AOTGenericReferences.PatchedAOTAssemblyList),GotoLogin)
             ) ;

@@ -17,7 +17,7 @@ namespace Assets.Script.Core.Server
             public static async Task AddCharacter(Api_PlayerData playerData, string[] CharacterName)
             {
                
-                var List = ApiTool.JsonToObject<List<CharacterData_Net>>(playerData.Characters);
+                var List = WebTool.JsonToObject<List<CharacterData_Net>>(playerData.Characters);
 
                 for(int i = 0; i < CharacterName.Length; i++)
                 {
@@ -26,7 +26,7 @@ namespace Assets.Script.Core.Server
                     List.Add(c);
                 }
 
-                playerData.Characters = ApiTool.ToJson(List);
+                playerData.Characters = WebTool.ToJson(List);
             }
           
             public static async Task<bool> UpdataAndSave(Api_PlayerData data,string token,ulong Client_id)
@@ -54,7 +54,7 @@ namespace Assets.Script.Core.Server
                 }
                 else
                 {
-                    var before = ApiTool.JsonToObject<DateTime>(data.LastUpDataTime);
+                    var before = WebTool.JsonToObject<DateTime>(data.LastUpDataTime);
                     var Vs = CalculateRecovery_Minutes(before, now, 3, 1);
                     if (Vs != 0) Change = true;
                     data.Stamina += Vs;
@@ -64,7 +64,7 @@ namespace Assets.Script.Core.Server
                 #endregion
 
                 if (Change)
-                    data.LastUpDataTime = ApiTool.ToJson(now);
+                    data.LastUpDataTime = WebTool.ToJson(now);
                 return Change;
             }
 

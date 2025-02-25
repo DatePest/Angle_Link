@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
-
+#if UNITY_EDITOR
 namespace EditorTool
 {
+
     public class SerializeReference_ClassNameDisplayAttribute : PropertyAttribute { }
     [CustomPropertyDrawer(typeof(SerializeReference_ClassNameDisplayAttribute))]
     public class SerializeReference_ClassNameDisplayAttributeDrawer : PropertyDrawer
@@ -34,3 +35,4 @@ namespace EditorTool
         }
     }
 }
+#endif

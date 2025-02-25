@@ -65,7 +65,7 @@ public class BattleClient :IDisposable
         UnityEngine.Debug.Log($" Req.orders : {orders.Count}");
         var msg = new BattlePlayerSelectRequest();
         msg.accesLogin_token = ClientRoot.GetToken();
-        msg.orders_Json = ApiTool.ToJson(orders);
+        msg.orders_Json = WebTool.ToJson(orders);
         msg.GameUid = Game.Uid;
         EventSystemToolExpand.Publish(ClientEventTag.SendSelectToServerRequest, NetworkMsg_HandlerTag.Battle, default, msg);
     }

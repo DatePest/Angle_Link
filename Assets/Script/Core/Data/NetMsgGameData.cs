@@ -1,12 +1,8 @@
 using Assets.Script.Core.GameDevelop;
-using Client;
 using GameApi;
 using System;
 using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.Plastic.Newtonsoft.Json;
-using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 /// <summary>
 // Player data for client and server
@@ -77,9 +73,9 @@ public class PlayerData_Net : INetworkSerializable
         P.Stamina = res.Stamina;
 
         if (res.Characters != null)
-            P.Characters = ApiTool.JsonToObject<List<CharacterData_Net>>(res.Characters);
+            P.Characters = WebTool.JsonToObject<List<CharacterData_Net>>(res.Characters);
         if (res.Items != null)
-            P.Items = ApiTool.JsonToObject<List<Item_Net>>(res.Items);
+            P.Items = WebTool.JsonToObject<List<Item_Net>>(res.Items);
         return P;
     }
     public Api_PlayerData DTO()
@@ -93,9 +89,9 @@ public class PlayerData_Net : INetworkSerializable
         P.UID = UID;
         P.Stamina = Stamina;
         if (Characters != null)
-            P.Characters = ApiTool.ToJson(Characters);
+            P.Characters = WebTool.ToJson(Characters);
         if (Items != null)
-            P.Items = ApiTool.ToJson(Items);
+            P.Items = WebTool.ToJson(Items);
         return P;
     }
 

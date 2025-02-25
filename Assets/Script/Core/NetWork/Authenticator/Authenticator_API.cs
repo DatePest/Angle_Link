@@ -1,11 +1,5 @@
-using Assets.Script.Core.Server;
-using Assets.Script.Core.Server.Services;
-using Client;
 using GameApi;
 using System.Threading.Tasks;
-using UnityEditor.PackageManager.Requests;
-using UnityEngine;
-using UnityEngine.Android;
 using static Assets.Script.Core.Server.ServerGameLogic;
 /// <summary>
 /// This authenticator require external UserLogin API asset

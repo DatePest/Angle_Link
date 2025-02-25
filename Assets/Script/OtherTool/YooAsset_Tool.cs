@@ -1,5 +1,4 @@
-﻿using Codice.Client.BaseCommands.Download;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YooAsset;
-using static UnityEngine.GraphicsBuffer;
 
 public class YooAsset_Tool
 {

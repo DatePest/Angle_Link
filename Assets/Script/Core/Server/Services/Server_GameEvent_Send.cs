@@ -17,7 +17,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(SerEventTag.ReturnCharacterDevelop_Lv)] 
         public void ReturnMsg(NetSendData Sdata)
         {
-            SendAction(NetworkMsg_HandlerTag.ReturnCharacterDevelop_Lv, (MsgEvent_Net)Sdata.data, Sdata.TargetId);
+            SendAction(NetworkMsg_HandlerTag.ReturnCharacterDevelop_Lv, (Response_Net)Sdata.data, Sdata.TargetId);
         }
 
     }

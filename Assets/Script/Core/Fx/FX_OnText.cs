@@ -1,9 +1,7 @@
-using Assets.Script.Core.Fx;
 using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
-using static Codice.CM.Common.CmCallContext;
 
 namespace Assets.Script.Core.Fx
 {

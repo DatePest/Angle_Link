@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Reflection;
 using System;
+#if UNITY_EDITOR
 namespace Editor_Tool
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
@@ -53,3 +54,4 @@ namespace Editor_Tool
         }
     }
 }
+#endif

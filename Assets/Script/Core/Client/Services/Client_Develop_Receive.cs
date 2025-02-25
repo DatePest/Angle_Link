@@ -1,10 +1,13 @@
 ﻿using EventSystemTool;
+using GameApi;
 using NetWorkServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Client.ClientScene;
+using UnityEngine.SceneManagement;
 
 
 namespace Client
@@ -16,10 +19,15 @@ namespace Client
         [EventTag(NetworkMsg_HandlerTag.ReturnCharacterDevelop_Lv)]
         public void ReturnMsg(ReceiveNetSerializedData data)
         {
-            GameUtilityTool.DebugAsync("A");
-            //var msg = data.NData.Get<MsgEvent_Net>();
-            //Ui_SystemMsg.Get().ShowMsg(msg.msg);
-            // Todo  Call other functions against event ID
+            var msg = data.NData.Get<Response_Net>();
+
+            if (msg.success)
+            {
+                var a = ClientRoot.Get().ClientUserData.GetCache<Action>(GameConstant.DevelopEvent, true);
+                a?.Invoke();
+            }
+            var u = Ui_SystemMsg.Get();
+            u.WaitConfirm(msg.msg);
         }
 
     }

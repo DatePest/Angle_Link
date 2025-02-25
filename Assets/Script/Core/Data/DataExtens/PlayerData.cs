@@ -1,14 +1,7 @@
 ﻿using GameApi;
-using Client;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine.TextCore.Text;
 using Assets.Script.Core.GameDevelop;
-using static Assets.Script.Core.Server.ServerGameLogic;
-using UnityEditor.PackageManager.Requests;
 
 public static class PlayerData_NetExtensions
 {
@@ -72,7 +65,7 @@ public static class Api_PlayerDataExtensions
 {
     public static List<CharacterData_Net> GetListCharacterData_Nets(this Api_PlayerData player)
     {
-        var Pc = ApiTool.JsonToObject<List<CharacterData_Net>>(player.Characters);
+        var Pc = WebTool.JsonToObject<List<CharacterData_Net>>(player.Characters);
         if (Pc == null) Pc = new();
         return Pc;
     }
@@ -102,7 +95,7 @@ public static class Api_PlayerDataExtensions
 
     public static List<Item_Net> GetListItem_Net(this Api_PlayerData player)
     {
-        var PItems = ApiTool.JsonToObject<List<Item_Net>>(player.Items);
+        var PItems = WebTool.JsonToObject<List<Item_Net>>(player.Items);
         if (PItems == null) PItems = new();
         return PItems;
     }
@@ -129,7 +122,7 @@ public static class Api_PlayerDataExtensions
 
             PlayerData_NetExtensions.ItemListAdd(PItems, item);
         }
-        player.Items = ApiTool.ToJson(PItems);
+        player.Items = WebTool.ToJson(PItems);
     }
     public static void RemoveItem(this Api_PlayerData player, IEnumerable<DataObject> items)
     {
@@ -146,7 +139,7 @@ public static class Api_PlayerDataExtensions
 
             PlayerData_NetExtensions.ItemListRemove(PItems, item.AssetName, item.Amount);
         }
-        player.Items = ApiTool.ToJson(PItems);
+        player.Items = WebTool.ToJson(PItems);
     }
     public static  void AddCharacters(this Api_PlayerData player, IEnumerable<CharacterData_Net> characters)
     {
@@ -157,7 +150,7 @@ public static class Api_PlayerDataExtensions
             var b =  PlayerData_NetExtensions.AddCharacter(Pc, c);
             //Todo : Duplicate character switching props
         }
-        player.Characters = ApiTool.ToJson(Pc);
+        player.Characters = WebTool.ToJson(Pc);
     }
     public static void AddCharacterToDevelop(this Api_PlayerData player,string name ,int exp)
     {
@@ -166,7 +159,7 @@ public static class Api_PlayerDataExtensions
         if (c == null) return;
 
         Develop_CharacterLv.ToLevelUP(c, exp);
-        player.Characters = ApiTool.ToJson(cs);
+        player.Characters = WebTool.ToJson(cs);
        
     }
 

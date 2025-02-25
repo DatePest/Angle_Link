@@ -1,20 +1,24 @@
+#if UNITY_EDITOR
 using Editor_Tool;
+#endif
 using RngDropTool;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Test_Example : MonoBehaviour
 {
     public bool showHiddenField_A;
     public bool showHiddenField_B;
-
+#if UNITY_EDITOR
     [ConditionalHide("showHiddenField_A")]
+#endif
     public int A = 10;
+#if UNITY_EDITOR
     [ConditionalHide("showHiddenField_B")]
+#endif
     public int hiddenField;
+#if UNITY_EDITOR
     [CustomEditorButton("TestRngItem")]
+#endif
     public int B = 100;
 
     public WeightedRandom WeightedRandom = new WeightedRandom();

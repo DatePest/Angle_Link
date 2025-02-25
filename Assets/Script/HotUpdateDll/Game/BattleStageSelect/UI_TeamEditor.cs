@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEditor.Graphs;
-using UnityEngine.SceneManagement;
-using EventSystemTool;
 using Tools;
 
 public class UI_TeamEditor : MonoBehaviour

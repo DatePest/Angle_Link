@@ -1,9 +1,9 @@
 using Assets.Script.Core.UI;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
 {
 
@@ -14,12 +14,21 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         CharacterDevelpoStatuData develpoData;
         Character ISelectCharacter.TCharacter { get; set; }
 
+        public Action CallUpdata;
+
         private void Awake()
         {
-            InitButtons("CharacterLvButton", new Develop_Ui_Lv(this));
+            InitDevelop_Ui_Lv();
             InitSelectCharact();
             InitDevelpoData();
 
+
+        }
+        void InitDevelop_Ui_Lv()
+        {
+            var lv = new Develop_Ui_Lv(this);
+            InitButtons("CharacterLvButton", lv);
+            lv.CallUpdata += CallUpdata;
 
         }
         void InitSelectCharact()
@@ -40,6 +49,7 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
                 a.Value.OnShow += () => develpoData.ActiveSwitch(true);
             }
             develpoData.ActiveSwitch(false);
+            CallUpdata +=  develpoData.Updata;
             FuncObjs.Add("DevelpoData", develpoData);
         }
         void InitButtons(string Name, IUi_Switch Obj)

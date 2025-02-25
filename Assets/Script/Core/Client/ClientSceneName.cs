@@ -19,5 +19,11 @@ namespace Client
             //
             Battle
         }
+
+
+        public static void Goto(ClientSceneName sceneName)
+        {
+            UI_SceneLoad.Get().SceneLoad(sceneName.ToString(), GameConstant.PackName_GameCore, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        }
     }
 }

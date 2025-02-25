@@ -56,5 +56,5 @@ Assets:
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
 Dependencies:
-- R:/Unity_Project/ANGELIC_LINK/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_textmesh_pro_fonts.bundle
-- R:/Unity_Project/ANGELIC_LINK/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_unityshaders.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_textmesh_pro_fonts.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_unityshaders.bundle

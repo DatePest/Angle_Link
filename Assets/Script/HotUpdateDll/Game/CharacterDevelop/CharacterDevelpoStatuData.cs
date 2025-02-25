@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
 {
@@ -18,12 +19,15 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         GameObject Target;
 
         Image CharacterIcon;
-        public GameObject TargetObj => throw new NotImplementedException();
+        public GameObject TargetObj { get => Target; }
         ISelectCharacter TargetCharacter;
+        public Dictionary<string,TextMeshProUGUI> UITextMeshPros;
         public CharacterDevelpoStatuData(ISelectCharacter select)
         {
             TargetCharacter = select;
             Init();
+            InitSetTexts();
+            Updata();
         }
         void Init()
         {
@@ -39,7 +43,44 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         }
         public void Updata()
         {
-            //Todo CharacterDevelpoData View Updata
+            UpdateCharacter();
+        }
+        void UpdateCharacter()
+        {
+            if (TargetCharacter.TCharacter == null) return;
+            var ua = TargetCharacter.TCharacter.UnitAttribute;
+            SetAttribute("Hp",ua.HP);
+            SetAttribute("Atk", ua.Atk);
+            SetAttribute("Def", ua.Def);
+            SetAttribute("Speed", ua.Speed);
+            SetAttribute("MAtk", ua.MAtk);
+            SetAttribute("MDef", ua.MDef);
+        }
+        void SetAttribute(string name , int i)
+        {
+            UITextMeshPros.TryGetValue(name, out var textMeshPro);
+            if (textMeshPro == null) return;
+            textMeshPro.text = i.ToString();
+        }
+      
+        void InitSetTexts()
+        {
+            UITextMeshPros = new();
+            var attribute = Target.transform.Find("Attribute").gameObject.transform;
+            findTMP(attribute, "Hp");
+            findTMP(attribute, "Atk");
+            findTMP(attribute, "Def");
+            findTMP(attribute, "Speed");
+            findTMP(attribute, "MAtk");
+            findTMP(attribute, "MDef");
+        }
+
+        void findTMP(Transform transform, string text)
+        {
+            var t = transform.Find(text);
+            var TM = t.Find("Stat").GetComponent<TextMeshProUGUI>();
+
+            UITextMeshPros.Add(text, TM);
         }
         public void ActiveSwitch(bool b)
         {
@@ -48,6 +89,7 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
                 SetCharacter();
                 Target.SetActive(true);
                 OnShow?.Invoke();
+                Updata();
             }
             else
             {
@@ -60,6 +102,7 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         {
             OnShow = null;
             OnHide = null;
+            UITextMeshPros = null;
         }
     }
 }

@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
+#if UNITY_EDITOR
 namespace EditorTool
 {
     public class EditorAPI
@@ -36,3 +36,4 @@ namespace EditorTool
         }
     }
 }
+#endif

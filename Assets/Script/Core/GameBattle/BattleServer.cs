@@ -1,9 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
-using RngDropTool;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Unity.Netcode;
 
 public class BattleServer : IDisposable
 {
@@ -26,7 +22,7 @@ public class BattleServer : IDisposable
         GamedData = data;
         GameLogic = new(GamedData);
     }
-    public string GetGameDataToJosn() => GameApi.ApiTool.ToJson(GamedData);
+    public string GetGameDataToJosn() => WebTool.ToJson(GamedData);
     public void Start()
     {
         UpdataHeartbeat();

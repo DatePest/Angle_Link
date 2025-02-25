@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 3039516059
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 395b0d840b1587f672fdd1e9e8d28976
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: de716d9b9c662dcdc72ba6b8fd5667ba
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/AssetManagement/GameCore/Art/Characters/A001/\u30AB\u30FC\u30C9\uFF0F\u5B50\u4F9B\u5FD7\u6D25\u9999\uFF0F\u57FA\u672C.png"
+- "Assets/AssetManagement/GameCore/Art/Characters/A001/\u30B7\u30B9\uFF0F\u6226\u95D8\uFF0F\u652F\u63F4\u52B9\u679C\uFF0F\u5B50\u4F9B\u5FD7\u6D25\u9999\uFF0F\u5927.png"
+Dependencies: []

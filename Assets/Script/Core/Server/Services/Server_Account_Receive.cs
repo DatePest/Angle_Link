@@ -16,7 +16,7 @@ namespace Assets.Script.Core.Server.Services
         public void ReceiveTest(ReceiveNetSerializedData Rdata)
         {
             var data = Rdata.NData.GetString();
-            var msg = ApiTool.JsonToObject<MsgEvent_Net>(data);
+            var msg = WebTool.JsonToObject<MsgEvent_Net>(data);
             UnityEngine.Debug.Log($"mgs : {msg.msg} _ ID = {msg.MsgId}");
         }
 
@@ -25,7 +25,7 @@ namespace Assets.Script.Core.Server.Services
         {
             var auth = new Authenticator_API();
             var data = Rdata.NData.GetString();
-            var Request = ApiTool.JsonToObject<RegisterRequest>(data);
+            var Request = WebTool.JsonToObject<RegisterRequest>(data);
             var b = await auth.Register(Request);
             if (b)
             {
@@ -34,7 +34,7 @@ namespace Assets.Script.Core.Server.Services
                 //New account initial information
                 await PlayerDataLogic.AddCharacter(Udata, new[] { "A001", "A002" });
                 Udata.Stamina = Develop_PlayerLv.GetStaminaMax(1);
-                Udata.LastUpDataTime = ApiTool.ToJson(DateTime.Now);
+                Udata.LastUpDataTime = WebTool.ToJson(DateTime.Now);
                 //
                 await auth.TokenSavePlayerData(Udata);
                 var U = auth.GetUserData();
@@ -51,7 +51,7 @@ namespace Assets.Script.Core.Server.Services
         {
             var auth = new Authenticator_API();
             var data = Rdata.NData.GetString();
-            var Request = ApiTool.JsonToObject<LoginRequest>(data);
+            var Request = WebTool.JsonToObject<LoginRequest>(data);
             var b = await auth.Login(Request.username,Request.password);
             if (b)
             {
@@ -66,7 +66,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestGetPlayerData)]
         public async void ReceiveGetPlayerData(ReceiveNetSerializedData Rdata)
         {
-            var Request = ApiTool.JsonToObject<UserGetPlayerDataRequest>(Rdata.NData.GetString());
+            var Request = WebTool.JsonToObject<UserGetPlayerDataRequest>(Rdata.NData.GetString());
             Api_PlayerData Udata = await PlayerDataLogic.TokenGetPlayerData(Request.accesLogin_token, Rdata.Client_id,false);
             if(Udata == null)   return;
 

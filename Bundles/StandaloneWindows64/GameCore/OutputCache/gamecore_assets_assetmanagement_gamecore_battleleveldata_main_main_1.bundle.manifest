@@ -1,0 +1,45 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 3588562679
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 46dbf2abbbb49f5b174b743db2e67bf9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2f6ad4b054f9913424809933f0717152
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 31225f354819e136a89d90d25cb7b6cf
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 73d78c0b119bdbf41b3fbc0724d70688, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: efc0b50f3534a2b4e892bbd8e3df4fd5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d4d2f34cb5d21a4439495f5de17c79c3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 154c281aa90b16e4a9f2bf28a381e9f0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Core
+  ClassName: .GameLevelData/Wave
+- AssemblyName: RngDrop_
+  ClassName: RngDropTool.AllIndividuallyRandom
+- AssemblyName: RngDrop_
+  ClassName: RngDropTool.LayeredRandom
+- AssemblyName: RngDrop_
+  ClassName: RngDropTool.RngDrop
+- AssemblyName: RngDrop_
+  ClassName: RngDropTool.WeightedRandom
+Assets:
+- Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-2.asset
+- Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-1.asset
+- Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-3.asset
+- Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-4.asset
+Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_character.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_items.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_monsters.bundle

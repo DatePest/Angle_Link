@@ -2,7 +2,6 @@
 
     /// <summary>
     /// If you have issue finding the IsMobileJS function, you need to add a special file in your Assets/Plugins/WebGL folder
-    /// You can get the file in a WebGL package in Assets/TcgEngine/Install folder
     /// </summary>
 
     public class WebGLTool

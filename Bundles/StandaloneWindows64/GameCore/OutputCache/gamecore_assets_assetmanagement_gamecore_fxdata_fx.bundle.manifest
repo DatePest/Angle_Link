@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 2601820622
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ccea8fbd5cd85030b22bf2181f964b65
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5e9f21ed585650fc84dd0dee474b6d13
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2c3b3619a4ac55b383473316d0460f83
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetManagement/GameCore/FxData/FX/pulse4.prefab
+Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_warped_shooting_fx_pixel_art_pulse.bundle

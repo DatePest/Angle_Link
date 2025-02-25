@@ -22,7 +22,7 @@ namespace GameApi
         public List<BattleSelectOrder> GetSelectOrders()
         {
             if (orders_Json == null) return null;
-            return ApiTool.JsonToObject<List<BattleSelectOrder>>(orders_Json);
+            return WebTool.JsonToObject<List<BattleSelectOrder>>(orders_Json);
         }
     }
 }

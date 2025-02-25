@@ -29,23 +29,23 @@ MonoBehaviour:
   RngDrop:
     RandomType: 0
     items:
-      rid: 894652969250455662
+      rid: 4723744416837140570
   references:
     version: 2
     RefIds:
-    - rid: 894652969250455662
-      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+    - rid: 4723744416837140570
+      type: {class: WeightedRandom, ns: RngDropTool, asm: RngDrop_}
       data:
         itemTable:
           TableName: 
-          TotalWeight: 0
+          TotalWeight: 14
           items:
           - Amount: 0
+            Data: {fileID: 11400000, guid: 2e26d65603ee95b4489ec3e45291e2b2, type: 2}
+            <Weight>k__BackingField: 2
+          - Amount: 1
+            Data: {fileID: 11400000, guid: b5f0eeeec395e104493e636ff991dce9, type: 2}
+            <Weight>k__BackingField: 2
+          - Amount: 1
             Data: {fileID: 0}
-            <Weight>k__BackingField: 0
-          - Amount: 0
-            Data: {fileID: 0}
-            <Weight>k__BackingField: 0
-          - Amount: 0
-            Data: {fileID: 0}
-            <Weight>k__BackingField: 0
+            <Weight>k__BackingField: 10

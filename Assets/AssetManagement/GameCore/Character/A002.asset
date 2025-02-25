@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc0b50f3534a2b4e892bbd8e3df4fd5, type: 3}
   m_Name: A002
   m_EditorClassIdentifier: 
+  AssetName: A002
   UnitName: TestA
   Attribute:
-    HP: 0
+    HP: 50
     Atk: 0
     Def: 0
     MAtk: 0

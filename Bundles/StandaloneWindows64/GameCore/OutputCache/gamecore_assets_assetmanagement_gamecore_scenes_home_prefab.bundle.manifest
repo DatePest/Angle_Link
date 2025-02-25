@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 1075976137
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4f619c12a667bce5b57203e3ead321b6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b883c86690545ab79fa073e613c3d49f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: fdce739d53f694a447f0fe53a88ff864
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4239520db5c9ec8458fd38bd3ae9c8ed, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/AssetManagement/GameCore/Scenes/Home/Prefab/SwichButtons.prefab
+Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_scenes_home_art.bundle

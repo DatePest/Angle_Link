@@ -1,13 +1,4 @@
-﻿using PlasticGui.Configuration.CloudEdition.Welcome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor.Playables;
-using UnityEngine;
-using static EffectAddUnitAttribute;
-using static UnityEngine.GraphicsBuffer;
+﻿using UnityEngine;
 [CreateAssetMenu(fileName = "EffectAddUnitAttribute", menuName = "AL/EffectData/AddUnitAttribute")]
 public class EffectAddUnitAttribute : EffectData
 {

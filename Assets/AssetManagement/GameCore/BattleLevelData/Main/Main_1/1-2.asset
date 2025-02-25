@@ -27,33 +27,28 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e737739118a3acb45bcc61f9bfc682f6, type: 2}
   Bgm: {fileID: 0}
   RngDrop:
-    RandomType: 1
+    RandomType: 2
     items:
-      rid: 4723744245954117707
+      rid: 4723744416837140567
   references:
     version: 2
     RefIds:
-    - rid: 4723744245954117707
-      type: {class: LayeredRandom, ns: RngDropTool, asm: Core}
-      data:
-        ItemTables:
-        - rid: 4723744245954117708
-    - rid: 4723744245954117708
-      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
+    - rid: 4723744416837140567
+      type: {class: AllIndividuallyRandom, ns: RngDropTool, asm: RngDrop_}
       data:
         itemTable:
           TableName: 
-          TotalWeight: 500
+          TotalWeight: 0
           items:
           - Amount: 1
             Data: {fileID: 11400000, guid: e18ddd2e902a9b646bf868630907e4ce, type: 2}
-            <Weight>k__BackingField: 100
+            <Weight>k__BackingField: 200
           - Amount: 1
             Data: {fileID: 11400000, guid: 102f1ddb5f8ce80448de7e7b3d00efb6, type: 2}
-            <Weight>k__BackingField: 100
+            <Weight>k__BackingField: 200
           - Amount: 1
             Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
-            <Weight>k__BackingField: 100
-          - Amount: 1
-            Data: {fileID: 0}
+            <Weight>k__BackingField: 200
+          - Amount: 0
+            Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
             <Weight>k__BackingField: 200

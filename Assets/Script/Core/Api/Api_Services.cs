@@ -22,7 +22,7 @@ namespace GameApi
         public UnityAction<LoginResponse> onRefresh; //Triggered after login refresh, even if failed 
         public UnityAction onLogout; //Triggered after logout
 
-        private ClinetData Client = new();
+        //private ClinetData Client = new();
         private bool logged_in = false;
         private bool expired = false;
 
@@ -58,7 +58,7 @@ namespace GameApi
             else
                 data.username = user;
             string url = ServerURL + "/Account/Login";
-            string json = ApiTool.ToJson(data);
+            string json = WebTool.ToJson(data);
 
             WebResponse res = await SendPostRequest(url, json);
             LoginResponse login_res = GetData<LoginResponse>(res);
@@ -67,7 +67,7 @@ namespace GameApi
         }
         public void Logout()
         {
-            Client.Clear();
+            //Client.Clear();
             logged_in = false;
             onLogout?.Invoke();
             // SaveTokens();
@@ -87,7 +87,7 @@ namespace GameApi
             Logout(); //Disconnect
 
             string url = ServerURL + "/Account/Reg";
-            string json = ApiTool.ToJson(data);
+            string json = WebTool.ToJson(data);
 
             WebResponse res = await SendPostRequest(url, json);
             var regist_res = GetData<RegisterResponse>(res);
@@ -100,7 +100,7 @@ namespace GameApi
         public async Task<Api_PlayerDataRespons> GetUserPlayerData(string token)
         {
             string url = ServerURL + "/GameData/GetPlayerData";
-            var json = ApiTool.ToJson(token);
+            var json = WebTool.ToJson(token);
             WebResponse res = await SendPostRequest(url, json);
             var udata = GetData<Api_PlayerDataRespons>(res);
 
@@ -109,7 +109,7 @@ namespace GameApi
         public async Task<bool> SaveUserPlayerData(SavePlayerDataRequest data)
         {
             string url = ServerURL + "/GameData/SavelayerData";
-            var json = ApiTool.ToJson(data);
+            var json = WebTool.ToJson(data);
             WebResponse res = await SendPostRequest(url, json);
 
             if (res.success)
@@ -190,7 +190,7 @@ namespace GameApi
             if (res.success)
                 return "";
 
-            ErrorResponse err = ApiTool.JsonToObject<ErrorResponse>(res.data);
+            ErrorResponse err = WebTool.JsonToObject<ErrorResponse>(res.data);
             if (err != null)
                 return err.error;
             else
@@ -201,7 +201,7 @@ namespace GameApi
             T data;
             if (res.success)
             {
-                data = ApiTool.JsonToObject<T>(res.data);
+                data = WebTool.JsonToObject<T>(res.data);
             }
             else
             {
@@ -213,7 +213,7 @@ namespace GameApi
         }
         //    private LoginResponse GetLoginRes(WebResponse res)
         //    {
-        //        LoginResponse login_res = ApiTool.JsonToObject<LoginResponse>(res.data);
+        //        LoginResponse login_res = WebTool.JsonToObject<LoginResponse>(res.data);
 
         //        if (!res.success)
         //        {

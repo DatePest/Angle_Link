@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 1758943278
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: be7949124b81e372852ab219458d441f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f0746a44c1f0c1559a31d971a3d48d41
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 54d75c84357488db7c4fc71c7f163a41
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetManagement/GameCore/Scenes/Config/Config.unity
+Dependencies: []

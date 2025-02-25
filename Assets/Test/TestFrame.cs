@@ -56,11 +56,11 @@ public class TestFrame : MonoBehaviour
         B.Name = st;
         A.bBB = B;
         A.A1 = 100;
-        Text = ApiTool.ToJson(A);
+        Text = WebTool.ToJson(A);
 
         Debug.Log(Text);
 
-        var AA = ApiTool.JsonToObject<AAA>(Text);
+        var AA = WebTool.JsonToObject<AAA>(Text);
         UnityEngine.Debug.Log($"Req == null {AA == null}");
         UnityEngine.Debug.Log(AA.A1);
     }

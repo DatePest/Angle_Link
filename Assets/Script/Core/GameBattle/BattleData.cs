@@ -1,14 +1,9 @@
 ﻿using EventSystemTool;
-using RngDropTool;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Unity.Netcode;
-using Unity.Plastic.Newtonsoft.Json;
-using Unity.Plastic.Newtonsoft.Json.Serialization;
-using UnityEngine;
+
 [System.Serializable]
 public class BattleData
 {

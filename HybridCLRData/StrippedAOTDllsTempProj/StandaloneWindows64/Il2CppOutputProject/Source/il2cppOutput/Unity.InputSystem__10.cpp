@@ -7091,7 +7091,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR InputControl_t74F06B623518F992BF8E38656A5E085
 		L_5 = InputControlLayout_get_type_mB36B8AAE50EB013820BFB388233F4BCC6AD419B3_inline(L_4, NULL);
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_5);
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_5);
 		InputControlLayout_t46A40BE4C976BE33E85F61E63EB34323FED9831D* L_7 = ___0_layout;
 		NullCheck(L_7);
 		InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 L_8;
@@ -23490,7 +23490,7 @@ CATCH_0022:
 			L_10 = Exception_GetType_mAD1230385BDC06119C339187CC37F22B6A79CF09(L_9, NULL);
 			NullCheck(L_10);
 			String_t* L_11;
-			L_11 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_10);
+			L_11 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_10);
 			String_t* L_12 = ___1_callbackName;
 			RuntimeObject* L_13 = ___2_context;
 			String_t* L_14;
@@ -23508,7 +23508,7 @@ IL_004a:
 			L_16 = Exception_GetType_mAD1230385BDC06119C339187CC37F22B6A79CF09(L_15, NULL);
 			NullCheck(L_16);
 			String_t* L_17;
-			L_17 = VirtualFuncInvoker0< String_t* >::Invoke(7, L_16);
+			L_17 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_16);
 			String_t* L_18 = ___1_callbackName;
 			String_t* L_19;
 			L_19 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_17, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral29E9D8EEDD40E3ADE1579882DA345730D66B63B5)), L_18, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral77A73EBDA78185D665A8799738A9D6885E237CAD)), NULL);

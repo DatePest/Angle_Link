@@ -27,7 +27,7 @@ namespace Assets.Script.Core.Server.Services
         public async void ReceiveBattleEnterRequest(ReceiveNetSerializedData Rdata)
         {
             var data = Rdata.NData.GetString();
-            var Req = ApiTool.JsonToObject<BattleEnterRequest>(data);
+            var Req = WebTool.JsonToObject<BattleEnterRequest>(data);
             Api_PlayerData Udata = await PlayerDataLogic.TokenGetPlayerData(Req.accesLogin_token, Rdata.Client_id);
             if (Udata == null) return;
             var LevelData=await AssetFInd.GetGameLevelData_Async(Req.GameLevelDataName);
@@ -63,7 +63,7 @@ namespace Assets.Script.Core.Server.Services
         public async void ReceiveBattleStart(ReceiveNetSerializedData Rdata)
         {
             // await UniTask.SwitchToMainThread();
-            var Req = ApiTool.JsonToObject<BattleRequest>(Rdata.NData.GetString());
+            var Req = WebTool.JsonToObject<BattleRequest>(Rdata.NData.GetString());
             var Rresult = await BattleManager.TryGet_GameStart(Req.GameUid);
             if (Rresult.Success)
             {
@@ -81,7 +81,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestBattlePlayerSelect)]
         public async void ReceiveBattlePlayerSelect(ReceiveNetSerializedData Rdata)
         {
-            var Req = ApiTool.JsonToObject<BattlePlayerSelectRequest>(Rdata.NData.GetString());
+            var Req = WebTool.JsonToObject<BattlePlayerSelectRequest>(Rdata.NData.GetString());
             var Rresult = await BattleManager.TryGet_GameSelect(Req.GameUid, Req.GetSelectOrders());
             if (Rresult.Success)
             {
@@ -99,7 +99,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestBattleEndSettlement)]
         public async void ReceiveBattleEndGetDrop(ReceiveNetSerializedData Rdata)
         {
-            var Req = ApiTool.JsonToObject<BattleRequest>(Rdata.NData.GetString());
+            var Req = WebTool.JsonToObject<BattleRequest>(Rdata.NData.GetString());
             var Rresult = await BattleManager.TryGet_GameEndToGetDrop(Req.GameUid);
             if (Rresult.Success)
             {
@@ -141,7 +141,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestReceiveBattleData)]
         public async void ReceiveBattleData(ReceiveNetSerializedData Rdata)
         {
-            var Req = ApiTool.JsonToObject<BattleData>(Rdata.NData.GetString());
+            var Req = WebTool.JsonToObject<BattleData>(Rdata.NData.GetString());
             var Ser =await BattleManager.NewBattle_Async(Req);
             var Handle = await　BattleManager.FindHandle(Req.Uid);
             await Handle.Excute(Ser,true);

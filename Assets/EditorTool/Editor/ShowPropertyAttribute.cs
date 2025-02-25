@@ -1,12 +1,10 @@
-using Codice.Client.BaseCommands;
-using Editor_Tool;
 using System;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static Editor_Tool.ShowType.Base;
+
+#if UNITY_EDITOR
 using static Editor_Tool.ShowType;
+using static Editor_Tool.ShowType.Base;
 namespace Editor_Tool
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
@@ -234,3 +232,4 @@ namespace Editor_Tool
 
     }
 }
+#endif

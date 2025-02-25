@@ -1,8 +1,5 @@
 ﻿using Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -17,6 +14,7 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
         Client_MenuButton client_MenuButton;
         Client_AutoButton AutoButton;
         Client_GameEnd client_GameEnd;
+        Client_Exitutton client_Exitutton;
         public BattleUI()
         {
             _BattleSpeed = new();
@@ -24,6 +22,7 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
             client_MenuButton = new();
             AutoButton = new();
             client_GameEnd = new ();
+            client_Exitutton = new ();
         }
         public void Dispose()
         {
@@ -37,7 +36,10 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
             AutoButton = null;
             client_GameEnd.Dispose();
             client_GameEnd = null;
+            client_Exitutton.Dispose();
+            client_Exitutton =null; 
         }
+
     }
     public class Client_BattleUIGameState : IDisposable
     {
@@ -120,6 +122,25 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
         private void _Button()
         {
             Debug.Log("Button_Menu");
+        }
+    }
+    public class Client_Exitutton : IDisposable
+    {
+        public Client_Exitutton()
+        {
+            var t = GameObject.Find("Button_Exit");
+            if (t == null) throw new Exception("Button_Exit Is null");
+            t.GetComponent<Button>().onClick.AddListener(_Button);
+        }
+
+        public void Dispose()
+        {
+            return;
+        }
+
+        private void _Button()
+        {
+            ClientScene.Goto(ClientScene.ClientSceneName.Home);
         }
     }
     public class Client_AutoButton : IDisposable
@@ -224,7 +245,7 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
         }
         void Exit()
         {
-            UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home.ToString(), GameConstant.PackName_GameCore, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            ClientScene.Goto(ClientScene.ClientSceneName.Home);
         }
         private void Win_Button()
         {

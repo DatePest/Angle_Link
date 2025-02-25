@@ -40,12 +40,12 @@ namespace Assets.Script.Core.Server.Services
         public void DataExpiredRequestCombatData(NetSendData Sdata)
         {
             BattleEventLog Redata = BattleLogic.RequestData();
-            SendAction(NetworkMsg_HandlerTag.Return_RequestToBattleData, ApiTool.ToJson(Redata), Sdata.TargetId, Unity.Netcode.NetworkDelivery.Reliable);
+            SendAction(NetworkMsg_HandlerTag.Return_RequestToBattleData, WebTool.ToJson(Redata), Sdata.TargetId, Unity.Netcode.NetworkDelivery.Reliable);
         }
         //[EventTag(SerEventTag.DataExpiredBackHome)]
         //public void DataExpiredBackHome(NetSendData Sdata)
         //{
-        //    SendAction(NetworkMsg_HandlerName.ReturnErrorMsg_BackLogin, ApiTool.ToJson(Redata), Sdata.TargetId, Unity.Netcode.NetworkDelivery.Reliable);
+        //    SendAction(NetworkMsg_HandlerName.ReturnErrorMsg_BackLogin, WebTool.ToJson(Redata), Sdata.TargetId, Unity.Netcode.NetworkDelivery.Reliable);
         //}
         [EventTag(SerEventTag.ReturnBattleSettlement)]
         public void ReturnBattleSettlement(NetSendData Sdata)

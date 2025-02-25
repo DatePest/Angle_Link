@@ -24,25 +24,24 @@ public class Character
     public UnitAttribute UnitAttribute ;
     public NetworkFilteredData<CharacterData> characterData;
     public CharacterData_Net characterNetData;
-    public void SetCharacterData(CharacterData data)
+   
+    public void ReCalculateLv()
     {
-        UnitAttribute = UnitAttribute.Create(data.Attribute);
-        characterData = new(data);
-    }
-    public void SetAttributeData(CharacterData_Net data)
-    {
-        characterNetData = data;
-        UnitAttribute.Lv = data.Lv;
+        this.UnitAttribute = UnitAttribute.Create(characterData.GetData().Attribute);
+        if (characterData == null)
+            Debug.LogError($"{characterData} is null");
         UnitAttribute.CalculateLvGrowth(characterNetData);
     }
-     
+
+
     public static  async Task<Character> Create(CharacterData_Net character_Net)
     {
         var C = new Character();
         var data = await AssetFInd.GetCharacterData_Async(character_Net.AssetName);
-        C.SetCharacterData(data);
-        C.SetAttributeData(character_Net);
-
+        C.characterData = new(data);
+        C.characterNetData = character_Net;
+        C.UnitAttribute = UnitAttribute.Create(data.Attribute);
+        C.UnitAttribute.CalculateLvGrowth(character_Net);
         return C;
 
     }

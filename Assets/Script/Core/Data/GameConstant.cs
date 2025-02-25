@@ -24,6 +24,7 @@ public class GameConstant
 
     //Client Cache Tag
     public const string OriginalBattleData = "OriginalBattleData"; //The original data returned initially
+    public const string DevelopEvent = "DevelopEvent";
 
     public const string Item_Money = "ItemMoney";
 }

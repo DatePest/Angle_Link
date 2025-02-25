@@ -23,7 +23,7 @@ namespace Client
         public void ReturnErrorMsg_BackLogin(ReceiveNetSerializedData data)
         {
             var msg = data.NData.Get<MsgEvent_Net>();
-            Ui_SystemMsg.Get().WaitConfirm(msg.msg, () => UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Login.ToString(), GameConstant.PackName_GameCore, UnityEngine.SceneManagement.LoadSceneMode.Single));
+            Ui_SystemMsg.Get().WaitConfirm(msg.msg, () => ClientScene.Goto(ClientScene.ClientSceneName.Login));
         }
         [EventTag(NetworkMsg_HandlerTag.ReturnReg)]
         public void Reg(ReceiveNetSerializedData data)
@@ -31,14 +31,14 @@ namespace Client
             var msg = data.NData.Get<UserData>();
             ClientRoot.Get().ClientUserData.SetUserData(msg);
 
-            Ui_SystemMsg.Get().WaitConfirm("Registration successful",()=> UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home.ToString(), GameConstant.PackName_GameCore,UnityEngine.SceneManagement.LoadSceneMode.Single));
+            Ui_SystemMsg.Get().WaitConfirm("Registration successful",() => ClientScene.Goto(ClientScene.ClientSceneName.Home));
         }
         [EventTag(NetworkMsg_HandlerTag.Returnlogin)]
         public void Login(ReceiveNetSerializedData data)
         {
             var msg = data.NData.Get<UserData>();
             ClientRoot.Get().ClientUserData.SetUserData(msg);
-            UI_SceneLoad.Get().SceneLoad(ClientScene.ClientSceneName.Home.ToString(), GameConstant.PackName_GameCore, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            ClientScene.Goto(ClientScene.ClientSceneName.Home);
         }
         [EventTag(NetworkMsg_HandlerTag.ReturnGetPlayerData)]
         public void UpdatePlayerData(ReceiveNetSerializedData data)

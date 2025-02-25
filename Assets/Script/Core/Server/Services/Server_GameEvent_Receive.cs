@@ -16,7 +16,7 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestCharacterDevelop_Lv)]
         public async void ReceiveTest(ReceiveNetSerializedData Rdata)
         {
-            var Req = ApiTool.JsonToObject<ItemListRequst>(Rdata.NData.GetString());
+            var Req = WebTool.JsonToObject<ItemListRequst>(Rdata.NData.GetString());
             //GameUtilityTool.DebugAsync(Rdata.NData.GetString());
             Api_PlayerData Udata = await PlayerDataLogic.TokenGetPlayerData(Req.accesLogin_token, Rdata.Client_id);
 
@@ -25,12 +25,21 @@ namespace Assets.Script.Core.Server.Services
             var exp =Develop_CharacterLv.GetExp(Req.ItemList1);
             Udata.AddCharacterToDevelop((string)Req.Arg1, exp);
             Udata.RemoveItem(Req.ItemList1);
+            var r = new Response_Net();
+
             if (!await PlayerDataLogic.SaveData(Udata, Req.accesLogin_token))
             {
-                return;
+                r.success = false;
+                r.msg = "Failure";
+            }
+            else
+            {
+                r.msg = "Success";
+                r.success = true;
+
             }
 
-            EventSystemToolExpand.Publish(SerEventTag.ReturnCharacterDevelop_Lv, NetworkMsg_HandlerTag.GameEvent, Rdata.Client_id, "Error");
+            EventSystemToolExpand.Publish(SerEventTag.ReturnCharacterDevelop_Lv, NetworkMsg_HandlerTag.GameEvent, Rdata.Client_id, r);
         }
     } 
 }

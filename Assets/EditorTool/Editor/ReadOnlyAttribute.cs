@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-
+#if UNITY_EDITOR
 [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
 public class ReadOnlyAttribute : PropertyAttribute
 {
@@ -20,3 +20,4 @@ public class ReadOnlyDrawer : PropertyDrawer
         GUI.enabled = true;
     }
 }
+#endif

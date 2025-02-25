@@ -1,13 +1,4 @@
-﻿using Codice.CM.Common;
-using Cysharp.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using static Assets.Script.Core.Fx.AnimFX_Tool;
-using static UnityEngine.GraphicsBuffer;
+﻿using UnityEngine;
 
 namespace Assets.Script.Core.Fx
 {

@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.11f1
+CRC: 2677949313
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 500c3b7c93afc18ed9f2bc04671ae785
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b4d531226a74972086fb1479c6432e6e
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 46b4c6d75fe159de40b183b9cf6b5f41
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: efc0b50f3534a2b4e892bbd8e3df4fd5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b693455da7396e6409ae1cacaa03622f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Core
+  ClassName: .AbilityDatas
+- AssemblyName: Core
+  ClassName: .ArtData
+- AssemblyName: Core
+  ClassName: .AttributeData
+- AssemblyName: Core
+  ClassName: .CharacterPersonal
+Assets:
+- Assets/AssetManagement/GameCore/Character/A002.asset
+- Assets/AssetManagement/GameCore/Character/A001.asset
+- Assets/AssetManagement/GameCore/Character/A003.asset
+- Assets/AssetManagement/GameCore/Character/A004.asset
+Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_abilitydatas.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_art_characters_a001.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_art_characters_a002.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_art_characters_a003.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_art_characters_a004.bundle

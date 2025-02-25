@@ -1,9 +1,5 @@
 ﻿using Assets.Script.Core.Data;
 using RngDropTool;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "AL/Item", order = 8)]

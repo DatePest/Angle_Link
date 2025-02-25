@@ -41,7 +41,6 @@ namespace Tools
         }
         public static void Publish(ushort tagId, string sendID, ulong targetId, IRequest data)
         {
-
             if (data.accesLogin_token == null)
             {
                 data.accesLogin_token = ClientRoot.GetToken();

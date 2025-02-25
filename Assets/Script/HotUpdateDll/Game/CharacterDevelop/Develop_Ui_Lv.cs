@@ -27,11 +27,11 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         Button Use, Reset, Auto;
         List<ExpItemUseObj> expItems;
         ISelectCharacter TargetCharacter;
-       // Client.ClientUserData User => Client.ClientRoot.Get().ClientUserData;
+        // Client.ClientUserData User => Client.ClientRoot.Get().ClientUserData;
         public GameObject TargetObj { get => Target; }
         public Action OnShow { get; set; }
         public Action OnHide { get; set; }
-
+        public Action CallUpdata;
         public Develop_Ui_Lv(ISelectCharacter character)
         {
             TargetCharacter = character;
@@ -95,9 +95,28 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
             }
             if(r.ItemList1.Count == 0) return;
             r.Arg1 = TargetCharacter.TCharacter.characterNetData.AssetName;
+
+            Action a = LoaclTolevelUP;
+            ClientRoot.Get().ClientUserData.AddCache(GameConstant.DevelopEvent, a, true);
             EventSystemToolExpand.Publish(ClientEventTag.SendCharacterDevelopLv, NetworkMsg_HandlerTag.GameEvent, default, r);
         }
 
+        void LoaclTolevelUP()
+        {
+            
+            int Exp = 0;
+            foreach (var a in expItems)
+            {
+                Exp += a.GetNowExp();
+                if (a.ItemNet != null)
+                    a.ItemNet.Amount -= a.CurrentAmount;
+            }
+            ToLevelUP(TargetCharacter.TCharacter.characterNetData, Exp);
+            TargetCharacter.TCharacter.ReCalculateLv();
+
+            CallUpdata?.Invoke();
+            onReset();
+        }
       
         void UpdataUI()
         {
@@ -230,6 +249,7 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
             }
             expItems.Clear();
             expItems = null;
+            CallUpdata = null;
             TargetCharacter = null;
             OnShow = null;
             OnHide = null;
@@ -306,7 +326,6 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
                 GetExp.text = $"{CurrentAmount * ItemExp}";
                 OnUpdata?.Invoke();
             }
-
             public int GetNowExp() => CurrentAmount * ItemExp;
             public void SetCharacter(ISelectCharacter c) => TargetCharacter = c;
             private void AddMax()
