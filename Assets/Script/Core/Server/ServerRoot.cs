@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Script.Core.Server.Services;
+using MacFsWatcher;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,7 +32,7 @@ namespace Assets.Script.Core.Server
             Network network = Network.Get();
             network.StartServer(port);
             serverBattleManager = new();
-            serverRequestServices = new();
+            serverRequestServices = new(new ServerServices());
         }
         
         private void FixedUpdate()
@@ -46,7 +48,17 @@ namespace Assets.Script.Core.Server
             base.OnDestroy();
         }
 
-       
+
+
+
+        private void Update()
+        {
+            if(Input.GetKeyUp(KeyCode.A))
+            {
+                EventSystemToolExpand.Publish(SerEventTag.ReturnMsg, NetworkMsg_HandlerTag.Account, default, "B");
+                Debug.Log("A");
+            }
+        }
     }
 
     

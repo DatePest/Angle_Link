@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db89c827381cb0488451eb37e2a3959, type: 3}
   m_Name: NetworkSetting
   m_EditorClassIdentifier: 
-  ServerUrl: 127.0.0.1
+  ServerUrl: datepest.myddns.me
   port: 2211
-  FileUrl_1: 
+  FileUrl_1: http://datepest.myddns.me:2222/ANGELIC_LINK/
   FileUrl_2: 
-  api_url: 127.0.0.1:5126
+  api_url: http://datepest.myddns.me:5126/
   api_https: 0
   solo_type: 0
   auth_type: 10

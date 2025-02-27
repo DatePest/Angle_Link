@@ -16,11 +16,6 @@ public class HomeRoot : SigMono<HomeRoot>
     {
         base.Awake();
 
-#if UNITY_EDITOR
-        var c = ClientRoot.Get();
-        await c.StartInitUpdata();
-#endif
-
 
         var handle = UI_SceneLoad.Get().BackLoad(ClientSceneName.News.ToString(), "GameCore");
         while (!(handle.Progress >= 0.9f)) await UniTask.Yield(PlayerLoopTiming.Update);

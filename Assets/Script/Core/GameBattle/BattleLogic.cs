@@ -153,7 +153,7 @@ public class BattleLogic
         {
             var Idata = u.UnitData.GetData();
             var M = Idata as Monster;
-            var o = M.GetMonsterAction(this);
+            var o = M.GetMonsterAction(this,u);
             if(o ==  null) continue;
             MOrder.Add(o);
         }

@@ -1,0 +1,1110 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "GameCore",
+    "PackageVersion": "Simulate",
+    "AssetList": [
+        {
+            "Address": "Battle",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Battle.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "Ability_StartCasting",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Data/Ability_StartCasting.anim",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "Black_ToHide",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Data/Black_ToHide.anim",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "Black_ToShow",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Data/Black_ToShow.anim",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "Team_Enters_Animation",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Data/Team_Enters_Animation.anim",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "BattleEnd",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/BattleEnd.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "BattleUII",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/BattleUII.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "CatserAnime",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/CatserAnime.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "CharacterIcon",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/CharacterIcon.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "NextWaveAnime",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/NextWaveAnime.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "SelectAction",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/SelectAction.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "SkillButton",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/SkillButton.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "Slots",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Battle/Prefab/Slots.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "BattleStageSelect",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/BattleStageSelect.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "BattlePlayerInfo",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/BattlePlayerInfo.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "GameLevelContenet",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/GameLevelContenet.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "Team_Editor",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/Team_Editor.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "Team_EditorCharacterSelectButton",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/Team_EditorCharacterSelectButton.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "Ui_Select_GameLevel",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/BattleStageSelect/Prefab/Ui_Select_GameLevel.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "Character",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Character.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5
+        },
+        {
+            "Address": "Develop_UI_CharacterData",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Prefab/Develop_UI_CharacterData.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "Develop_Ui_Lv",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Prefab/Develop_Ui_Lv.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "DevelopCharacterSelectButton",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Prefab/DevelopCharacterSelectButton.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "DevelopSelectCharacterLayout",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Prefab/DevelopSelectCharacterLayout.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "LvExpItemUseObj",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Character/Prefab/LvExpItemUseObj.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "Config",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Config/Config.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "Gasha",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Gasha/Gasha.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8
+        },
+        {
+            "Address": "ScenesSwichIcon",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home/Art/ScenesSwichIcon.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
+        },
+        {
+            "Address": "Home",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home/Home.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "SwichButtons",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Home/Prefab/SwichButtons.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login/Login.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "UI_GameStart",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login/Prefab/UI_GameStart.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
+        },
+        {
+            "Address": "Ui_Login",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login/Prefab/Ui_Login.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
+        },
+        {
+            "Address": "Ui_Regisiter",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Login/Prefab/Ui_Regisiter.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
+        },
+        {
+            "Address": "シス／ボタン／秘書チェンジ",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/News/Art/Other/シス／ボタン／秘書チェンジ.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 14
+        },
+        {
+            "Address": "シス／ボタン／閉じる",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/News/Art/Other/シス／ボタン／閉じる.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 14
+        },
+        {
+            "Address": "News",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/News/News.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 15
+        },
+        {
+            "Address": "DesktopConfig",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/News/Prefab/DesktopConfig.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 16
+        },
+        {
+            "Address": "NewsPlayerInfo",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/News/Prefab/NewsPlayerInfo.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 16
+        },
+        {
+            "Address": "Radio",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Radio/Radio.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 17
+        },
+        {
+            "Address": "Story",
+            "AssetPath": "Assets/AssetManagement/GameCore/Scenes/Story/Story.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 18
+        },
+        {
+            "Address": "EV_002_04_0A",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Cover/EV_002_04_0A.jpg",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Cover"
+            ],
+            "BundleID": 19
+        },
+        {
+            "Address": "G101L_b",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Cover/G101L_b.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Cover"
+            ],
+            "BundleID": 19
+        },
+        {
+            "Address": "G306_BG",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Cover/G306_BG.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Cover"
+            ],
+            "BundleID": 19
+        },
+        {
+            "Address": "CharacterButtonInfo",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/CharacterButtonInfo.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "White1X1",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/White1X1.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "シス／キャラ詳細／星／１",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/シス／キャラ詳細／星／１.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "シス／キャラ詳細／星／６",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/シス／キャラ詳細／星／６.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "シス／クエスト／マップ／到達道／０３",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/シス／クエスト／マップ／到達道／０３.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "シス／戦闘／弱点属性／？",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/シス／戦闘／弱点属性／？.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "戦闘背景／ゼス平原／日照",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/戦闘背景／ゼス平原／日照.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "戦闘背景／穴草原",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/戦闘背景／穴草原.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "戦闘背景／空",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/戦闘背景／空.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "選択不可",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Other/選択不可.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtOther"
+            ],
+            "BundleID": 20
+        },
+        {
+            "Address": "カード／子供志津香／基本",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A001/カード／子供志津香／基本.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 21
+        },
+        {
+            "Address": "シス／戦闘／支援効果／子供志津香／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A001/シス／戦闘／支援効果／子供志津香／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 21
+        },
+        {
+            "Address": "カード／子供ナギ／基本",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A002/カード／子供ナギ／基本.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 22
+        },
+        {
+            "Address": "シス／戦闘／支援効果／子供ナギ／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A002/シス／戦闘／支援効果／子供ナギ／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 22
+        },
+        {
+            "Address": "カード／美樹／基本",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A003/カード／美樹／基本.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "シス／戦闘／支援効果／美樹／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A003/シス／戦闘／支援効果／美樹／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "カード／剣豪／基本",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A004/カード／剣豪／基本.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "シス／戦闘／支援効果／剣豪／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/A004/シス／戦闘／支援効果／剣豪／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "シス／戦闘／支援効果／ハニー／大",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/シス／戦闘／支援効果／ハニー／大.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 25
+        },
+        {
+            "Address": "立ち／汎用グリーンハニー／基本",
+            "AssetPath": "Assets/AssetManagement/GameCore/Art/Characters/立ち／汎用グリーンハニー／基本.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ArtCharacters"
+            ],
+            "BundleID": 25
+        },
+        {
+            "Address": "MainGameLevelTable",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/LevelTables/MainGameLevelTable.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "GameLevelTables"
+            ],
+            "BundleID": 26
+        },
+        {
+            "Address": "1-1",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-1.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Main_1"
+            ],
+            "BundleID": 27
+        },
+        {
+            "Address": "1-2",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-2.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Main_1"
+            ],
+            "BundleID": 27
+        },
+        {
+            "Address": "1-3",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-3.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Main_1"
+            ],
+            "BundleID": 27
+        },
+        {
+            "Address": "1-4",
+            "AssetPath": "Assets/AssetManagement/GameCore/BattleLevelData/Main/Main_1/1-4.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Main_1"
+            ],
+            "BundleID": 27
+        },
+        {
+            "Address": "A001",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A001.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 28
+        },
+        {
+            "Address": "A002",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A002.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 28
+        },
+        {
+            "Address": "A003",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A003.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 28
+        },
+        {
+            "Address": "A004",
+            "AssetPath": "Assets/AssetManagement/GameCore/Character/A004.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "CharactersData"
+            ],
+            "BundleID": 28
+        },
+        {
+            "Address": "Monster_1",
+            "AssetPath": "Assets/AssetManagement/GameCore/Monsters/Monster_1.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "MonstersData"
+            ],
+            "BundleID": 29
+        },
+        {
+            "Address": "Character_A001_A",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/Character_A001_A.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "EffectDamage",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/EffectDamage.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "FilterRandom_1",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/FilterRandom_1.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "FilterRandom_2",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/FilterRandom_2.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "FilterRandom_3",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/FilterRandom_3.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "NormalAttack_Magic",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/NormalAttack_Magic.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "NormalAttack_Physics",
+            "AssetPath": "Assets/AssetManagement/GameCore/AbilityDatas/NormalAttack_Physics.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 30
+        },
+        {
+            "Address": "pulse4",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FX/pulse4.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 31
+        },
+        {
+            "Address": "FXObj_Normal_Magic",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FXObj_Normal_Magic.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 32
+        },
+        {
+            "Address": "FXObj_Normal_Physics",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FXObj_Normal_Physics.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 32
+        },
+        {
+            "Address": "FX_Single_Caster",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Single_Caster.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Single_PhysicalAttack",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Single_PhysicalAttack.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Single_Target",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Single_Target.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Single_TargetTeam",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Single_TargetTeam.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Throw_Caster",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Throw_Caster.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Throw_MagicBullet",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Throw_MagicBullet.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Throw_Target",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Throw_Target.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "FX_Throw_TargetTeam",
+            "AssetPath": "Assets/AssetManagement/GameCore/FxData/FxType/FX_Throw_TargetTeam.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 33
+        },
+        {
+            "Address": "ExpItem01",
+            "AssetPath": "Assets/AssetManagement/GameCore/Items/ExpItem01.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Items"
+            ],
+            "BundleID": 34
+        },
+        {
+            "Address": "ExpItem02",
+            "AssetPath": "Assets/AssetManagement/GameCore/Items/ExpItem02.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Items"
+            ],
+            "BundleID": 34
+        },
+        {
+            "Address": "ExpItem03",
+            "AssetPath": "Assets/AssetManagement/GameCore/Items/ExpItem03.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Items"
+            ],
+            "BundleID": 34
+        },
+        {
+            "Address": "ItemMoney",
+            "AssetPath": "Assets/AssetManagement/GameCore/Items/ItemMoney.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Items"
+            ],
+            "BundleID": 34
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battle.bundle",
+            "UnityCRC": 0,
+            "FileHash": "5ecbac11bae6616e13cb37940aa916b7",
+            "FileCRC": "00000000",
+            "FileSize": 36792,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battle_data.bundle",
+            "UnityCRC": 0,
+            "FileHash": "55c1a04164af523b790f219835820e4e",
+            "FileCRC": "00000000",
+            "FileSize": 32703,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battle_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7de655bc6fa3c92abb6c758fb142fff4",
+            "FileCRC": "00000000",
+            "FileSize": 194956,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battlestageselect.bundle",
+            "UnityCRC": 0,
+            "FileHash": "25cebe146e9e83bb383d91663f118b40",
+            "FileCRC": "00000000",
+            "FileSize": 38854,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_battlestageselect_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f137c499ab1e5c32997e7dbe0beb1a01",
+            "FileCRC": "00000000",
+            "FileSize": 238113,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_character.bundle",
+            "UnityCRC": 0,
+            "FileHash": "c1074dc34d7e5d05383970c4dfa5e8af",
+            "FileCRC": "00000000",
+            "FileSize": 69213,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_character_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "60bc18f75bf229291e50379ce496ed79",
+            "FileCRC": "00000000",
+            "FileSize": 211069,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_config.bundle",
+            "UnityCRC": 0,
+            "FileHash": "aad631917039616673eec5344824d288",
+            "FileCRC": "00000000",
+            "FileSize": 3463,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_gasha.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7ca444447dbf8101e1c49948030a7402",
+            "FileCRC": "00000000",
+            "FileSize": 17039,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home_art.bundle",
+            "UnityCRC": 0,
+            "FileHash": "945c4711e5e8c82b83f37235be7c0ad8",
+            "FileCRC": "00000000",
+            "FileSize": 40639,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7ec5f5e98b7c3940ccd19f980b43d2f2",
+            "FileCRC": "00000000",
+            "FileSize": 30201,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_home_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "cee6b4cb613fed638730a1bb8d4a518c",
+            "FileCRC": "00000000",
+            "FileSize": 17784,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_login.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3d5291b4f8d7fe7438fdf4b1c7cf1ab0",
+            "FileCRC": "00000000",
+            "FileSize": 25218,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_login_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "12880b5f153d00be79af4c8b2ac2e739",
+            "FileCRC": "00000000",
+            "FileSize": 130511,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news_art_other.bundle",
+            "UnityCRC": 0,
+            "FileHash": "2fc6ca3fa704bfe871906176bb120990",
+            "FileCRC": "00000000",
+            "FileSize": 12277,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news.bundle",
+            "UnityCRC": 0,
+            "FileHash": "83858703d69133f7f6551f8864ec4110",
+            "FileCRC": "00000000",
+            "FileSize": 29233,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_news_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "16e53b484b06ae01d1d232f7a43cc685",
+            "FileCRC": "00000000",
+            "FileSize": 40293,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_radio.bundle",
+            "UnityCRC": 0,
+            "FileHash": "5820128e6695f6e18517f624e3292a5b",
+            "FileCRC": "00000000",
+            "FileSize": 16860,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_scenes_story.bundle",
+            "UnityCRC": 0,
+            "FileHash": "fb8135c60f82405020f16446d854c193",
+            "FileCRC": "00000000",
+            "FileSize": 16845,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_cover.bundle",
+            "UnityCRC": 0,
+            "FileHash": "65a95b3a35d23e0da13575b47d06652a",
+            "FileCRC": "00000000",
+            "FileSize": 2539255,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_other.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b78f35e2a42e42097884760dd042196d",
+            "FileCRC": "00000000",
+            "FileSize": 3610241,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a001.bundle",
+            "UnityCRC": 0,
+            "FileHash": "98bcccca304331a5ae7075177a84472f",
+            "FileCRC": "00000000",
+            "FileSize": 199467,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a002.bundle",
+            "UnityCRC": 0,
+            "FileHash": "49578c50ceebefa4601b223491011ed3",
+            "FileCRC": "00000000",
+            "FileSize": 191702,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a003.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b74c090ccc7ad5418f30d6b1960da4d1",
+            "FileCRC": "00000000",
+            "FileSize": 214205,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters_a004.bundle",
+            "UnityCRC": 0,
+            "FileHash": "a428130877008aa0e7018d61ec09a8d3",
+            "FileCRC": "00000000",
+            "FileSize": 168019,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_art_characters.bundle",
+            "UnityCRC": 0,
+            "FileHash": "087e47fab9c0c2fa521725257248c883",
+            "FileCRC": "00000000",
+            "FileSize": 459496,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_battleleveldata_main_leveltables.bundle",
+            "UnityCRC": 0,
+            "FileHash": "6f269b7e063ba470c8e7f8f911b7fdf8",
+            "FileCRC": "00000000",
+            "FileSize": 485,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_battleleveldata_main_main_1.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3d1e613225eb72d00f362fea0ce7e19d",
+            "FileCRC": "00000000",
+            "FileSize": 7062,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_character.bundle",
+            "UnityCRC": 0,
+            "FileHash": "25d1a59b699aa7585e1fa446f3dde9d9",
+            "FileCRC": "00000000",
+            "FileSize": 4834,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_monsters.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3294c8fcb6ea6129b7de58d4f77c7738",
+            "FileCRC": "00000000",
+            "FileSize": 1099,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_abilitydatas.bundle",
+            "UnityCRC": 0,
+            "FileHash": "15f4a876e38058ed910c7db65f46d67f",
+            "FileCRC": "00000000",
+            "FileSize": 4435,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_fxdata_fx.bundle",
+            "UnityCRC": 0,
+            "FileHash": "6c995133b3d7f2ca9c510cc754b9687d",
+            "FileCRC": "00000000",
+            "FileSize": 3161,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_fxdata.bundle",
+            "UnityCRC": 0,
+            "FileHash": "8ce87a9bb3a346f0f2a29effd236dd7c",
+            "FileCRC": "00000000",
+            "FileSize": 1120,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_fxdata_fxtype.bundle",
+            "UnityCRC": 0,
+            "FileHash": "cafeedbf257573aeddf94de3d897d95f",
+            "FileCRC": "00000000",
+            "FileSize": 3671,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "gamecore_assets_assetmanagement_gamecore_items.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3a1cec7b78604491a5be1ecf8f2d55a7",
+            "FileCRC": "00000000",
+            "FileSize": 2116,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}

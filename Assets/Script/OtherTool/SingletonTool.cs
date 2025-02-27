@@ -70,7 +70,6 @@ public class SingletonTool
         public static T Create_Resources(string Path, Transform transform = null)
         {
             var op = Resources.Load<GameObject>(Path);
-            Debug.Log(op == null);
             var tar =GameObject.Instantiate(op, transform);
             Resources.UnloadUnusedAssets();
             return tar.GetComponent<T>();

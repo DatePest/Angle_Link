@@ -1,22 +1,23 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 287168866
+CRC: 3409867707
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1e5f2c5b85a37c865e0c99b5a41eee53
+    Hash: 799b76e1af765440ec6c632f112ea5a3
   TypeTreeHash:
     serializedVersion: 2
     Hash: bb8521372c98e74594d3b7eb1b0a7a88
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 99da39edc1fdde7ca9c9870560dfbedc
+    Hash: 3f4d07202bda09ee32b7b34339ad5870
 HashAppended: 0
 ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/TextMesh Pro/Shaders/TMP_SDF.shader
 - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
 - Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
 - Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Shaders/CFXR Particle Ubershader.cfxrshader

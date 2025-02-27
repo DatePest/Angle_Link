@@ -54,10 +54,10 @@ public class NetDownloadProgress : SigMono<NetDownloadProgress>
     {
         float progress = (float)currentDownloadBytes / totalDownloadBytes;
 
-        slider.value = progress;
+        var v =  Math.Round(progress, 3);
+        slider.value = (float)v;
         //Debug.Log($"下載進度：{currentDownloadCount}/{totalDownloadCount} 文件，已下載 {currentDownloadBytes}/{totalDownloadBytes} 字節，進度：{progress * 100}%");
-
-        textUGU.text = $"{(progress * 100):0.0}%";
+        textUGU.text = $"{(v) * 100} %";
 
     }
     /// When the downloader finishes (whether successful or failed)

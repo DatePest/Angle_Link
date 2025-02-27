@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
+using Unity.VisualScripting.YamlDotNet.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
-using static Unity.Netcode.Transports.UTP.UnityTransport;
 /// <summary>
 /// Main script handling network connection betweeen server and client
 /// It's one of the few scripts in this asset that needs to be on a DontDestroyOnLoad object
@@ -24,16 +24,14 @@ public class Network : MonoBehaviour
     public UnityAction onTick; //Every network tick
     public UnityAction onConnect;  //Event when self connect, happens before onReady, before sending any data
     public UnityAction onDisconnect; //Event when self disconnect
-    //Client only events
-    public UnityAction<ClientFailedConnectEvent> onClientFailedConnect; //Client Events Connection Errors
-    //Server only events
+                                     //Client only events
+    public UnityAction<Network, ConnectionEventData> OnConnectionEvent; //Client Events Connection Errors
+                                                                        //Server only events
     public UnityAction<ulong> onClientConnect; //Server event when any client connect
     public UnityAction<ulong> onClientDisconnect; //Server event when any client disconnect
 
     public delegate bool ApprovalEvent(ulong client_id, ConnectionData connect_data);
     public ApprovalEvent checkApproval; //Additional approval validations for when a client connects
-
-
 
     //---------
 
@@ -69,7 +67,7 @@ public class Network : MonoBehaviour
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
-            return; 
+            return;
         }
         Init();
         DontDestroyOnLoad(gameObject);
@@ -87,20 +85,14 @@ public class Network : MonoBehaviour
             Connection = new ConnectionData();
             CoustmTransport.Init();
             NetManager.ConnectionApprovalCallback += ApprovalCheck;
-            NetManager.OnClientConnectedCallback += OnClientConnect;
-            NetManager.OnClientDisconnectCallback += OnClientDisconnect;
+            NetManager.OnConnectionEvent += ConnectionEvent;
+            //NetManager.OnClientConnectedCallback += OnClientConnect;      // Old verion
+            //NetManager.OnClientDisconnectCallback += OnClientDisconnect;
             NetManager.NetworkConfig.NetworkTransport = transport;
             NetManager.NetworkConfig.ConnectionApproval = false;
-            transport.ClientFailedConnect+= ClientFailedConnect;
-            //InitAuth();
-        }
-    }
 
-    
-    private async void InitAuth()
-    {
-        Auth = IAuthenticator.Create(data.auth_type);
-        await Auth.Initialize();
+            transport.OnTransportEvent += TransportEvent;
+        }
     }
     //Start a host (client + server)
     public void StartHost(ushort port)
@@ -159,7 +151,7 @@ public class Network : MonoBehaviour
         NetManager.Shutdown();
         AfterDisconnected();
     }
-# region SetConnectionExtraData
+    #region SetConnectionExtraData
     public void SetConnectionExtraData(byte[] bytes)
     {
         Connection.extra = bytes;
@@ -209,13 +201,13 @@ public class Network : MonoBehaviour
         if (!IsServer)
             AfterConnected(); //AfterConnected wasn't called yet for client
     }
-   
+
 
     private void OnClientDisconnect(ulong client_id)
     {
         if (IsServer && client_id != ServerID)
         {
-           // Debug.Log("Client Disconnected: " + client_id);
+            // Debug.Log("Client Disconnected: " + client_id);
             onClientDisconnect?.Invoke(client_id);
         }
 
@@ -223,28 +215,66 @@ public class Network : MonoBehaviour
             AfterDisconnected();
     }
 
-    private void ClientFailedConnect(ClientFailedConnectEvent FailedEvent)
+    private void ConnectionEvent(NetworkManager manager, ConnectionEventData data)
     {
-        onClientFailedConnect?.Invoke(FailedEvent);
-    }
-    //private void TransportEvent(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime)
-    //{
-    //    Debug.LogError(eventType + clientId.ToString());
-    //    switch (eventType)
-    //    {
-    //        case NetworkEvent.Data:
-    //            break;
-    //        case NetworkEvent.Connect:
-    //            break;
-    //        case NetworkEvent.Disconnect:
-    //            break;
-    //        case NetworkEvent.TransportFailure:
-    //            break;
-    //        case NetworkEvent.Nothing:
-    //            break;
+        Action<ulong> a = null;
+        if (data.EventType == Unity.Netcode.ConnectionEvent.ClientConnected || data.EventType == Unity.Netcode.ConnectionEvent.PeerConnected)
+        {
+            a = OnClientConnect;
+            //Debug.Log("Connected");
+            if (IsServer)
+            {
 
-    //    }
-    //}
+            }
+            else
+            {
+                Debug.Log("Client IsConnected");
+
+            }
+        }
+        else
+        {
+            a = OnClientDisconnect;
+            //Debug.Log("Disconnected");
+            if (IsServer)
+            {
+
+            }
+            else
+            {
+                if (IsConnecting())
+                {
+                    Debug.Log("Failed to connect to server.");
+                }
+                else if (IsConnected())
+                {
+                    Debug.Log("Disconnect");
+                }
+            }
+        }
+        a?.Invoke(data.ClientId);
+        OnConnectionEvent?.Invoke(this, data);
+    }
+
+    private void TransportEvent(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime)
+    {
+        //Debug.LogError(eventType + "Target : " + clientId + "//" + payload + "//" + receiveTime );
+        switch (eventType)
+        {
+            case NetworkEvent.Data:
+                break;
+            case NetworkEvent.Connect:
+                break;
+            case NetworkEvent.Disconnect:
+                break;
+            case NetworkEvent.TransportFailure:
+                break;
+            case NetworkEvent.Nothing:
+                break;
+
+        }
+    }
+
     private void OnTick()
     {
         onTick?.Invoke();
@@ -275,24 +305,24 @@ public class Network : MonoBehaviour
         return true; //New Client approved
     }
 
-    public IReadOnlyList<ulong> GetClientsIds() =>  NetManager.ConnectedClientsIds;
+    public IReadOnlyList<ulong> GetClientsIds() => NetManager.ConnectedClientsIds;
     public bool IsConnecting() => IsActive() && !IsConnected(); //Trying to connect but not yet
     public bool IsConnected() => offline_mode || NetManager.IsServer || NetManager.IsConnectedClient;
     public bool IsActive() => offline_mode || NetManager.IsServer || NetManager.IsClient;
     public string Address { get { return CoustmTransport.GetAddress(); } }
-    public ushort Port{get { return CoustmTransport.GetPort(); }}
+    public ushort Port { get { return CoustmTransport.GetPort(); } }
 
     public ulong ClientID { get { return offline_mode ? ServerID : NetManager.LocalClientId; } } //ID of this client (if host, will be same than ServerID), changes for every reconnection, assigned by Netcode
     public ulong ServerID { get { return NetworkManager.ServerClientId; } } //ID of the server
     public bool IsServer { get { return offline_mode || NetManager.IsServer; } }
     public bool IsClient { get { return offline_mode || NetManager.IsClient; } }
-    public bool IsHost { get { return IsClient && IsServer; } } 
+    public bool IsHost { get { return IsClient && IsServer; } }
     public bool IsOnline { get { return !offline_mode && IsActive(); } }
 
     public NetworkTime LocalTime { get { return NetManager.LocalTime; } }
     public NetworkTime ServerTime { get { return NetManager.ServerTime; } }
     public float DeltaTick { get { return 1f / NetManager.NetworkTickSystem.TickRate; } }
-    
+
 
 }
 [System.Serializable]
@@ -370,9 +400,9 @@ public class ReceiveNetSerializedData
     public ulong Client_id;
     public NetSerializedData NData;
 
-    public ReceiveNetSerializedData(ulong client_id, NetSerializedData data) 
+    public ReceiveNetSerializedData(ulong client_id, NetSerializedData data)
     {
         Client_id = client_id;
-        NData = data; 
+        NData = data;
     }
 }

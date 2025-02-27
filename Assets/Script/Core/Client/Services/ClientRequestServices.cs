@@ -1,48 +1,36 @@
 ﻿using Cysharp.Threading.Tasks;
 using NetWorkServices;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Unity.Netcode.Transports.UTP;
-using UnityEngine;
-using static NetworkSetting;
+using Unity.Netcode;
 
 namespace Client
 {
-    public class ClientRequestServices : IServices
+    public class ClientRequestServices : IRequestServices
     {
         public Action<string, ushort, object> SendRequest;
         public Action<string, ushort> SendEnd;
         public Action<string, ushort> ReceiveEnd;
 
+        public ClientConnectionControl ConnectionControl;
 
+        public ClientRequestServices(IServices services) : base(services)
+        {
+        }
 
-        ClientConnectionControl connectionControl;
-
-        public Dictionary<string, NetRequest> NetRequests { get;  set; } = new();
-
-        //public Dictionary<string, NetRequest> NetRequests { get ; protected set; } = new();
-
-        public ClientRequestServices()
+        override protected void Init()
         {
             Network network = Network.Get();
 
-            connectionControl = new ClientConnectionControl(this, network);
-            #region NetRequestsAdd
-            IServices.TryAdd<Client_Account_Send, Client_Account_Receive>(this, NetworkMsg_HandlerTag.Account, network);
-            IServices.TryAdd<Client_Battle_Send, Client_Battle_Receive>(this, NetworkMsg_HandlerTag.Battle, network);
-            IServices.TryAdd<Client_Develop_Send, Client_Develop_Receive>(this, NetworkMsg_HandlerTag.GameEvent, network);
-            #endregion
-            foreach (var r in NetRequests.Values)
+            ConnectionControl = new ClientConnectionControl(this, network);
+            foreach (var r in services.NetRequests.Values)
             {
                 r.RequestSend.EndCallback += SendEndCallback;
                 r.RequestSend.ReceiveSendRequest += ReceiveSendRequest;
                 r.RequestReceive.EndCallback += ReceiveCallback;
             }
+
         }
 
         private void ReceiveSendRequest(string MsgTag, ushort tag, object data)
@@ -62,7 +50,22 @@ namespace Client
 
         public void Destory()
         {
-            connectionControl.Dispose();
+            ConnectionControl.Dispose();
+        }
+
+
+
+        public override void Dispose()
+        {
+            foreach (var r in services.NetRequests.Values)
+            {
+                r.Dispose();
+            }
+            services.NetRequests.Clear();
+            SendRequest = null;
+            SendEnd = null;
+            ReceiveEnd = null;
+
         }
     }
 
@@ -77,47 +80,45 @@ namespace Client
         ClientRequestServices requestServices;
         WaitSer waitSer;
         WithLockQueueTool.WithLockQueue<EventHandle_NetSendData> SendEventQueue;
+
+        public Action OnConnectFailed;
+        public Action OnSend_StartWait;
+        public Action OnReceiveEnd;
         public ClientConnectionControl(ClientRequestServices requestServices, Network network)
         {
-            requestServices.SendRequest += SendR;
+            requestServices.SendRequest += Send_ToWait;
             requestServices.SendEnd += Send;
             requestServices.ReceiveEnd += Receive;
-            network.onClientFailedConnect += FailedConnect;
+            network.OnConnectionEvent += FailedConnect;
             this.network = network;
-          
+
             SendEventQueue = new();
             waitSer = new(network, 5, async () =>
-            { 
-                await UniTask.SwitchToMainThread(); 
-                await SendEventQueue.Excute();
-            }, ConnectFailedToServer) ;
-        }
-        private void FailedConnect(UnityTransport.ClientFailedConnectEvent @event)
-        {
-            switch (@event)
             {
-                case UnityTransport.ClientFailedConnectEvent.Disconnected:
-                    break;
-                case UnityTransport.ClientFailedConnectEvent.ConnectFailed:
-
-                    //UnityEngine.Debug.LogError("IsConnectedClient__" + network.NetManager.IsConnectedClient);
-                    ConnectFailedToServer();
-                    break;
+                await UniTask.SwitchToMainThread();
+                await SendEventQueue.Excute();
+            }, ConnectFailedToServer);
+        }
+        private void FailedConnect(Network network, ConnectionEventData @event)
+        {
+            if (network.IsConnecting())
+            {
+                ConnectFailedToServer();
             }
         }
 
-        public  async void ConnectFailedToServer()
+
+        public async void ConnectFailedToServer()
         {
-            Ui_LoadIng.Get()?.Show(false);
-            Ui_SystemMsg.Get()?.ShowMsg("ConnectFailedToServer");
-            SendEventQueue.Clear();
+            OnConnectFailed?.Invoke();
+            await SendEventQueue.Clear();
             waitReceiveQuantity = 0;
         }
 
-        async void SendR(string MsgTag, ushort tag, object data)
+        async void Send_ToWait(string MsgTag, ushort tag, object data)
         {
             await SendEventQueue.Add((EventHandle_NetSendData)data);
-            Ui_LoadIng.Get().Show(true);
+            OnSend_StartWait?.Invoke();
             waitSer.ConnectToServer();
         }
 
@@ -133,16 +134,16 @@ namespace Client
             {
                 if (network.IsActive()) network.Disconnect();
                 waitReceiveQuantity = 0;
-                Ui_LoadIng.Get().Show(false);
+                OnReceiveEnd?.Invoke();
                 waitSer.StopWaitSerReceive();
             }
         }
-         void Remove()
+        void Remove()
         {
-            requestServices.SendRequest -= SendR;
+            requestServices.SendRequest -= Send_ToWait;
             requestServices.SendEnd -= Send;
             requestServices.ReceiveEnd -= Receive;
-            network.onClientFailedConnect -= FailedConnect;
+            network.OnConnectionEvent -= FailedConnect;
         }
 
         public void Dispose()
@@ -162,16 +163,19 @@ namespace Client
             public WaitSer(Network network, int WaitTIme, Action action, Action OnConnectFailed)
             {
                 this.network = network;
-                this.WaiTime=WaitTIme;
+                this.WaiTime = WaitTIme;
                 this.OnConnectFailed = OnConnectFailed;
-                Exceut =action;
-                network.onClientFailedConnect += FailedConnect;
+                Exceut = action;
+                network.OnConnectionEvent += FailedConnect;
             }
 
-            private void FailedConnect(UnityTransport.ClientFailedConnectEvent @event)
+            private void FailedConnect(Network network, ConnectionEventData @event)
             {
-                StopWaitSerReceive();
-                WaitConnect = false;
+                if (!network.IsConnected())
+                {
+                    StopWaitSerReceive();
+                    WaitConnect = false;
+                }
             }
 
             public async void ConnectToServer()
@@ -184,7 +188,7 @@ namespace Client
                     StartWait(true);
                     return; // Already connected
                 }
-                if (network.data.solo_type == SoloType.Offline)
+                if (network.data.solo_type == NetworkSetting.SoloType.Offline)
                 {
 
                     network.StartHostOffline();
@@ -239,27 +243,27 @@ namespace Client
                 OnConnectFailed?.Invoke();
                 StopWaitSerReceive();
             }
-     
+
             void Connect()
             {
                 network.onConnect -= Connect;
                 WaitConnect = false;
-                StartWait(true); 
+                StartWait(true);
                 Exceut?.Invoke();
             }
-          
+
             public void Dispose()
             {
-                network.onClientFailedConnect -= FailedConnect;
+                network.OnConnectionEvent -= FailedConnect;
                 token.Cancel();
                 token.Dispose();
                 Exceut = null;
-                OnConnectFailed = null; 
+                OnConnectFailed = null;
             }
-            
+
 
         }
     }
-   
+
 
 }

@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 406373058
+CRC: 1294463693
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b75a359faa2e03af8fc307e0eac1873d
+    Hash: b3dfc1eaa5c5249c96b11cb08d734b20
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3e24b549d1d9ccd69b0ce3dbe9474dc1
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: cce5d3a4cb8942dfbfa0ce28a15d0b7e
+    Hash: 7e6278a26df35f7eeaf12bfebcc95f3e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -83,3 +83,4 @@ Dependencies:
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_scenes_battlestageselect_prefab.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_assetmanagement_other.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_prefabs.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle

@@ -11,6 +11,7 @@ namespace Assets.Script.Core.Server.Services
     {
         public static void ReturnError(ulong Client_id, string Msg)
         {
+            GameUtilityTool.DebugErrorAsync(Msg);
             var MsgEvent = new MsgEvent_Net();
             MsgEvent.msg = Msg;
             EventSystemToolExpand.Publish(SerEventTag.ReturnMsg, NetworkMsg_HandlerTag.Account, Client_id, MsgEvent);

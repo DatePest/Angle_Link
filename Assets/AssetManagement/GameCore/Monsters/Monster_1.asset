@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154c281aa90b16e4a9f2bf28a381e9f0, type: 3}
   m_Name: Monster_1
   m_EditorClassIdentifier: 
-  UnitName: 
+  AssetName: Monster_1
+  UnitName: Hani
   Attribute:
-    HP: 10
-    Atk: 0
-    Def: 0
+    HP: 50
+    Atk: 15
+    Def: 5
     MAtk: 0
     MDef: 0
     Speed: 1250
     CritRate: 0
-    AtkType: 0
+    AtkType: 1
     RoleType: 0
   Art:
     CharacterIcon: {fileID: 2331210693439328752, guid: 40c11dd3d6a786e47834d12dc4150a51, type: 3}
@@ -30,7 +31,7 @@ MonoBehaviour:
     Casting: {fileID: 0}
     Overkill: {fileID: 0}
   Ability:
-    Ability_NormalAttack: {fileID: 0}
+    Ability_NormalAttack: {fileID: 11400000, guid: 7df92b393ba85c14ca1023ab15e6b1a5, type: 2}
     Ability_1: {fileID: 0}
     Ability_2: {fileID: 0}
     Ability_SP: {fileID: 0}

@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 984418172
+CRC: 2030002008
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5f169c39661e6b02bbefef001a1e2b6d
+    Hash: 9dce21ba5f8105689596ebfb5aced20b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4cd78a37fb460e353ea675aea82a1045
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 54c565dd5af826ee4ab248d462668e44
+    Hash: c139e2f8d2ded13374e5c53b8d32d1e8
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -56,5 +56,6 @@ Assets:
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
 Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_resources_font.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_textmesh_pro_fonts.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_unityshaders.bundle

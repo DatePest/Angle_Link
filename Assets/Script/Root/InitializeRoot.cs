@@ -17,15 +17,15 @@ public class InitializeRoot : MonoBehaviour
     public ITestData testData;
     async void Start()
     {
+        Debug.Log(Application.persistentDataPath);
         InitUI();
         await RootStert();
     }
 
-
     public static async Task RootStert()
     {
         var c = ClientRoot.Get();
-        // while (!temp.IsCompleted) await UniTask.Yield(PlayerLoopTiming.Update);
+        Custom_reg.Reg_NetWait();
         if (await c.StartInitUpdata())
             AssLoad();
         else
@@ -41,7 +41,7 @@ public class InitializeRoot : MonoBehaviour
          Ui_SystemMsg.Create_Resources("OtherPrefab/SystemMsg", tc.transform);
          UI_SceneLoad.Create_Resources("OtherPrefab/SceneLoad", tc.transform);
         NetDownloadProgress.Create_Resources("OtherPrefab/NetDownloadProgress", tc.transform);
-
+       
         Debug.Log("Init UI  End ");
     }
 

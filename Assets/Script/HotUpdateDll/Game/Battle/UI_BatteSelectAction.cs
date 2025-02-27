@@ -151,7 +151,7 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
                 CharacterIcon.sprite = u.GetArt().CharacterIcon;
                 for (int i = 0; i < Buttons.Length; i++)
                 {
-                    SetSkillButton(Buttons[i], u, (byte)i);
+                    SetSkillButton(Buttons[i], u,i);
                 }
             }
             public SkillSelectButton(GameObject g)
@@ -167,7 +167,7 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
                 }
             }
 
-            void SetSkillButton(GameObject g, Unit u, byte AbilityOrder)
+            void SetSkillButton(GameObject g, Unit u, int AbilityOrder)
             {
                 var Ab = u.GetUnitAbility(AbilityOrder);
                 var Nu = g.transform.Find("NotUse");

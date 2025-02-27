@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 961682027
+CRC: 975944532
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 969e448b3d9fd2015a9d4271cb9bc8a2
+    Hash: 0673809d0b97da3c52f6ece11d7d4172
   TypeTreeHash:
     serializedVersion: 2
     Hash: c8df2b5c1206ef39a4e51701f557bba6
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 27e806743d3eb050e062d260ce3426b0
+    Hash: d6610a9dbd4632b132f5c3af4f953ab3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -55,3 +55,4 @@ Assets:
 Dependencies:
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_assetmanagement_other.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_prefabs.bundle
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_share_assets_textmesh_pro_resources_fonts_&_materials.bundle

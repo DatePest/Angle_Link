@@ -76,7 +76,6 @@ namespace NetWorkServices
             writer.WriteValueSafe(data);
             Messaging.Send(SendMsgTag, TargetID, writer, delivery);
             writer.Dispose();
-
         }
 
         protected void SendAction(ushort type, ulong TargetID)

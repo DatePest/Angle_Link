@@ -78,7 +78,7 @@ public class Unit
         }
         return u;
     }
-    public UnitAbility GetUnitAbility(byte Ordar)
+    public UnitAbility GetUnitAbility(AbilityOrderTag Ordar)
     {
         foreach (var a in unitAbilitys)
         {
@@ -87,6 +87,12 @@ public class Unit
         }
         return null;
     }
+    public UnitAbility GetUnitAbility(int Ordar)
+    {
+       var tag = AbilityOrderTagExtensions.ToAbilityOrderTag(Ordar);
+       return GetUnitAbility(tag);
+    }
+    
     public UnitAbility GetUnitAbility(string Name)
     {
         foreach (var a in unitAbilitys)
@@ -105,7 +111,7 @@ public class UnitAbility
     public NetworkFilteredData<AbilityData> abilityData;
     public int CurrentCoolDown;
     public int Lv;
-    public int Ordar;
+    public AbilityOrderTag Ordar;
     public int BaseCoolDown => abilityData.GetData().CoolDown;
     public static UnitAbility Create(Unit u, AbilityData Adata)
     {
@@ -141,36 +147,61 @@ public class UnitAbility
         var Ab = u.UnitData.GetData().Ability;
         if (Ab.Ability_NormalAttack.name == Name)
         {
-            Ordar = 0;
+            Ordar = AbilityOrderTag.Ability_NormalAttack;
             return;
         }
         if (Ab.Ability_1.name == Name)
         {
-            Ordar = 1;
+            Ordar = AbilityOrderTag.Ability_1;
             return;
         }
         if (Ab.Ability_2.name == Name)
         {
-            Ordar = 2;
+            Ordar = AbilityOrderTag.Ability_2;
             return;
         }
         if (Ab.Ability_SP.name == Name)
         {
-            Ordar = 3;
+            Ordar = AbilityOrderTag.Ability_SP;
             return;
         }
         if (Ab.AbilityPassive_1.name == Name)
         {
-            Ordar = 4;
+            Ordar = AbilityOrderTag.AbilityPassive_1;
             return;
         }
         if (Ab.AbilityPassive_2.name == Name)
         {
-            Ordar = 5;
+            Ordar = AbilityOrderTag.AbilityPassive_2;
             return;
         }
     }
 }
+[System.Serializable]
+public enum AbilityOrderTag
+{
+    None = 0,
+    Ability_NormalAttack = 1,
+    Ability_1 = 2,
+    Ability_2 = 3,
+    Ability_SP = 4,
+    AbilityPassive_1 = 5,
+    AbilityPassive_2 = 6
+
+}
+public static class AbilityOrderTagExtensions
+{
+    public static AbilityOrderTag ToAbilityOrderTag(this int value)
+    {
+        if (Enum.IsDefined(typeof(AbilityOrderTag), value))
+        {
+            return (AbilityOrderTag)value;
+        }
+        return AbilityOrderTag.None; // 預設回傳 None
+    }
+}
+
+
 
 [System.Serializable]
 public class UnitAttribute : AttributeData

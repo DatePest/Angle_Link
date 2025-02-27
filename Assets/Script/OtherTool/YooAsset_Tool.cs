@@ -50,7 +50,7 @@ public class YooAsset_Tool
                 succeed = await InitializeYooAsset_WebPlayModeAsync(package); // 網絡模式
                 break;
         }
-        if(!succeed) return false;
+        if (!succeed) return false;
         var version = new PackageVersion();
         // 獲取資源版本
         Debug.Log($"{packageName} UpdatePackageVersion");
@@ -66,9 +66,8 @@ public class YooAsset_Tool
         if (!succeed) return false;
         // 清理緩存文件
         Debug.Log("ClearAllCacheFile");
-        succeed = await ClearPackageAllCacheFilesAsync(package);
+        succeed = await ClearPackageUnusedCacheFilesAsync(package);
         if (!succeed) return false;
-
         return true;
     }
     #region Mode
@@ -79,7 +78,8 @@ public class YooAsset_Tool
         var buildinFileSystem = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
         var initParameters = new HostPlayModeParameters
         {
-            BuildinFileSystemParameters = buildinFileSystem,
+            //BuildinFileSystemParameters = buildinFileSystem,
+            BuildinFileSystemParameters = null,  // Loaal Not Package File Use
             CacheFileSystemParameters = cacheFileSystem
         };
 
@@ -227,6 +227,20 @@ public class YooAsset_Tool
     }
 
     // 清理文件系统所有的缓存资源文件
+    public static async Task ClearPackageAllCacheFilesAsync(string packageName)
+    {
+        var package = YooAssets.GetPackage("DefaultPackage");
+        var operation =  package.ClearAllBundleFilesAsync();
+        await operation;
+        if (operation.Status == EOperationStatus.Succeed)
+        {
+            //清理成功
+        }
+        else
+        {
+            //清理失败
+        }
+    }
     static async Task<bool> ClearPackageAllCacheFilesAsync(ResourcePackage package)
     {
         var operation = package.ClearAllBundleFilesAsync();

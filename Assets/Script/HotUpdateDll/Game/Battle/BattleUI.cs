@@ -193,21 +193,32 @@ namespace Assets.Script.HotUpdateDll.Game.Battle_
         }
         private async void updataItem(SettlementDatas_Net net)
         {
+            int returnTag = 0;
             if (net.Items != null)
                 foreach (var item in net.Items)
                 {
                     var sp = await AssetFInd.GetItemData_Async(item.AssetName);
                     NewBox(sp.Icon, item.Amount);
-
                 }
+            else
+            { returnTag++; }
             if (net.Characters != null)
                 foreach (var item in net.Characters)
                 {
                     var sp = await AssetFInd.GetCharacterData_Async(item.AssetName);
                     NewBox(sp.Art.SDIcon, 0);
                 }
+            else
+            { returnTag++; }
             if (net.Money > 0)
                 NewBox(null, net.Money);
+            else
+            { returnTag++; }
+
+            if(returnTag >= 3)
+            {
+                Exit();
+            }
         }
 
         void init()

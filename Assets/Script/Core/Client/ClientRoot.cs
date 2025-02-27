@@ -7,9 +7,9 @@ namespace Client
 {
     public class ClientRoot
     {
-        public readonly ClientPackageSetting packageSetting;
-        public readonly ClientRequestServices clientRequestServices;
-        public readonly ClientAsset clientAsset;
+        public  ClientPackageSetting packageSetting;
+        public  ClientRequestServices clientRequestServices;
+        public  ClientAsset clientAsset;
         readonly ClientMsgEvent clientMsgEvent;
 
         static ClientRoot instance;
@@ -33,7 +33,7 @@ namespace Client
         {
             var net = Network.Get();
             packageSetting = ClientPackageSetting.Get();
-            clientRequestServices = new ClientRequestServices();
+            clientRequestServices = new ClientRequestServices( new ClientService());
             YooAsset_Tool.SerRemoteServicesUrl(net.data.FileUrl_1, net.data.FileUrl_2);
             clientAsset = new ClientAsset(packageSetting.PlayMode);
             clientMsgEvent = new ClientMsgEvent();
@@ -41,6 +41,7 @@ namespace Client
         public async Task<bool> StartInitUpdata()
         {
             if (Inited) return true;
+
             var b = await clientAsset.InitUpdata(packageSetting);
             if (b)
             {
@@ -55,7 +56,26 @@ namespace Client
         }
     }
 
-    
+    public class Custom_reg
+    {
+        public static void Reg_NetWait()
+        {
+            var c = ClientRoot.Get().clientRequestServices;
+            c.ConnectionControl.OnConnectFailed += ConnectFailed;
+            c.ConnectionControl.OnSend_StartWait += () => ShowWait(true);
+            c.ConnectionControl.OnReceiveEnd += () => ShowWait(false);
+
+        }
+       static void ConnectFailed()
+        {
+            Ui_LoadIng.Get()?.Show(false);
+            Ui_SystemMsg.Get()?.ShowMsg("ConnectFailedToServer");
+        }
+        static void ShowWait(bool b)
+        {
+            Ui_LoadIng.Get().Show(b);
+        }
+    }
 
 }
 
