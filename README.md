@@ -1,12 +1,6 @@
 此作品個人以練習實現學習的用途 請不要作為商用行為
 
 素材都只是隨片找東西放進去的看看是否生效  取自網路或遊戲截圖  後期會購買素材替代
-
-#由於並沒有玩過此款遊戲 大部分內容都是在YT找影片並且翻閱WIKI資料所得知的# 
-#選擇該作品是因友人起了頭OOO他很喜歡要不嘗試看看#  
-
-[個人所撰寫的一份簡易的遊戲企劃](https://docs.google.com/document/d/1IsJkN7QeWTN0F6YH7nQXMLSK_4QRIg7m6XY9c1QVk_w/edit?tab=t.0#heading=h.raz8d8hqsao0)
-
 目前規劃:   
 遊戲會做拆分成 client/server/WebDb三個部分 此git專案中包含  遊戲組成的client/server部分  
 至於WebDB的內容目前暫時尚未搭建之後會放置於一個git倉庫  
@@ -24,7 +18,7 @@ Hybridclr  搭配資源管理實現代碼的熱更新
 NGO        Unity的一個網路模塊  
 UniTask    協程替代或切換執行續  
 
-其他的小工具/作者想說的事情:  
+
 
 事件系統+自動註冊尋找方法 
     個人自己寫的 簡單的全局事件系統，後者是搭配事件的可傳遞參數使用的 用於專門寫一些事件方法的類  
@@ -38,7 +32,6 @@ UniTask    協程替代或切換執行續
 美術效果相關的，只會做一些基礎的處理，或是預留功能口，由於美術相關的放面暫時還不是我學習方向中較為注重的區域，請多包涵
 ![Animation](https://github.com/user-attachments/assets/c79109fe-f751-41ae-97eb-955264a5d083)
 
-感謝您的閱讀!   我是一個不專業的Unity自學者!
 
 
 
