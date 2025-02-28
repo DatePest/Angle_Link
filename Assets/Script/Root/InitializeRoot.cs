@@ -28,11 +28,6 @@ public class InitializeRoot : MonoBehaviour
         Custom_reg.Reg_NetWait();
         if (await c.StartInitUpdata())
             AssLoad();
-        else
-        {
-
-        }
-
     }
     void  InitUI()
     {

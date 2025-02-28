@@ -16,7 +16,6 @@ namespace Assets.Script.Core.Server
         {
             public static async Task AddCharacter(Api_PlayerData playerData, string[] CharacterName)
             {
-               
                 var List = WebTool.JsonToObject<List<CharacterData_Net>>(playerData.Characters);
 
                 for(int i = 0; i < CharacterName.Length; i++)
@@ -25,7 +24,6 @@ namespace Assets.Script.Core.Server
                     if (c == null) continue;
                     List.Add(c);
                 }
-
                 playerData.Characters = WebTool.ToJson(List);
             }
           

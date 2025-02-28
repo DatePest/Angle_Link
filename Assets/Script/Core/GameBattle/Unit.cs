@@ -45,38 +45,44 @@ public class Unit
     }
     public void RemoveStatu(Statu data) => RemoveStatu(data.Uid);
     #endregion
-    public static Unit Create(string uid, IUnitData data, byte OwnerID)
+    public static Unit Create(string uid, IUnitData data, byte OwnerID, CharacterData_Net data_Net = null)
     {
         var u = new Unit();
         u.Uid = uid;
         u.OwnerID = OwnerID;
         u.UnitAttribute = UnitAttribute.Create(data.Attribute);
         u.UnitData = new NetworkFilteredData<IUnitData>(data, GameConstant.PackName_GameCore);
-
+        if (data_Net == null)
+        {
+            data_Net =  CharacterData_Net.Create(data);
+        }
+        u.characterAbilityData = data_Net;
         u.unitAbilitys = new();
         foreach (var ability in u.UnitData.GetData().Ability.GetAbilityDatas())
         {
             UnitAbility Ua =  UnitAbility.Create(u, ability);
             u.unitAbilitys.Add(Ua);
         }
+        u.UnitAttribute.CalculateLvGrowth(data_Net);
         return u;
     }
     public static Unit Create(string uid, Character data, byte OwnerID)
     {
-        var u = new Unit();
-        u.Uid = uid;
-        u.OwnerID = OwnerID;
-        u.UnitAttribute = UnitAttribute.Create(data.UnitAttribute);
-        u.UnitData = new NetworkFilteredData<IUnitData>(data.characterData.GetData(), GameConstant.PackName_GameCore);
-        u.characterAbilityData = data.characterNetData;
+        return Create(uid, data.characterData.GetData(), OwnerID, data.characterNetData);
+        //var u = new Unit();
+        //u.Uid = uid;
+        //u.OwnerID = OwnerID;
+        //u.UnitAttribute = UnitAttribute.Create(data.UnitAttribute);
+        //u.UnitData = new NetworkFilteredData<IUnitData>(data.characterData.GetData(), GameConstant.PackName_GameCore);
+        //u.characterAbilityData = data.characterNetData;
 
-        u.unitAbilitys = new();
-        foreach (var ability in u.UnitData.GetData().Ability.GetAbilityDatas())
-        {
-            UnitAbility Ua = UnitAbility.Create(u, ability);
-            u.unitAbilitys.Add(Ua);
-        }
-        return u;
+        //u.unitAbilitys = new();
+        //foreach (var ability in u.UnitData.GetData().Ability.GetAbilityDatas())
+        //{
+        //    UnitAbility Ua = UnitAbility.Create(u, ability);
+        //    u.unitAbilitys.Add(Ua);
+        //}
+        //return u;
     }
     public UnitAbility GetUnitAbility(AbilityOrderTag Ordar)
     {

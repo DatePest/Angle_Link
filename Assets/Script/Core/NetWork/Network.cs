@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
-using Unity.VisualScripting.YamlDotNet.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 /// <summary>
@@ -119,7 +118,6 @@ public class Network : MonoBehaviour
         NetManager.StartServer();
         AfterConnected();
     }
-
     //If is_host is set to true, it means this player created the game on a dedicated server
     //so its still a client (not server) but is the one who selected game settings
     public void StartClient(string server_url, ushort port)

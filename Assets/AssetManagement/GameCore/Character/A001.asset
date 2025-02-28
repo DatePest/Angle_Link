@@ -17,7 +17,7 @@ MonoBehaviour:
   Attribute:
     HP: 100
     Atk: 0
-    Def: 0
+    Def: 2
     MAtk: 0
     MDef: 0
     Speed: 1000

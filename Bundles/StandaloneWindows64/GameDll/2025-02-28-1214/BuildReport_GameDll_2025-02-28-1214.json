@@ -1,0 +1,270 @@
+{
+    "Summary": {
+        "YooVersion": "2.2.4-preview",
+        "UnityVersion": "6000.0.11f1",
+        "BuildDate": "2025/2/28 下午 08:15:04",
+        "BuildSeconds": 3,
+        "BuildTarget": 19,
+        "BuildMode": 0,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildPackageName": "GameDll",
+        "BuildPackageVersion": "2025-02-28-1214",
+        "UniqueBundleName": true,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "EnableSharePackRule": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "AssetFileTotalCount": 9,
+        "MainAssetTotalCount": 9,
+        "AllBundleTotalCount": 9,
+        "AllBundleTotalSize": 2624035,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "Core.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/Core.dll.bytes",
+            "AssetGUID": "ac6226f82e4ecb14699ec4b41739dea4",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_core_dll_bytes.rawfile",
+            "MainBundleSize": 106643,
+            "DependAssets": []
+        },
+        {
+            "Address": "GameHotDll.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/GameHotDll.dll.bytes",
+            "AssetGUID": "10ed3a6d3a7c168419e7ad4e3d82480d",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_gamehotdll_dll_bytes.rawfile",
+            "MainBundleSize": 34752,
+            "DependAssets": []
+        },
+        {
+            "Address": "mscorlib.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/mscorlib.dll.bytes",
+            "AssetGUID": "5e9154c6a9e1fb546af0c8a1e6eebfbf",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_mscorlib_dll_bytes.rawfile",
+            "MainBundleSize": 1083728,
+            "DependAssets": []
+        },
+        {
+            "Address": "OtherTools.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/OtherTools.dll.bytes",
+            "AssetGUID": "9912185321b92a24cb30c64706a0166f",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_othertools_dll_bytes.rawfile",
+            "MainBundleSize": 39931,
+            "DependAssets": []
+        },
+        {
+            "Address": "System.Core.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/System.Core.dll.bytes",
+            "AssetGUID": "375aed1379bed764aa4c378e47c701b3",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_system_core_dll_bytes.rawfile",
+            "MainBundleSize": 215059,
+            "DependAssets": []
+        },
+        {
+            "Address": "System.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/System.dll.bytes",
+            "AssetGUID": "b68fdbd118d16a6469a244aef75499a1",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_system_dll_bytes.rawfile",
+            "MainBundleSize": 449488,
+            "DependAssets": []
+        },
+        {
+            "Address": "UniTask.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/UniTask.dll.bytes",
+            "AssetGUID": "53a8af20e2ac1cc4c970c4cd39a51801",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_unitask_dll_bytes.rawfile",
+            "MainBundleSize": 221039,
+            "DependAssets": []
+        },
+        {
+            "Address": "UnityEngine.CoreModule.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/UnityEngine.CoreModule.dll.bytes",
+            "AssetGUID": "ca8509376a4ca924fafef22907382e70",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_unityengine_coremodule_dll_bytes.rawfile",
+            "MainBundleSize": 386953,
+            "DependAssets": []
+        },
+        {
+            "Address": "YooAsset.dll",
+            "AssetPath": "Assets/AssetManagement/GameDll/YooAsset.dll.bytes",
+            "AssetGUID": "2021d78262024c24fb71b87b10eedc7a",
+            "AssetTags": [
+                "Dll"
+            ],
+            "MainBundleName": "gamedll_assets_assetmanagement_gamedll_yooasset_dll_bytes.rawfile",
+            "MainBundleSize": 86442,
+            "DependAssets": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_core_dll_bytes.rawfile",
+            "FileName": "931125046f4fdc6b2d127752d0b44494.rawfile",
+            "FileHash": "931125046f4fdc6b2d127752d0b44494",
+            "FileCRC": "0628550d",
+            "FileSize": 106643,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/Core.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_gamehotdll_dll_bytes.rawfile",
+            "FileName": "3846330b1468de9b07ca92ee2995237b.rawfile",
+            "FileHash": "3846330b1468de9b07ca92ee2995237b",
+            "FileCRC": "bdfeffc7",
+            "FileSize": 34752,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/GameHotDll.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_mscorlib_dll_bytes.rawfile",
+            "FileName": "0f8200c421e5c519d3b59f2111d67a79.rawfile",
+            "FileHash": "0f8200c421e5c519d3b59f2111d67a79",
+            "FileCRC": "65effa82",
+            "FileSize": 1083728,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/mscorlib.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_othertools_dll_bytes.rawfile",
+            "FileName": "edab9db6c1c2a110c28bb6b8657b51fb.rawfile",
+            "FileHash": "edab9db6c1c2a110c28bb6b8657b51fb",
+            "FileCRC": "d0f063b6",
+            "FileSize": 39931,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/OtherTools.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_system_core_dll_bytes.rawfile",
+            "FileName": "f30014aab99a3e8106e39cf39879d797.rawfile",
+            "FileHash": "f30014aab99a3e8106e39cf39879d797",
+            "FileCRC": "99b07f09",
+            "FileSize": 215059,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/System.Core.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_system_dll_bytes.rawfile",
+            "FileName": "41e4732d3f217e9db07dba113881895b.rawfile",
+            "FileHash": "41e4732d3f217e9db07dba113881895b",
+            "FileCRC": "ec119dfe",
+            "FileSize": 449488,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/System.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_unitask_dll_bytes.rawfile",
+            "FileName": "8c02e3673f9b1540d2683027d59bf85b.rawfile",
+            "FileHash": "8c02e3673f9b1540d2683027d59bf85b",
+            "FileCRC": "d8fd8079",
+            "FileSize": 221039,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/UniTask.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_unityengine_coremodule_dll_bytes.rawfile",
+            "FileName": "3115579e07999d21b24d10d95a69d94a.rawfile",
+            "FileHash": "3115579e07999d21b24d10d95a69d94a",
+            "FileCRC": "0ca2da2e",
+            "FileSize": 386953,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/UnityEngine.CoreModule.dll.bytes"
+            ]
+        },
+        {
+            "BundleName": "gamedll_assets_assetmanagement_gamedll_yooasset_dll_bytes.rawfile",
+            "FileName": "edee76c9245acce624a062dbc1e0ef68.rawfile",
+            "FileHash": "edee76c9245acce624a062dbc1e0ef68",
+            "FileCRC": "84cfa287",
+            "FileSize": 86442,
+            "Encrypted": false,
+            "Tags": [
+                "Dll"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/AssetManagement/GameDll/YooAsset.dll.bytes"
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

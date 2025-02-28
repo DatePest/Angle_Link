@@ -38,7 +38,7 @@ MonoBehaviour:
       data:
         itemTable:
           TableName: 
-          TotalWeight: 14
+          TotalWeight: 5
           items:
           - Amount: 0
             Data: {fileID: 11400000, guid: 2e26d65603ee95b4489ec3e45291e2b2, type: 2}
@@ -48,4 +48,4 @@ MonoBehaviour:
             <Weight>k__BackingField: 2
           - Amount: 1
             Data: {fileID: 0}
-            <Weight>k__BackingField: 10
+            <Weight>k__BackingField: 1

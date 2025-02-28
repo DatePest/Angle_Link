@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Core.GameDevelop;
+using Cysharp.Threading.Tasks;
 using EventSystemTool;
 using GameApi;
 using NetWorkServices;
@@ -23,14 +24,14 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestRegister)]
         public async void ReceiveRegister(ReceiveNetSerializedData Rdata)
         {
-            var auth = new Authenticator_API();
+           
             var data = Rdata.NData.GetString();
             var Request = WebTool.JsonToObject<RegisterRequest>(data);
+            var auth = new Authenticator_API();
             var b = await auth.Register(Request);
             if (b)
             {
                 var Udata = await auth.LoadUserPlayerData();
-
                 //New account initial information
                 await PlayerDataLogic.AddCharacter(Udata, new[] { "A001", "A002" });
                 Udata.Stamina = Develop_PlayerLv.GetStaminaMax(1);
@@ -49,8 +50,8 @@ namespace Assets.Script.Core.Server.Services
         [EventTag(NetworkMsg_HandlerTag.RequestLogin)]
         public async void ReceiveLogin(ReceiveNetSerializedData Rdata)
         {
-            var auth = new Authenticator_API();
             var data = Rdata.NData.GetString();
+            var auth = new Authenticator_API();
             var Request = WebTool.JsonToObject<LoginRequest>(data);
             var b = await auth.Login(Request.username,Request.password);
             if (b)

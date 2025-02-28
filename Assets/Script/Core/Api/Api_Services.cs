@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using UnityEngine.Events;
 using UnityEngine.Networking;
+using UnityEngine;
 namespace GameApi
 {
     public class Api_Services
@@ -199,6 +200,7 @@ namespace GameApi
         public T GetData<T>(WebResponse res) where T : IWebResponseState
         {
             T data;
+
             if (res.success)
             {
                 data = WebTool.JsonToObject<T>(res.data);

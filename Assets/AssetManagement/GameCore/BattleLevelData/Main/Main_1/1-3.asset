@@ -42,13 +42,13 @@ MonoBehaviour:
           items:
           - Amount: 1
             Data: {fileID: 11400000, guid: e18ddd2e902a9b646bf868630907e4ce, type: 2}
-            <Weight>k__BackingField: 200
+            <Weight>k__BackingField: 6000
           - Amount: 1
             Data: {fileID: 11400000, guid: 102f1ddb5f8ce80448de7e7b3d00efb6, type: 2}
-            <Weight>k__BackingField: 200
+            <Weight>k__BackingField: 6000
           - Amount: 1
             Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
-            <Weight>k__BackingField: 200
+            <Weight>k__BackingField: 6000
           - Amount: 0
             Data: {fileID: 11400000, guid: 24ad2108340a9f148b041529dea5eb7c, type: 2}
             <Weight>k__BackingField: 200

@@ -127,9 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173099823}
-  - component: {fileID: 173099822}
-  - component: {fileID: 173099821}
-  - component: {fileID: 173099820}
+  - component: {fileID: 173099824}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -137,51 +135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &173099820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173099819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2963b32e1854e5844bb3582d9ad53d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestGame: {fileID: 0}
-  TestField: 
-  List: []
---- !u!114 &173099821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173099819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2963b32e1854e5844bb3582d9ad53d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestGame: {fileID: 0}
-  TestField: 
-  List: []
---- !u!114 &173099822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173099819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2963b32e1854e5844bb3582d9ad53d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestGame: {fileID: 0}
-  TestField: 
-  List: []
 --- !u!4 &173099823
 Transform:
   m_ObjectHideFlags: 0
@@ -197,67 +150,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &569132914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 569132918}
-  - component: {fileID: 569132919}
-  m_Layer: 0
-  m_Name: DropTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &569132918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569132914}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &569132919
+--- !u!114 &173099824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569132914}
+  m_GameObject: {fileID: 173099819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c23e65c49626c34695b6fb611be7360, type: 3}
+  m_Script: {fileID: 11500000, guid: 61cf95740a2d5414d8f6fc1fcedac573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RngDrop:
-    RandomType: 0
-    items:
-      rid: 894652969250455663
-  references:
-    version: 2
-    RefIds:
-    - rid: 894652969250455663
-      type: {class: WeightedRandom, ns: RngDropTool, asm: Core}
-      data:
-        itemTable:
-          TableName: 
-          TotalWeight: 0
-          items: []
+  ePlayMode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 569132918}
   - {fileID: 173099823}

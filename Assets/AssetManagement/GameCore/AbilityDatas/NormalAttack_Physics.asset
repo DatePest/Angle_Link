@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b693455da7396e6409ae1cacaa03622f, type: 3}
   m_Name: NormalAttack_Physics
   m_EditorClassIdentifier: 
+  AssetName: NormalAttack_Physics
   title: NormalAttack_Physics
   desc: 
   trigger: 5

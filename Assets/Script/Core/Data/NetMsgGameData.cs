@@ -123,13 +123,26 @@ public class CharacterData_Net :INetworkSerializable
         serializer.SerializeValue(ref Favorability);
         serializer.SerializeValue(ref CharacterRank);
     }
+    public static CharacterData_Net Create(IUnitData Unitdata)
+    {
+        var data = Create();
+        data.AssetName = Unitdata.AssetName;
+        return data;
+    }
     public static CharacterData_Net Create(CharacterData character)
     {
-        var data =new CharacterData_Net();
+        var data = Create();
         data.CharacterRank = character.CharacterRank;
-        data.AssetName = character.name;
+        data.AssetName = character.AssetName;
+        return data;
+    }
+    public static CharacterData_Net Create()
+    {
+        var data = new CharacterData_Net();
         data.Lv = 1;
         data.AbilityLv_1 = 1;
+        data.AbilityLv_2 = 1;
+        data.AbilityLv_SP = 1;
         return data;
     }
     public static CharacterData_Net DTO(CharacterDataResponse response)
@@ -149,6 +162,7 @@ public class CharacterData_Net :INetworkSerializable
         return data;
 
     }
+
 }
 
     [System.Serializable]
@@ -237,6 +251,7 @@ public class SettlementDatas_Net : INetworkSerializable
     public void AddCharacter(CharacterData Cdata)
     {
         if (Characters == null) Characters = new();
+        if (CharactersNets == null) CharactersNets = new();
         var i = new DataObject(Cdata.AssetName,1);
         Characters.Add(i);
         CharactersNets.Add(CharacterData_Net.Create(Cdata));

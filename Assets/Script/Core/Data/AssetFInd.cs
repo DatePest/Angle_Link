@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.TextCore.Text;
 
 public class AssetFInd
 {
@@ -24,7 +25,8 @@ public class AssetFInd
     public static async Task<CharacterData_Net> GetNewCharacterNet_Async(string Name )
     {
         var data = await GetCharacterData_Async(Name);
-        return CharacterData_Net.Create(data);
+        var net = CharacterData_Net.Create(data);
+        return net;
     }
     public static async Task<ItemData> GetItemData_Async(string Name)
     {

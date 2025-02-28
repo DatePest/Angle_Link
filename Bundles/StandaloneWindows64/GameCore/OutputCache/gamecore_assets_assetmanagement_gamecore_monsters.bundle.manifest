@@ -1,18 +1,20 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 4228178282
+CRC: 1742092350
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9cb57969d94d0884e4ff741481317ebb
+    Hash: 3872e89ca27377d26ae10e977be492c5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3688be9bc04c58ec70d759c3d6c9da8b
+    Hash: 591779e3486855e834f73961ccf3fc44
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 2c6137585e95dc8e825cc3d9ab653ce3
+    Hash: 900168786b07b42f3f9ca975876d356d
 HashAppended: 0
 ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: b693455da7396e6409ae1cacaa03622f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 154c281aa90b16e4a9f2bf28a381e9f0, type: 3}
 - Class: 115
@@ -29,4 +31,5 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/AssetManagement/GameCore/Monsters/Monster_1.asset
 Dependencies:
+- R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_abilitydatas.bundle
 - R:/GitData/Angle_Link/Angle_Link/Bundles/StandaloneWindows64/GameCore/OutputCache/gamecore_assets_assetmanagement_gamecore_art_characters.bundle

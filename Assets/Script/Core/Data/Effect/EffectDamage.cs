@@ -15,9 +15,10 @@ public class EffectDamage : EffectData
         var modfireType = ParametersTypeTool.GetModfireType(int.Parse(ability.Parameters[1]));
         var ModfireParameters = float.Parse(ability.Parameters[2]);
 
-
+  
         var C = logic.GetUnit(ability.Caster);
-        foreach(var target in ability.Targets)
+        GameUtilityTool.DebugAsync($"{C.characterAbilityData.AssetName} Atk :{C.UnitAttribute.Atk} ");
+        foreach (var target in ability.Targets)
         {
             var T = logic.GetUnit(target);
             int damage = (int)ability.AbilityMainParameter;

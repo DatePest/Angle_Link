@@ -183,7 +183,7 @@ public class BattleLogic
         L?.Add_ExecutionResult(log);
 
         // ---------------
-        if (Target.UnitAttribute.HP < 0)
+        if (Target.UnitAttribute.HP <= 0)
             Kill(Caster, Target, ExcuteId, log);
 
     }
