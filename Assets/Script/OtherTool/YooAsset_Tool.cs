@@ -574,7 +574,7 @@ public class YooAsset_Tool
         public RemoteServices(string package)
         {
             _defaultHostServer = FileUrl_1 + package;
-            _fallbackHostServer = FileUrl_1 + package;
+            _fallbackHostServer = FileUrl_2 + package;
         }
         string IRemoteServices.GetRemoteMainURL(string fileName)
         {

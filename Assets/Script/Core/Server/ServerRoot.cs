@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tools;
+using Unity.Netcode;
 using UnityEngine;
 using YooAsset;
 
@@ -33,6 +34,8 @@ namespace Assets.Script.Core.Server
             network.StartServer(port);
             serverBattleManager = new();
             serverRequestServices = new(new ServerServices());
+
+
         }
         
         private void FixedUpdate()
@@ -49,16 +52,6 @@ namespace Assets.Script.Core.Server
         }
 
 
-
-
-        private void Update()
-        {
-            if(Input.GetKeyUp(KeyCode.A))
-            {
-                EventSystemToolExpand.Publish(SerEventTag.ReturnMsg, NetworkMsg_HandlerTag.Account, default, "B");
-                Debug.Log("A");
-            }
-        }
     }
 
     
