@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 [System.Serializable]
@@ -63,12 +64,14 @@ public class Unit
             UnitAbility Ua =  UnitAbility.Create(u, ability);
             u.unitAbilitys.Add(Ua);
         }
-        u.UnitAttribute.CalculateLvGrowth(data_Net);
         return u;
     }
     public static Unit Create(string uid, Character data, byte OwnerID)
     {
-        return Create(uid, data.characterData.GetData(), OwnerID, data.characterNetData);
+        var u = Create(uid, data.characterData.GetData(), OwnerID, data.characterNetData);
+        //  IF Character (Player)   Use CalculateLv  Attribute
+        u.UnitAttribute.CalculateLvGrowth(data.characterNetData);
+        return u;
         //var u = new Unit();
         //u.Uid = uid;
         //u.OwnerID = OwnerID;

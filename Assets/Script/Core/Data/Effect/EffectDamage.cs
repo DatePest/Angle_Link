@@ -17,12 +17,11 @@ public class EffectDamage : EffectData
 
   
         var C = logic.GetUnit(ability.Caster);
-        GameUtilityTool.DebugAsync($"{C.characterAbilityData.AssetName} Atk :{C.UnitAttribute.Atk} ");
         foreach (var target in ability.Targets)
         {
             var T = logic.GetUnit(target);
             int damage = (int)ability.AbilityMainParameter;
-            if(type == AtkType.physics)
+            if (type == AtkType.physics)
             {
                 damage += C.UnitAttribute.Atk;
             }
@@ -31,7 +30,6 @@ public class EffectDamage : EffectData
                 damage += C.UnitAttribute.MAtk;
             }
             int _Value = ParametersTypeTool.CalculateAddValue(damage, ModfireParameters, modfireType);
-
             logic.Damage(C, T, _Value, type, ability.ExcuteUid);
         }
     }

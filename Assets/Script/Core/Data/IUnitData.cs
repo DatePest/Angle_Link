@@ -14,8 +14,9 @@ public abstract class IUnitData : iSobj_Name, IRngItem
 }
 public enum AtkType
 {
-    physics = 1,
-    magic = 2
+    magic = 1,
+    physics = 2,
+    
 }
 public enum RoleType
 {
