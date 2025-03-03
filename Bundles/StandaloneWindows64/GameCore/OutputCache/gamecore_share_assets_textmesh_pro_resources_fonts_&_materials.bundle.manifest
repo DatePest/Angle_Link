@@ -1,29 +1,25 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.11f1
-CRC: 2030002008
+CRC: 688207864
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9dce21ba5f8105689596ebfb5aced20b
+    Hash: f743d2f8e257f171d4aaa3036078511c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4cd78a37fb460e353ea675aea82a1045
+    Hash: 6a668ef51acc827511d710a321e3ce6f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: c139e2f8d2ded13374e5c53b8d32d1e8
+    Hash: d9035647229de73ee963a823830d030e
 HashAppended: 0
 ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
-- Class: 48
-  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 115
-  Script: {instanceID: 0}
-- Class: 128
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.TextMeshPro

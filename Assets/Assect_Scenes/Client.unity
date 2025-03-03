@@ -128,7 +128,6 @@ GameObject:
   m_Component:
   - component: {fileID: 739903130}
   - component: {fileID: 739903129}
-  - component: {fileID: 739903131}
   m_Layer: 0
   m_Name: InitializeRoot
   m_TagString: Untagged
@@ -149,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proUGUI: {fileID: 1682445261}
-  testData: {fileID: 739903131}
+  testData: {fileID: 0}
 --- !u!4 &739903130
 Transform:
   m_ObjectHideFlags: 0
@@ -165,41 +164,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &739903131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739903128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a21f06795cb5074db0b57dc17bce494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    Email: 
-    Username: 
-    Access_Token: 
-    PlayerData:
-      Name: 
-      Money: 114514
-      PaidCoins: 7777
-      Lv: 1
-      Exp: 0
-      Stamina: 5
-      UID: 
-      Characters: []
-      Items:
-      - AssetName: ExpItem01
-        Amount: 10
-      - AssetName: ExpItem02
-        Amount: 3
-  characters:
-  - {fileID: 11400000, guid: ddeafd79d06003f418bda7965c932eff, type: 2}
-  - {fileID: 11400000, guid: ce3f797807bdca74496ae83cdc61336d, type: 2}
-  - {fileID: 11400000, guid: 2e26d65603ee95b4489ec3e45291e2b2, type: 2}
-  - {fileID: 11400000, guid: b5f0eeeec395e104493e636ff991dce9, type: 2}
 --- !u!1 &1007775700
 GameObject:
   m_ObjectHideFlags: 0

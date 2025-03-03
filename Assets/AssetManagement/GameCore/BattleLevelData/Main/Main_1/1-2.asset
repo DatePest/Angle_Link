@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1-2
   m_EditorClassIdentifier: 
   AssetName: 1-2
-  Stamina: 12
+  Stamina: 7
   Exp: 70
   TurnMax: 30
   Waves:

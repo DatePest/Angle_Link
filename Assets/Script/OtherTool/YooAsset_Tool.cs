@@ -15,7 +15,7 @@ public class YooAsset_Tool
     
     public static string FileUrl_1 { get; private set; }
     public static string FileUrl_2 { get; private set; }
-    public static void SerRemoteServicesUrl(string fileUrl_1, string fileUrl_2)
+    public static void SetRemoteFileUrl(string fileUrl_1, string fileUrl_2)
     {
         FileUrl_1 = fileUrl_1;
         FileUrl_2 = fileUrl_2;

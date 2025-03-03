@@ -16,7 +16,7 @@ MonoBehaviour:
   port: 2211
   FileUrl_1: http://datepest.myddns.me:2222/ANGELIC_LINK/
   FileUrl_2: 
-  api_url: 111.248.38.44:5126
+  api_url: datepest.myddns.me:5126
   api_https: 0
   solo_type: 0
   auth_type: 10

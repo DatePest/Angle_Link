@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Core.Server.Services;
+using System;
 using UnityEngine;
 using YooAsset;
 
@@ -21,14 +22,16 @@ namespace Assets.Script.Core.Server
 
         async void Start()
         {
-          await YooAsset_Tool.InitPackageAsync(ePlayMode, GameConstant.PackName_GameCore);
-
             Network network = Network.Get();
+            YooAsset_Tool.SetRemoteFileUrl(network.data.FileUrl_1, network.data.FileUrl_2);
+            await YooAsset_Tool.InitPackageAsync(ePlayMode, GameConstant.PackName_GameCore);
+
+           
             network.StartServer(port);
             serverBattleManager = new();
             serverRequestServices = new(new ServerServices());
-
-
+            Debug.Log("Ser Ready");
+            Console.WriteLine("Ser Ready");
         }
         
         private void FixedUpdate()

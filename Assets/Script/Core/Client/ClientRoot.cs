@@ -34,7 +34,7 @@ namespace Client
             var net = Network.Get();
             packageSetting = ClientPackageSetting.Get();
             clientRequestServices = new ClientRequestServices( new ClientService());
-            YooAsset_Tool.SerRemoteServicesUrl(net.data.FileUrl_1, net.data.FileUrl_2);
+            YooAsset_Tool.SetRemoteFileUrl(net.data.FileUrl_1, net.data.FileUrl_2);
             clientAsset = new ClientAsset(packageSetting.PlayMode);
             clientMsgEvent = new ClientMsgEvent();
         }
