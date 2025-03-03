@@ -1,18 +1,14 @@
 ﻿using Assets.Script.Core.GameDevelop;
 using Assets.Script.Core.UI;
 using Client;
-using NUnit.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Tools;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static Assets.Script.Core.GameDevelop.Develop_CharacterLv;
-using static UnityEngine.GraphicsBuffer;
-using static UnityEngine.UI.CanvasScaler;
 namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
 {
     public class Develop_Ui_Lv :  IUi_Switch 
@@ -27,7 +23,6 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
         Button Use, Reset, Auto;
         List<ExpItemUseObj> expItems;
         ISelectCharacter TargetCharacter;
-        // Client.ClientUserData User => Client.ClientRoot.Get().ClientUserData;
         public GameObject TargetObj { get => Target; }
         public Action OnShow { get; set; }
         public Action OnHide { get; set; }
@@ -231,14 +226,16 @@ namespace Assets.Script.HotUpdateDll.Game.CharacterDevelop
             //character.characterNetData.CurrentExp += totalExpNeeded - expRemaining;
 
             // 記錄結果
-#if UNITY_EDITOR
+
             for (int i = 0; i < sortedItems.Count; i++)
             {
+#if UNITY_EDITOR
                 Debug.Log($"Item: {sortedItems[i].ItemExp}, Used: {usedItems[i]}");
+#endif
                 sortedItems[i].CurrentAmount = usedItems[i];
                 sortedItems[i].Updata();
             }
-#endif
+
         }
 
         public void Dispose()

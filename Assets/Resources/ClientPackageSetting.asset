@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef786d0bd60be6748a52b5292e47cee5, type: 3}
   m_Name: ClientPackageSetting
   m_EditorClassIdentifier: 
-  PlayMode: 2
+  PlayMode: 0
   PackageNames:
   - GameCore
   - GameDll

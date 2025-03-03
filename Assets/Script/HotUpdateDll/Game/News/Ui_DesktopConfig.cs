@@ -59,7 +59,7 @@ public class Ui_DesktopConfig : MonoBehaviour
 
     Client.Ui_Layout CreatSelectObj()
     {
-        var g =YooAsset_Tool.GetPackageData_Sync<GameObject>("GameCore", "Ui_Select_default");
+        var g =YooAsset_Tool.GetPackageData_Sync<GameObject>("GameCore", "Ui_Select_Bg");
         var s = GameObject.Instantiate(g,transform.parent).GetComponent<Ui_Layout>();
         s.SetSize(High, width);
         var sp = GetCovers();
